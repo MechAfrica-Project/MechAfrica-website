@@ -28,11 +28,11 @@ export default function Navbar() {
       }`}
     >
       <div className="max-width-wrapper flex justify-between items-center">
-        <Link href={"/"}>
+        <Link href={"/"} className="bg-white">
           <Image
-            src="/assets/svgs/logo.svg"
+            src="/assets/pngs/logoV2.png"
             width={100}
-            height={80}
+            height={90}
             alt="MechAfricaLOGO"
           />
         </Link>
@@ -85,7 +85,7 @@ export default function Navbar() {
             <SheetHeader>
               <SheetTitle className="font-poppins text-sm text-left">
                 <Image
-                  src="/assets/svgs/logo.svg"
+                  src="/assets/pngs/logo.png"
                   width={80}
                   height={70}
                   alt="MechAfricaLOGO"
