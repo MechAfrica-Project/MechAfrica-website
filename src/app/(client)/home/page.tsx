@@ -1,5 +1,10 @@
 import React from "react";
+import ComingSoonPage from "./_components/ComingSoon";
 
 export default function HomePage() {
-  return <div>Welcome to MechAfrica</div>;
+  return (
+    <div>
+      <ComingSoonPage />
+    </div>
+  );
 }

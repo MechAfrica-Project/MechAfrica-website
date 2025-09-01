@@ -23,9 +23,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`w-full z-10 lg:py-4 font-poppins transition-colors duration-200 ${
-        isHomePage ? "bg-black" : "text-black shadow-sm"
-      }`}
+      className={`w-full z-10 lg:py-4 font-poppins transition-colors duration-200 `}
     >
       <div className="max-width-wrapper flex justify-between items-center">
         <Link href={"/"} className="bg-white">
@@ -48,13 +46,8 @@ export default function Navbar() {
               <Link
                 key={index}
                 href={navLink.link}
-                className={`link transition-colors ${
-                  isActive
-                    ? "text-yellow-500 underline underline-offset-4"
-                    : isHomePage
-                    ? "text-white hover:text-yellow-500"
-                    : "text-black hover:text-yellow-500"
-                }`}
+                className={`link transition-colors  "text-white hover:text-yellow-500
+                `}
               >
                 {navLink.text}
               </Link>
