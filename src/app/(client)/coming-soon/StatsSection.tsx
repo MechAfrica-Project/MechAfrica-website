@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function StatsSection() {
   const stats: [string, string][] = [
-    ["20,000+", "Farmers Expected"],
-    ["400+", "Service Providers"],
+    ["1 million+", "Farmers Expected"],
+    ["1000+", "Service Providers"],
     ["100+", "Trained Agents"],
     ["Nov", "2025 Launch"],
   ];
