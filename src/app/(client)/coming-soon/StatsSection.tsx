@@ -9,7 +9,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+    <section className="relative py-35 bg-primary text-primary-foreground overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/assets/pngs/MechAfrica.png"
