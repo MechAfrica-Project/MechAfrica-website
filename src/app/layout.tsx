@@ -17,7 +17,7 @@ const comfortaa = Comfortaa({
 
 export const metadata: Metadata = {
   title: "MechAfrica",
-  description: "Your description",
+  description: "Mechanizing Africa Agriculture",
 };
 
 export default function RootLayout({
@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${comfortaa.variable} antialiased`}>{children}</body>
+      <body className={`${poppins.variable} ${comfortaa.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

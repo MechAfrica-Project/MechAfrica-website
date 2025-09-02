@@ -1,25 +1,28 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { useState, FormEvent } from "react"
-import { Mail } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState, FormEvent } from "react";
+import { Mail } from "lucide-react";
 
 export default function EmailSignup() {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e?: FormEvent) => {
-    e?.preventDefault()
-    if (!email) return
-    const subject = encodeURIComponent("Early Access Request")
+    e?.preventDefault();
+    if (!email) return;
+    const subject = encodeURIComponent("Early Access Request");
     const body = encodeURIComponent(
       `Hello,\n\nI’d like to join MechAfrica early access.\n\nMy email is: ${email}\n`
-    )
-    window.location.href = `mailto:admin@mechafrica.com?subject=${subject}&body=${body}`
-  }
+    );
+    window.location.href = `mailto:admin@mechafrica.com?subject=${subject}&body=${body}`;
+  };
 
   return (
-    <section className="py-24 bg-gray-200 to-muted/10 relative">
+    <section
+      id="email-signup"
+      className="py-24 bg-gray-200 to-muted/10 relative"
+    >
       <div className="container mx-auto px-4 text-center">
         {/* Tagline badge */}
         <div className="inline-flex items-center gap-2 bg-accent/10 rounded-full px-6 py-2 mb-8 font-sans">
@@ -37,8 +40,9 @@ export default function EmailSignup() {
 
         {/* Subtitle */}
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed font-sans">
-          Sign up today to receive exclusive updates, launch details, and early access
-          opportunities with <span className="font-semibold">MechAfrica</span>.
+          Sign up today to receive exclusive updates, launch details, and early
+          access opportunities with{" "}
+          <span className="font-semibold">MechAfrica</span>.
         </p>
 
         {/* Form card */}
@@ -70,5 +74,5 @@ export default function EmailSignup() {
         </form>
       </div>
     </section>
-  )
+  );
 }
