@@ -5,8 +5,8 @@ export default function FeaturesSection() {
   const features = [
     {
       icon: <Tractor className="h-10 w-10 text-accent" />,
-      title: "Equipment Access",
-      desc: "Connect with tractors, planters, harvesters, and specialized farming equipment across multiple regions when you need them most.",
+      title: "Expanded Access",
+      desc: "Access to wide range mechanization products and services for all actors",
     },
     {
       icon: <Clock className="h-10 w-10 text-accent" />,
