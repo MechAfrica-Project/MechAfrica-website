@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function StatsSection() {
   const stats: [string, string][] = [
     ["1 million+", "Farmers Expected"],
-    ["1000+", "Service Providers"],
-    ["100+", "Trained Agents"],
-    ["Nov", "2025 Launch"],
+    ["5,000+", "Service Providers"],
+    ["1,000+", "Trained Agents"],
+    ["100,000", "Jobs"],
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function StatsSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map(([stat, label], idx) => (
             <div key={idx} className="group">
-              <div className="text-4xl md:text-6xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform">
+              <div className="text-3xl md:text-5xl font-serif font-bold text-accent mb-3 group-hover:scale-110 transition-transform">
                 {stat}
               </div>
               <div className="text-primary-foreground/80 font-medium font-sans">
