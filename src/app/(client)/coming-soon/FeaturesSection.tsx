@@ -48,7 +48,7 @@ export default function FeaturesSection() {
           {features.map((feature, idx) => (
             <Card
               key={idx}
-              className="text-center p-8 hover:shadow-2xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm hover:-translate-y-2"
+              className="text-center cursor-pointer p-8 hover:shadow-2xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm hover:-translate-y-2"
             >
               <CardContent className="pt-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
