@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { CheckCircle2, Loader2 } from "lucide-react";
 
 import { siteConfig } from "@/content/site-config";
@@ -141,7 +142,7 @@ export function ContactForm({
           {status === "success" ? (
             <div className="inline-flex items-center gap-2 text-sm text-foreground">
               <CheckCircle2 className="size-4 text-primary" aria-hidden="true" />
-              Message received (placeholder endpoint).
+              Message received. We’ll get back to you soon.
             </div>
           ) : null}
         </div>
@@ -160,8 +161,11 @@ export function ContactForm({
         ) : null}
 
         <div className="text-xs text-muted-foreground">
-          This form currently posts to a placeholder endpoint. Replace the handler in{" "}
-          <code>src/app/api/contact/route.ts</code> when you’re ready to deliver emails or CRM leads.
+          We’ll only use your details to respond to this inquiry.{" "}
+          <Link className="underline underline-offset-4" href="/legal/privacy">
+            Privacy policy
+          </Link>
+          .
         </div>
       </form>
     </div>

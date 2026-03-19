@@ -3,11 +3,13 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPinned, ShieldCheck, SignalLow, Sprout, Tractor } from "lucide-react";
 
 import { impactMetrics, siteConfig } from "@/content/site-config";
+import { IMAGES } from "@/lib/images";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { Badge } from "@/components/marketing/Badge";
+import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
 
 export const metadata: Metadata = {
   title: "Impact | MechAfrica",
@@ -20,29 +22,40 @@ export default function ImpactPage() {
     <>
       <section className="bg-background">
         <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge>Impact</Badge>
-              <Badge variant="outline">Efficiency</Badge>
-              <Badge variant="outline">Inclusion</Badge>
-              <Badge variant="outline">Coordination</Badge>
+          <div className="grid items-center gap-10 lg:grid-cols-12">
+            <FadeIn className="lg:col-span-5">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge>Impact</Badge>
+                <Badge variant="outline">Efficiency</Badge>
+                <Badge variant="outline">Inclusion</Badge>
+                <Badge variant="outline">Coordination</Badge>
+              </div>
+              <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+                Agricultural services that reach more people — reliably
+              </h1>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                MechAfrica strengthens service delivery by connecting demand, supply, and field coordination — with
+                offline-first workflows and USSD access to keep participation inclusive.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-2">
+                <Button asChild variant="secondary" className="h-11 rounded-full px-5">
+                  <Link href="/download">Download / access</Link>
+                </Button>
+                <Button asChild variant="outline" className="h-11 rounded-full px-5">
+                  <Link href="/contact">Partner with us</Link>
+                </Button>
+              </div>
+            </FadeIn>
+
+            <div className="lg:col-span-7">
+              <OptionalPhotoCard
+                src={IMAGES.marketing.impact}
+                alt="Mechanized farm work showing increased efficiency in the field"
+                aspect="4/3"
+                priority
+              />
             </div>
-            <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              Agricultural services that reach more people — reliably
-            </h1>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              MechAfrica strengthens service delivery by connecting demand, supply, and field coordination — with
-              offline-first workflows and USSD access to keep participation inclusive.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-2">
-              <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                <Link href="/download">Download / access</Link>
-              </Button>
-              <Button asChild variant="outline" className="h-11 rounded-full px-5">
-                <Link href="/contact">Partner with us</Link>
-              </Button>
-            </div>
-          </FadeIn>
+          </div>
         </Container>
       </section>
 
@@ -80,9 +93,9 @@ export default function ImpactPage() {
         <Container className="py-14 sm:py-20">
           <FadeIn>
             <SectionHeader
-              eyebrow="Impact metrics (placeholders)"
-              title="Replace with verified numbers when available"
-              description="We intentionally avoid hardcoding fake stats. Use these placeholders as a structure for real impact reporting."
+              eyebrow="Impact metrics"
+              title="A structure for reporting progress"
+              description="Update these metrics with verified data as reporting matures."
             />
           </FadeIn>
 
@@ -92,7 +105,6 @@ export default function ImpactPage() {
                 <div className="rounded-3xl border bg-card p-6 shadow-sm">
                   <div className="text-3xl font-semibold tracking-tight text-foreground">{m.value}</div>
                   <div className="mt-2 text-sm font-medium text-foreground">{m.label}</div>
-                  {m.note ? <div className="mt-1 text-xs text-muted-foreground">{m.note}</div> : null}
                 </div>
               </FadeIn>
             ))}
@@ -101,17 +113,17 @@ export default function ImpactPage() {
           <FadeIn delay={0.08}>
             <div className="mt-10 rounded-3xl border bg-muted/35 p-6">
               <div className="flex items-center justify-between gap-3">
-                <div className="text-sm font-semibold">Service coverage map (placeholder)</div>
+                <div className="text-sm font-semibold">Service coverage map</div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">
                   <MapPinned className="size-3" aria-hidden="true" />
-                  Placeholder
+                  Coming soon
                 </div>
               </div>
               <div className="mt-4 aspect-[16/8] rounded-2xl border bg-card shadow-sm">
                 <div className="flex h-full flex-col items-center justify-center px-6 text-center">
                   <div className="font-semibold text-foreground">Coverage visualization</div>
                   <div className="mt-2 max-w-md text-sm text-muted-foreground">
-                    Embed a Ghana district map or coverage dashboard here once verified data is available.
+                    Add a Ghana district map or coverage dashboard when verified data is available.
                   </div>
                 </div>
               </div>

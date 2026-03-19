@@ -55,7 +55,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${comfortaa.variable} antialiased`}>
+      <body
+        suppressHydrationWarning
+        className={`${poppins.variable} ${comfortaa.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

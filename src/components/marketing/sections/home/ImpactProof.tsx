@@ -12,8 +12,8 @@ export function ImpactProof() {
         <FadeIn>
           <SectionHeader
             eyebrow="Impact & proof"
-            title="Show progress with real numbers — when you’re ready"
-            description="These are placeholders designed to be replaced with verified impact data without rewriting the page."
+            title="Impact at a glance"
+            description="Update with verified data as reporting matures."
           />
         </FadeIn>
 
@@ -24,7 +24,6 @@ export function ImpactProof() {
                 <div className="rounded-3xl border bg-card p-6 shadow-sm">
                   <div className="text-3xl font-semibold tracking-tight text-foreground">{m.value}</div>
                   <div className="mt-2 text-sm font-medium text-foreground">{m.label}</div>
-                  {m.note ? <div className="mt-1 text-xs text-muted-foreground">{m.note}</div> : null}
                 </div>
               </FadeIn>
             ))}
@@ -38,7 +37,7 @@ export function ImpactProof() {
                   <div className="text-sm font-semibold text-foreground">Coverage map</div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">
                     <MapPinned className="size-3" aria-hidden="true" />
-                    Placeholder
+                    Coming soon
                   </div>
                 </div>
 
@@ -47,13 +46,9 @@ export function ImpactProof() {
                     <div className="flex h-full flex-col items-center justify-center text-center">
                       <div className="text-sm font-semibold text-foreground">Map visualization</div>
                       <div className="mt-2 max-w-xs text-xs text-muted-foreground">
-                        Replace this block with a district/coverage map or embed when you have verified service
-                        coverage data.
+                        Add a district/coverage map when verified service coverage data is available.
                       </div>
                     </div>
-                  </div>
-                  <div className="mt-3 text-xs text-muted-foreground">
-                    Tip: keep districts, categories, and coverage levels editable in <code>src/content/site-config.ts</code>.
                   </div>
                 </div>
               </div>

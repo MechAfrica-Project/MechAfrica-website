@@ -50,7 +50,7 @@ export const siteConfig = {
   contact: {
     email: "hello@mechafrica.example",
     phone: "+233 XX XXX XXXX",
-    address: "Accra, Ghana (placeholder office/location)",
+    address: "Accra, Ghana",
   },
 
   social: {
@@ -146,7 +146,7 @@ export const testimonials: SiteTestimonial[] = [
     name: "Placeholder Farmer",
     role: "Maize farmer, Northern Ghana",
     quote:
-      "Placeholder story: “I used to struggle to find timely ploughing. With MechAfrica, I can request early, get updates, and plan my season with more confidence.”",
+      "I used to struggle to find timely ploughing. With MechAfrica, I can request early, get updates, and plan my season with more confidence.",
     isPlaceholder: true,
   },
   {
@@ -154,7 +154,7 @@ export const testimonials: SiteTestimonial[] = [
     name: "Placeholder Provider",
     role: "Mechanization service provider",
     quote:
-      "Placeholder story: “Demand is easier to manage when jobs are organized in one place. I can accept requests, coordinate my team, and keep farmers updated.”",
+      "Demand is easier to manage when jobs are organized in one place. I can accept requests, coordinate my team, and keep farmers updated.",
     isPlaceholder: true,
   },
   {
@@ -162,7 +162,7 @@ export const testimonials: SiteTestimonial[] = [
     name: "Placeholder Partner",
     role: "Ecosystem partner",
     quote:
-      "Placeholder quote: “MechAfrica strengthens service delivery by connecting people, tools, and processes — including users who rely on USSD and offline workflows.”",
+      "MechAfrica strengthens service delivery by connecting people, tools, and processes — including users who rely on USSD and offline workflows.",
     isPlaceholder: true,
   },
 ];
@@ -230,4 +230,35 @@ export const farmerServices = [
   "Drone services (where available)",
   "Other mechanized and related services",
 ] as const;
+
+export type AppScreenshot = {
+  audience: "Farmers App" | "Provider App" | "Agents App";
+  title: string;
+  description: string;
+  imageSrc?: string;
+};
+
+export const downloadScreenshots: AppScreenshot[] = [
+  {
+    audience: "Farmers App",
+    title: "Request services in minutes",
+    description:
+      "Capture demand clearly (service type, farm details, timing) and receive updates as providers respond.",
+    imageSrc: "/images/screenshots/farmers-01.png",
+  },
+  {
+    audience: "Provider App",
+    title: "Manage jobs and assets",
+    description:
+      "Accept requests, schedule work, assign equipment and operators, and track active delivery across locations.",
+    imageSrc: "/images/screenshots/providers-01.png",
+  },
+  {
+    audience: "Agents App",
+    title: "Support onboarding and coordination",
+    description:
+      "Planned release: workflows for onboarding, follow-ups, issue management, and operational notifications.",
+    imageSrc: "/images/screenshots/agents-01.png",
+  },
+];
 

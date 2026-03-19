@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Phone, QrCode, Smartphone } from "lucide-react";
 
-import { siteConfig } from "@/content/site-config";
+import { downloadScreenshots, siteConfig } from "@/content/site-config";
 import { Container } from "@/components/site/Container";
 import { AppStoreButtons } from "@/components/site/AppStoreButtons";
 import { UssdButton } from "@/components/site/UssdButton";
@@ -15,7 +15,7 @@ import { ScreenshotCarousel } from "@/components/marketing/ScreenshotCarousel";
 export const metadata: Metadata = {
   title: "Download / Access | MechAfrica",
   description:
-    "Choose how to access MechAfrica: download the apps for farmers and service providers, or use USSD for farmer access without a smartphone. QR code and screenshot placeholders included.",
+    "Choose how to access MechAfrica: download the apps for farmers and service providers, or use USSD for farmer access without a smartphone.",
 };
 
 function QrPlaceholder({ label }: { label: string }) {
@@ -25,14 +25,14 @@ function QrPlaceholder({ label }: { label: string }) {
         <div className="text-sm font-semibold text-foreground">{label}</div>
         <div className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">
           <QrCode className="size-3" aria-hidden="true" />
-          Placeholder
+          Add QR
         </div>
       </div>
       <div className="mt-4 aspect-square w-full rounded-2xl border bg-muted/35 p-4">
         <div className="flex h-full flex-col items-center justify-center text-center">
           <div className="text-sm font-semibold text-foreground">QR code</div>
           <div className="mt-2 max-w-[16rem] text-xs text-muted-foreground">
-            Replace with an actual QR code that links to the relevant store listing.
+            Add a QR code that links to the relevant store listing.
           </div>
         </div>
       </div>
@@ -141,16 +141,16 @@ export default function DownloadPage() {
             <SectionHeader
               eyebrow="QR codes"
               title="Make downloads easy in the field"
-              description="Use these placeholders for QR codes that link to each store listing."
+              description="Add QR codes that link directly to each store listing."
             />
           </FadeIn>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <FadeIn delay={0.02}>
-              <QrPlaceholder label="Farmers App QR (placeholder)" />
+              <QrPlaceholder label="Farmers App QR code" />
             </FadeIn>
             <FadeIn delay={0.06}>
-              <QrPlaceholder label="Provider App QR (placeholder)" />
+              <QrPlaceholder label="Provider App QR code" />
             </FadeIn>
             <FadeIn delay={0.1}>
               <div className="rounded-3xl border bg-card p-6 shadow-sm">
@@ -177,32 +177,13 @@ export default function DownloadPage() {
             <SectionHeader
               eyebrow="Screenshots"
               title="Preview the product experience"
-              description="A simple carousel component ready for real screenshots."
+              description="Browse key workflows across the ecosystem."
             />
           </FadeIn>
           <FadeIn delay={0.06}>
             <div className="mt-10">
               <ScreenshotCarousel
-                slides={[
-                  {
-                    audience: "Farmers App",
-                    title: "Request services in minutes",
-                    description:
-                      "Capture demand clearly (service type, farm details, timing) and receive updates as providers respond.",
-                  },
-                  {
-                    audience: "Provider App",
-                    title: "Manage jobs and assets",
-                    description:
-                      "Accept requests, schedule work, assign equipment and operators, and track active delivery across locations.",
-                  },
-                  {
-                    audience: "Agents App",
-                    title: "Support onboarding and coordination",
-                    description:
-                      "Planned release: workflows for onboarding, follow-ups, issue management, and operational notifications.",
-                  },
-                ]}
+                slides={downloadScreenshots}
               />
             </div>
           </FadeIn>

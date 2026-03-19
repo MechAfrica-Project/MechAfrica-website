@@ -10,12 +10,11 @@ export function PartnersStrip() {
           <div className="max-w-xl">
             <div className="text-sm font-semibold text-foreground">Strategic backing</div>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {siteConfig.partnershipLine} We focus on practical tools that improve service delivery,
-              even where connectivity is unreliable.
+              {siteConfig.partnershipLine} Focused on practical delivery tools for low-connectivity environments.
             </p>
           </div>
 
-          <div className="grid w-full max-w-lg grid-cols-3 gap-3">
+          <div className="grid w-full max-w-lg gap-3 sm:grid-cols-3">
             {partners.map((p) => (
               <div
                 key={p.name}

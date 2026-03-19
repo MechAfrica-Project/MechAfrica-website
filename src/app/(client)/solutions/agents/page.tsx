@@ -3,11 +3,13 @@ import Link from "next/link";
 import { ArrowRight, Bell, ClipboardCheck, ShieldCheck, Users } from "lucide-react";
 
 import { siteConfig } from "@/content/site-config";
+import { IMAGES } from "@/lib/images";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { Badge } from "@/components/marketing/Badge";
+import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
 
 export const metadata: Metadata = {
   title: "For Agents | MechAfrica",
@@ -20,36 +22,47 @@ export default function AgentsPage() {
     <>
       <section className="bg-background">
         <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge>For agents</Badge>
-              <Badge variant="outline">Planned release</Badge>
-              <Badge variant="outline">Operations support</Badge>
-            </div>
+          <div className="grid items-center gap-10 lg:grid-cols-12">
+            <FadeIn className="lg:col-span-5">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge>For agents</Badge>
+                <Badge variant="outline">Planned release</Badge>
+                <Badge variant="outline">Operations support</Badge>
+              </div>
 
-            <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              Field coordination that strengthens service delivery
-            </h1>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              The Agents App is an upcoming operational support tool for onboarding, coordination, and issue
-              resolution across the MechAfrica ecosystem. It’s designed to help the network run smoothly — even
-              in low-connectivity environments.
-            </p>
+              <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+                Field coordination that strengthens service delivery
+              </h1>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                The Agents App is an upcoming operational support tool for onboarding, coordination, and issue
+                resolution across the MechAfrica ecosystem. It’s designed to help the network run smoothly — even
+                in low-connectivity environments.
+              </p>
 
-            <div className="mt-7 flex flex-wrap gap-2">
-              <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                <Link href={siteConfig.appLinks.agents.waitlist}>
-                  Join waitlist <ArrowRight className="size-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="h-11 rounded-full px-5">
-                <Link href="/contact">Contact us</Link>
-              </Button>
-              <Button asChild variant="ghost" className="h-11 rounded-full px-4">
-                <Link href="/how-it-works#agents">See agent role</Link>
-              </Button>
+              <div className="mt-7 flex flex-wrap gap-2">
+                <Button asChild variant="secondary" className="h-11 rounded-full px-5">
+                  <Link href={siteConfig.appLinks.agents.waitlist}>
+                    Join waitlist <ArrowRight className="size-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="h-11 rounded-full px-5">
+                  <Link href="/contact">Contact us</Link>
+                </Button>
+                <Button asChild variant="ghost" className="h-11 rounded-full px-4">
+                  <Link href="/how-it-works#agents">See agent role</Link>
+                </Button>
+              </div>
+            </FadeIn>
+
+            <div className="lg:col-span-7">
+              <OptionalPhotoCard
+                src={IMAGES.marketing.agents}
+                alt="Field agent coordinating with farmers and service providers"
+                aspect="4/3"
+                priority
+              />
             </div>
-          </FadeIn>
+          </div>
         </Container>
       </section>
 
@@ -106,9 +119,9 @@ export default function AgentsPage() {
         <Container className="py-14 sm:py-20">
           <FadeIn>
             <SectionHeader
-              eyebrow="Planned features (placeholder)"
+              eyebrow="Planned features"
               title="What the Agents App will support"
-              description="This section is intentionally written as future-facing placeholder copy — update as the product scope is finalized."
+              description="Coming soon — update as the product scope is finalized."
             />
           </FadeIn>
 

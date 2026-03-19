@@ -3,12 +3,14 @@ import Link from "next/link";
 import { ArrowRight, BarChart3, CheckCircle2, ClipboardList, MapPinned, Star, Tractor, Users } from "lucide-react";
 
 import { siteConfig } from "@/content/site-config";
+import { IMAGES } from "@/lib/images";
 import { Container } from "@/components/site/Container";
 import { AppStoreButtons } from "@/components/site/AppStoreButtons";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { Badge } from "@/components/marketing/Badge";
+import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
 
 export const metadata: Metadata = {
   title: "For Service Providers | MechAfrica",
@@ -21,34 +23,41 @@ export default function ServiceProvidersPage() {
     <>
       <section className="bg-background">
         <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge>For service providers</Badge>
-              <Badge variant="outline">Job management</Badge>
-              <Badge variant="outline">Asset visibility</Badge>
-            </div>
-            <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              Turn demand into delivered work — with clearer operations
-            </h1>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              The MechAfrica Service Provider App helps you receive requests, manage jobs, assign equipment and
-              teams, track active work, and improve visibility across your service area.
-            </p>
+          <div className="grid items-center gap-10 lg:grid-cols-12">
+            <FadeIn className="lg:col-span-5">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge>For service providers</Badge>
+                <Badge variant="outline">Job management</Badge>
+                <Badge variant="outline">Asset visibility</Badge>
+              </div>
+              <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+                Turn demand into delivered work — with clearer operations
+              </h1>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                The MechAfrica Service Provider App helps you receive requests, manage jobs, assign equipment and
+                teams, track active work, and improve visibility across your service area.
+              </p>
 
-            <div className="mt-7 flex flex-wrap items-center gap-2">
-              <AppStoreButtons
-                playStoreHref={siteConfig.appLinks.provider.playStore}
-                appStoreHref={siteConfig.appLinks.provider.appStore}
+              <div className="mt-7 flex flex-wrap items-center gap-2">
+                <AppStoreButtons
+                  playStoreHref={siteConfig.appLinks.provider.playStore}
+                  appStoreHref={siteConfig.appLinks.provider.appStore}
+                />
+                <Button asChild variant="ghost" className="h-11 rounded-full px-4">
+                  <Link href="/how-it-works#providers">See provider flow</Link>
+                </Button>
+              </div>
+            </FadeIn>
+
+            <div className="lg:col-span-7">
+              <OptionalPhotoCard
+                src={IMAGES.marketing.providers}
+                alt="Mechanization service provider with equipment in a field setting"
+                aspect="4/3"
+                priority
               />
-              <Button asChild variant="ghost" className="h-11 rounded-full px-4">
-                <Link href="/how-it-works#providers">See provider flow</Link>
-              </Button>
             </div>
-
-            <div className="mt-6 text-xs text-muted-foreground">
-              Store links are placeholders — update in <code>src/content/site-config.ts</code>.
-            </div>
-          </FadeIn>
+          </div>
         </Container>
       </section>
 
@@ -150,10 +159,10 @@ export default function ServiceProvidersPage() {
 
           <FadeIn delay={0.1}>
             <div className="mt-10 rounded-3xl border bg-muted/35 p-6">
-              <div className="text-sm font-semibold">Analytics and planning (placeholder)</div>
+              <div className="text-sm font-semibold">Analytics and planning</div>
               <p className="mt-2 text-sm text-muted-foreground">
-                Add provider-facing analytics modules as they mature: demand heatmaps, seasonality trends, average
-                completion time, and utilization insights.
+                Planned: provider-facing analytics modules like demand heatmaps, seasonality trends, completion
+                times, and utilization insights.
               </p>
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
                 {[

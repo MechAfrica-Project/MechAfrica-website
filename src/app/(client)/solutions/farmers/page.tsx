@@ -3,12 +3,14 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone, Tractor } from "lucide-react";
 
 import { farmerServices, siteConfig } from "@/content/site-config";
+import { IMAGES } from "@/lib/images";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { UssdButton } from "@/components/site/UssdButton";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { Badge } from "@/components/marketing/Badge";
+import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
 
 export const metadata: Metadata = {
   title: "For Farmers | MechAfrica",
@@ -36,30 +38,41 @@ export default function FarmersPage() {
     <>
       <section className="bg-background">
         <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge>For farmers</Badge>
-              <Badge variant="outline">App + USSD</Badge>
-              <Badge variant="outline">Offline-first</Badge>
-            </div>
-            <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              Farm services, matched faster — with updates you can trust
-            </h1>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Request mechanized and related farm services through the MechAfrica Farmers App or by dialing USSD.
-              Track your request, receive updates, and complete the job with confidence.
-            </p>
+          <div className="grid items-center gap-10 lg:grid-cols-12">
+            <FadeIn className="lg:col-span-5">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge>For farmers</Badge>
+                <Badge variant="outline">App + USSD</Badge>
+                <Badge variant="outline">Offline-first</Badge>
+              </div>
+              <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+                Farm services, matched faster — with updates you can trust
+              </h1>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Request mechanized and related farm services through the MechAfrica Farmers App or by dialing USSD.
+                Track your request, receive updates, and complete the job with confidence.
+              </p>
 
-            <div className="mt-7 flex flex-wrap gap-2">
-              <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                <Link href="/download">Download the app</Link>
-              </Button>
-              <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
-              <Button asChild variant="ghost" className="h-11 rounded-full px-4">
-                <Link href="/how-it-works#farmers">See the farmer flow</Link>
-              </Button>
+              <div className="mt-7 flex flex-wrap gap-2">
+                <Button asChild variant="secondary" className="h-11 rounded-full px-5">
+                  <Link href="/download">Download the app</Link>
+                </Button>
+                <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
+                <Button asChild variant="ghost" className="h-11 rounded-full px-4">
+                  <Link href="/how-it-works#farmers">See the farmer flow</Link>
+                </Button>
+              </div>
+            </FadeIn>
+
+            <div className="lg:col-span-7">
+              <OptionalPhotoCard
+                src={IMAGES.marketing.farmers}
+                alt="Farmer using a phone in a field"
+                aspect="4/3"
+                priority
+              />
             </div>
-          </FadeIn>
+          </div>
         </Container>
       </section>
 
@@ -200,11 +213,11 @@ export default function FarmersPage() {
                     <div className="font-serif text-xl font-semibold text-foreground">USSD quick access</div>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       Dial <span className="font-semibold text-foreground">{siteConfig.ussd.code}</span> to request
-                      services without a smartphone. This page uses a placeholder USSD flow — update copy when you
-                      finalize the exact menu steps.
+                      services without a smartphone. The flow below is an example — update wording to match the
+                      live USSD menu.
                     </p>
                     <div className="mt-4 rounded-2xl border bg-muted/35 p-4">
-                      <div className="text-xs font-semibold text-muted-foreground">Placeholder flow</div>
+                      <div className="text-xs font-semibold text-muted-foreground">Example flow</div>
                       <ol className="mt-2 space-y-1 text-sm text-muted-foreground">
                         <li>1. Dial {siteConfig.ussd.code}</li>
                         <li>2. Select “Request service”</li>

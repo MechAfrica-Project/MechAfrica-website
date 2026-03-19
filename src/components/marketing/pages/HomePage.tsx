@@ -3,6 +3,7 @@ import { PartnersStrip } from "@/components/marketing/sections/home/PartnersStri
 import { WhatWeDo } from "@/components/marketing/sections/home/WhatWeDo";
 import { WhoWeServe } from "@/components/marketing/sections/home/WhoWeServe";
 import { PlatformAccess } from "@/components/marketing/sections/home/PlatformAccess";
+import { FieldMoments } from "@/components/marketing/sections/home/FieldMoments";
 import { WhyItMatters } from "@/components/marketing/sections/home/WhyItMatters";
 import { PlatformHighlights } from "@/components/marketing/sections/home/PlatformHighlights";
 import { HowItWorksPreview } from "@/components/marketing/sections/home/HowItWorksPreview";
@@ -18,6 +19,7 @@ export function HomePage() {
       <WhatWeDo />
       <WhoWeServe />
       <PlatformAccess />
+      <FieldMoments />
       <WhyItMatters />
       <PlatformHighlights />
       <HowItWorksPreview />

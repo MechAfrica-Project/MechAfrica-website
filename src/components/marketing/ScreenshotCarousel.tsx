@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -11,6 +12,8 @@ export type ScreenshotSlide = {
   title: string;
   description: string;
   audience: "Farmers App" | "Provider App" | "Agents App";
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export function ScreenshotCarousel({
@@ -22,8 +25,10 @@ export function ScreenshotCarousel({
 }) {
   const reduceMotion = useReducedMotion();
   const [index, setIndex] = React.useState(0);
+  const [failedImages, setFailedImages] = React.useState<Record<string, true>>({});
 
   const active = slides[index];
+  const canShowImage = Boolean(active.imageSrc && !failedImages[active.imageSrc]);
 
   function prev() {
     setIndex((i) => (i - 1 + slides.length) % slides.length);
@@ -37,9 +42,9 @@ export function ScreenshotCarousel({
     <div className={cn("rounded-3xl border bg-card p-6 shadow-sm", className)}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <div className="text-sm font-semibold text-foreground">App screenshots (placeholders)</div>
+          <div className="text-sm font-semibold text-foreground">App previews</div>
           <div className="mt-1 text-sm text-muted-foreground">
-            Replace these mock screens with real product screenshots when ready.
+            A look at key workflows across the ecosystem.
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -105,24 +110,44 @@ export function ScreenshotCarousel({
                     animate={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                     exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                    className="rounded-2xl border bg-muted/35 p-4"
+                    className={cn(
+                      "rounded-2xl border bg-muted/35",
+                      canShowImage ? "overflow-hidden p-0" : "p-4"
+                    )}
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="text-xs font-semibold text-foreground">{active.audience}</div>
-                      <div className="text-xs text-muted-foreground">Placeholder UI</div>
-                    </div>
-                    <div className="mt-3 space-y-2">
-                      {Array.from({ length: 4 }).map((_, i) => (
-                        <div key={i} className="flex items-start gap-2 rounded-xl bg-background/80 p-2">
-                          <div className="mt-0.5 size-3 rounded-full bg-primary/30" />
-                          <div className="flex-1">
-                            <div className="h-2 w-2/3 rounded bg-border" />
-                            <div className="mt-2 h-2 w-1/2 rounded bg-border/70" />
-                          </div>
-                          <div className="h-2 w-12 rounded bg-border/70" />
+                    {canShowImage ? (
+                      <div className="relative aspect-[9/19] w-full bg-background">
+                        <Image
+                          src={active.imageSrc!}
+                          alt={active.imageAlt || `${active.audience} screenshot`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 90vw, 420px"
+                          onError={() =>
+                            setFailedImages((m) => ({ ...m, [active.imageSrc!]: true }))
+                          }
+                        />
+                      </div>
+                    ) : (
+                      <>
+                        <div className="flex items-center justify-between">
+                          <div className="text-xs font-semibold text-foreground">{active.audience}</div>
+                          <div className="text-xs text-muted-foreground">Sample</div>
                         </div>
-                      ))}
-                    </div>
+                        <div className="mt-3 space-y-2">
+                          {Array.from({ length: 4 }).map((_, i) => (
+                            <div key={i} className="flex items-start gap-2 rounded-xl bg-background/80 p-2">
+                              <div className="mt-0.5 size-3 rounded-full bg-primary/30" />
+                              <div className="flex-1">
+                                <div className="h-2 w-2/3 rounded bg-border" />
+                                <div className="mt-2 h-2 w-1/2 rounded bg-border/70" />
+                              </div>
+                              <div className="h-2 w-12 rounded bg-border/70" />
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </motion.div>
                 </AnimatePresence>
               </div>

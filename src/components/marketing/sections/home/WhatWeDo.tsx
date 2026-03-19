@@ -9,25 +9,25 @@ const items = [
   {
     title: "Request farm services easily",
     description:
-      "Farmers can request ploughing, planting, spraying, harvesting, and more — through the app or USSD.",
+      "Farmers can request ploughing, planting, spraying, harvesting, and more — via app or USSD.",
     icon: Sparkles,
   },
   {
     title: "Match with trusted providers",
     description:
-      "Service providers receive demand, respond faster, and keep farmers informed with clear status updates.",
+      "Providers receive demand, respond faster, and keep farmers updated.",
     icon: ShieldCheck,
   },
   {
     title: "Manage operations in real time",
     description:
-      "Track requests across locations, schedule jobs, and reduce coordination friction across teams and assets.",
+      "Track requests, schedule jobs, and coordinate teams and assets across locations.",
     icon: Activity,
   },
   {
     title: "Access support through apps + USSD",
     description:
-      "Not every user needs a smartphone. USSD expands access while offline-first workflows keep work moving.",
+      "USSD expands reach while offline-first workflows keep work moving.",
     icon: MessageSquareText,
   },
 ] as const;

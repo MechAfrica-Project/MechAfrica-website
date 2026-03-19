@@ -2,16 +2,28 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { siteConfig } from "@/content/site-config";
+import { IMAGES } from "@/lib/images";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { UssdButton } from "@/components/site/UssdButton";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { Badge } from "@/components/marketing/Badge";
+import { OptionalImage } from "@/components/marketing/OptionalImage";
 import { HeroVisual } from "@/components/marketing/sections/home/HeroVisual";
 
 export function HomeHero() {
   return (
     <section className="relative overflow-hidden">
+      <div className="absolute inset-0 -z-20">
+        <OptionalImage
+          src={IMAGES.marketing.homeHero}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-20"
+        />
+      </div>
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(244,176,0,0.22),transparent_55%),radial-gradient(circle_at_80%_20%,rgba(11,61,46,0.18),transparent_55%)]" />
       <Container className="py-14 sm:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-12">
@@ -27,7 +39,8 @@ export function HomeHero() {
             </h1>
 
             <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {siteConfig.description}
+              MechAfrica coordinates farm service delivery across farmers, service providers, and agents — through
+              mobile apps, offline-first workflows, and USSD.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -48,8 +61,8 @@ export function HomeHero() {
 
             <div className="mt-7 space-y-2 text-sm text-muted-foreground">
               {[
-                "Built for farmers, providers, and field agents — not just tractor bookings.",
-                "Works in low-connectivity areas with offline-first workflows and USSD access.",
+                "A coordinated service network — not just tractor booking.",
+                "Offline-first + USSD to keep access inclusive.",
               ].map((line) => (
                 <div key={line} className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 size-4 text-primary/80" aria-hidden="true" />

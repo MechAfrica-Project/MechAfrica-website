@@ -7,12 +7,12 @@ import { SectionHeader } from "@/components/marketing/SectionHeader";
 const challenges = [
   {
     title: "Farmers struggle to find timely, reliable services",
-    description: "Uncertainty delays planting and harvesting windows — and impacts yields and income.",
+    description: "Delays can miss planting and harvesting windows and reduce income.",
     icon: Timer,
   },
   {
     title: "Providers struggle with visibility and coordination",
-    description: "Demand can be fragmented, scheduling is hard, and asset utilization suffers.",
+    description: "Demand can be fragmented, scheduling is hard, and assets sit idle.",
     icon: Wrench,
   },
   {
@@ -22,7 +22,7 @@ const challenges = [
   },
   {
     title: "The ecosystem needs better operational insight",
-    description: "Without clear workflows, it’s hard to improve delivery quality and scale service coverage.",
+    description: "Without clear workflows, it’s hard to improve quality and scale coverage.",
     icon: BarChart3,
   },
 ] as const;
@@ -36,7 +36,7 @@ export function WhyItMatters() {
             <SectionHeader
               eyebrow="Why it matters"
               title="Agricultural services are essential infrastructure"
-              description="MechAfrica reduces friction across the service chain so farmers can plan with more confidence and providers can operate more efficiently — even with unreliable connectivity."
+              description="MechAfrica reduces friction across the service chain — so farmers can plan and providers can deliver, even with unreliable connectivity."
             />
           </FadeIn>
 

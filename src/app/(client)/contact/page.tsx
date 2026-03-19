@@ -12,7 +12,7 @@ import { Badge } from "@/components/marketing/Badge";
 export const metadata: Metadata = {
   title: "Contact | MechAfrica",
   description:
-    "Contact MechAfrica for partnerships, support, and app access inquiries. Includes a contact form and placeholder contact details for launch.",
+    "Contact MechAfrica for partnerships, support, and app access inquiries.",
 };
 
 function normalizeTopic(value: string | undefined) {
@@ -50,8 +50,7 @@ export default function ContactPage({
               Let’s talk
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Use the form to send a partnership inquiry, get support, or ask about access methods. Contact
-              details below are placeholders — update them for launch.
+              Use the form to send a partnership inquiry, get support, or ask about access methods.
             </p>
           </FadeIn>
         </Container>
@@ -90,9 +89,6 @@ export default function ContactPage({
                   </div>
                 </div>
 
-                <div className="pt-3 text-xs text-muted-foreground">
-                  Tip: store contact details in <code>src/content/site-config.ts</code>.
-                </div>
               </div>
 
               <div className="mt-6 rounded-3xl border bg-card p-6 shadow-sm">

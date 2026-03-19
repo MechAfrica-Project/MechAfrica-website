@@ -55,6 +55,16 @@ Update these values in:
   - FAQ items
   - Farmer service categories
 
+## Images and screenshots
+
+- Image prompts checklist: `docs/image-prompts.md`
+- Optional marketing photos (drop into `public/images/marketing/`):
+  - `home-hero.png` (Home hero background, optional)
+  - `farmers.png`, `providers.png`, `agents.png`, `impact.png` (page hero photos)
+- App screenshots carousel (Download page):
+  - Add PNGs to `public/images/screenshots/`
+  - Update labels/copy in `src/content/site-config.ts` (`downloadScreenshots`)
+
 ## Components structure
 
 - `src/components/site/*` — global layout components (Navbar/Footer, store + USSD buttons)
