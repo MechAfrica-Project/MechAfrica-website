@@ -1,5 +1,5 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
-export default function PrivacyPolicy() {
-  return <div>PrivacyPolicy</div>;
+export default function PrivacyRedirect() {
+  redirect("/legal/privacy");
 }

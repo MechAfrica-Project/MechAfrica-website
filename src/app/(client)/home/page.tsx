@@ -1,10 +1,5 @@
-import React from "react";
-import ComingSoonPage from "./_components/ComingSoon";
+import { redirect } from "next/navigation";
 
-export default function HomePage() {
-  return (
-    <div>
-      <ComingSoonPage />
-    </div>
-  );
+export default function HomeRedirect() {
+  redirect("/");
 }

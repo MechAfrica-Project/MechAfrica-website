@@ -1,5 +1,5 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
-export default function ContactUs() {
-  return <div>ContactUs</div>;
+export default function ContactUsRedirect() {
+  redirect("/contact");
 }

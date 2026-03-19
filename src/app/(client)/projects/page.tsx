@@ -1,5 +1,5 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
-export default function Projects() {
-  return <div>Projects</div>;
+export default function ProjectsRedirect() {
+  redirect("/impact");
 }

@@ -1,5 +1,5 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
-export default function AboutUs() {
-  return <div>AboutUs</div>;
+export default function AboutUsRedirect() {
+  redirect("/about");
 }

@@ -1,5 +1,5 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
-export default function TermsOfUse() {
-  return <div>TermsOfUse</div>;
+export default function TermsRedirect() {
+  redirect("/legal/terms");
 }

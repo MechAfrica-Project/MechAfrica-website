@@ -1,5 +1,5 @@
-import Footer from "@/components/footer/page";
-import NavBar from "@/components/navbar/page";
+import { Footer } from "@/components/site/Footer";
+import { Navbar } from "@/components/site/Navbar";
 
 export default function HomeLayout({
   children,
@@ -7,10 +7,12 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="font-poppins">
-      {/* <NavBar /> */}
-      {children}
-      {/* <Footer /> */}
+    <div className="flex min-h-dvh flex-col font-sans">
+      <Navbar />
+      <main id="main-content" className="flex-1">
+        {children}
+      </main>
+      <Footer />
     </div>
   );
 }

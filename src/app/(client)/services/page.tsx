@@ -1,5 +1,5 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
-export default function Services() {
-  return <div>Services</div>;
+export default function ServicesRedirect() {
+  redirect("/how-it-works");
 }
