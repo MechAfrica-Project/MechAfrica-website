@@ -44,7 +44,7 @@ export function ScreenshotCarousel({
         <div>
           <div className="text-sm font-semibold text-foreground">App previews</div>
           <div className="mt-1 text-sm text-muted-foreground">
-            A look at key workflows across the ecosystem.
+            A quick look at key workflows across roles.
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -97,7 +97,7 @@ export function ScreenshotCarousel({
         </div>
 
         <div className="lg:col-span-7">
-          <div className="relative mx-auto w-full max-w-md">
+          <div className="relative mx-auto w-full max-w-lg lg:max-w-xl">
             <div className="absolute -inset-4 -z-10 rounded-[3rem] bg-[radial-gradient(circle_at_20%_20%,rgba(244,176,0,0.22),transparent_55%),radial-gradient(circle_at_70%_80%,rgba(11,61,46,0.16),transparent_55%)] blur-xl" />
             <div className="rounded-[2.4rem] border bg-background shadow-sm">
               <div className="mx-auto mt-3 h-1.5 w-16 rounded-full bg-border" />
@@ -122,7 +122,7 @@ export function ScreenshotCarousel({
                           alt={active.imageAlt || `${active.audience} screenshot`}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 1024px) 90vw, 420px"
+                          sizes="(max-width: 1024px) 92vw, 560px"
                           onError={() =>
                             setFailedImages((m) => ({ ...m, [active.imageSrc!]: true }))
                           }

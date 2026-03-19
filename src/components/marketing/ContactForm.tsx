@@ -14,9 +14,9 @@ type Topic = "partnership" | "support" | "app_help" | "general" | "agents";
 
 const topicOptions: { value: Topic; label: string; description: string }[] = [
   { value: "partnership", label: "Partnership inquiry", description: "Pilots, districts, institutions, integration" },
-  { value: "support", label: "Support inquiry", description: "Help using the platform or resolving an issue" },
+  { value: "support", label: "Support inquiry", description: "Help using MechAfrica or resolving an issue" },
   { value: "app_help", label: "App / help inquiry", description: "Downloads, access methods, troubleshooting" },
-  { value: "agents", label: "Agents waitlist", description: "Learn about Agents App release/pilots" },
+  { value: "agents", label: "Agents waitlist", description: "Learn about Agents App pilots and rollout" },
   { value: "general", label: "General inquiry", description: "Anything else" },
 ];
 

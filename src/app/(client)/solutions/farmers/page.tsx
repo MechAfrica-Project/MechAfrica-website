@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone, Tractor } from "lucide-react";
 
 import { farmerServices, siteConfig } from "@/content/site-config";
-import { IMAGES } from "@/lib/images";
+import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { UssdButton } from "@/components/site/UssdButton";
@@ -15,7 +15,7 @@ import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
 export const metadata: Metadata = {
   title: "For Farmers | MechAfrica",
   description:
-    "Request ploughing, spraying, harvesting and more through the MechAfrica Farmers App or USSD. Track requests, receive updates, and get support — even with unreliable connectivity.",
+    "Request ploughing, spraying, harvesting, and more through the MechAfrica Farmers App or USSD. Track updates and complete jobs with confidence.",
 };
 
 const farmerFaq = [
@@ -25,11 +25,11 @@ const farmerFaq = [
   },
   {
     q: "Do I need internet?",
-    a: "Some features work best with internet, but the platform is designed for low-connectivity environments. USSD also supports farmer access.",
+    a: "No. USSD works without internet, and the app supports field-ready workflows for low-connectivity areas.",
   },
   {
     q: "What services are available?",
-    a: "Services can include ploughing, planting, spraying, harvesting, transportation, threshing, and more — depending on availability in your area.",
+    a: "Common services include ploughing, planting, spraying, harvesting, transportation, threshing, and more — depending on availability in your area.",
   },
 ] as const;
 
@@ -49,13 +49,13 @@ export default function FarmersPage() {
                 Farm services, matched faster — with updates you can trust
               </h1>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Request mechanized and related farm services through the MechAfrica Farmers App or by dialing USSD.
-                Track your request, receive updates, and complete the job with confidence.
+                Request mechanized and related farm services through the Farmers App or by dialing USSD, then track
+                updates through the same channel.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-2">
                 <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                  <Link href="/download">Download the app</Link>
+                  <Link href="/download">Download Farmers App</Link>
                 </Button>
                 <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
                 <Button asChild variant="ghost" className="h-11 rounded-full px-4">
@@ -83,7 +83,7 @@ export default function FarmersPage() {
               <SectionHeader
                 eyebrow="Why farmers use MechAfrica"
                 title="Less searching. More certainty."
-                description="Get a reliable path to request services and stay informed — without needing perfect connectivity."
+                description="Request services with clear details and stay informed with reliable updates."
               />
             </FadeIn>
 
@@ -91,19 +91,19 @@ export default function FarmersPage() {
               {[
                 {
                   title: "Request services quickly",
-                  text: "Create a request with clear details so the right providers can respond faster.",
+                  text: "Share the key details providers need to respond quickly.",
                 },
                 {
                   title: "Track progress",
-                  text: "See status updates as your job moves from request to assignment to completion.",
+                  text: "Follow updates from request to completion.",
                 },
                 {
                   title: "Use USSD if needed",
-                  text: "No smartphone? Dial USSD to request services and follow updates.",
+                  text: "Dial USSD to request services without a smartphone.",
                 },
                 {
                   title: "Work with trusted providers",
-                  text: "Providers manage jobs and assets through the platform to improve delivery reliability.",
+                  text: "Providers manage jobs and assets to improve delivery reliability.",
                 },
               ].map((b, idx) => (
                 <FadeIn key={b.title} delay={idx * 0.03}>
@@ -127,7 +127,7 @@ export default function FarmersPage() {
             <SectionHeader
               eyebrow="Available services"
               title="Mechanized and related services (by availability)"
-              description="Offerings vary by area and provider capacity. This list is a guide — update it as your coverage grows."
+              description="Offerings vary by district and provider capacity. This list reflects common categories."
             />
           </FadeIn>
 
@@ -150,7 +150,7 @@ export default function FarmersPage() {
             <SectionHeader
               eyebrow="How requests work"
               title="A simple process with clear updates"
-              description="Whether you use the app or USSD, MechAfrica keeps your request organized and easy to track."
+              description="Whether you use the app or USSD, your request stays organized and easy to track."
             />
           </FadeIn>
 
@@ -193,11 +193,11 @@ export default function FarmersPage() {
               <SectionHeader
                 eyebrow="App + USSD access"
                 title="Choose what works for you"
-                description="Use the Farmers App when you can. Use USSD when you need a smartphone-free option."
+                description="Use the Farmers App for richer workflows. Use USSD when you need a basic-phone option."
               />
               <div className="mt-6 flex flex-wrap gap-2">
                 <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                  <Link href="/download">Download options</Link>
+                  <Link href="/download">Download & access</Link>
                 </Button>
                 <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
               </div>
@@ -213,11 +213,10 @@ export default function FarmersPage() {
                     <div className="font-serif text-xl font-semibold text-foreground">USSD quick access</div>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       Dial <span className="font-semibold text-foreground">{siteConfig.ussd.code}</span> to request
-                      services without a smartphone. The flow below is an example — update wording to match the
-                      live USSD menu.
+                      services without a smartphone. Menu steps can vary slightly by location.
                     </p>
                     <div className="mt-4 rounded-2xl border bg-muted/35 p-4">
-                      <div className="text-xs font-semibold text-muted-foreground">Example flow</div>
+                      <div className="text-xs font-semibold text-muted-foreground">Example menu</div>
                       <ol className="mt-2 space-y-1 text-sm text-muted-foreground">
                         <li>1. Dial {siteConfig.ussd.code}</li>
                         <li>2. Select “Request service”</li>
@@ -261,14 +260,14 @@ export default function FarmersPage() {
                   Ready to request a service?
                 </h2>
                 <p className="mt-3 max-w-2xl text-base text-primary-foreground/80 sm:text-lg">
-                  Download the Farmers App, or dial USSD for smartphone-free access.
+                  Download the Farmers App, or dial USSD if you don’t have a smartphone.
                 </p>
               </div>
               <div className="lg:col-span-5">
                 <div className="flex flex-wrap gap-2">
                   <Button asChild variant="secondary" className="h-11 rounded-full px-5">
                     <Link href="/download">
-                      Download / access <ArrowRight className="size-4" />
+                      Download Farmers App <ArrowRight className="size-4" />
                     </Link>
                   </Button>
                   <UssdButton

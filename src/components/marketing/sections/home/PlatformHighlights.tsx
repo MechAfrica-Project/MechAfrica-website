@@ -11,9 +11,9 @@ export function PlatformHighlights() {
       <Container className="py-14 sm:py-20">
         <FadeIn>
           <SectionHeader
-            eyebrow="Platform highlights"
-            title="Built for coordination — not just bookings"
-            description="A platform layer that supports farmers, providers, and agents with clear workflows and inclusive access."
+            eyebrow="Capabilities"
+            title="Tools that make service delivery easier"
+            description="Clear workflows for requests, updates, and coordination across the field."
           />
         </FadeIn>
 

@@ -134,7 +134,7 @@ export function EcosystemDiagram({ className }: { className?: string }) {
           viewBox="0 0 900 420"
           className="h-auto w-full"
           role="img"
-          aria-label="Ecosystem diagram showing farmers, service providers, and agents connected through the MechAfrica platform via apps and USSD."
+          aria-label="Service network diagram showing farmers, service providers, and agents connected through MechAfrica via apps and USSD."
         >
           <defs>
             <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">

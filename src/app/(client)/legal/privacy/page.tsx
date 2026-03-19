@@ -7,7 +7,7 @@ import { Badge } from "@/components/marketing/Badge";
 
 export const metadata: Metadata = {
   title: "Privacy | MechAfrica",
-  description: "Privacy policy placeholder page for MechAfrica.",
+  description: "MechAfrica privacy policy (coming soon).",
 };
 
 export default function PrivacyPage() {
@@ -17,20 +17,21 @@ export default function PrivacyPage() {
         <FadeIn>
           <div className="flex flex-wrap items-center gap-2">
             <Badge>Legal</Badge>
-            <Badge variant="outline">Placeholder</Badge>
+            <Badge variant="outline">Coming soon</Badge>
           </div>
           <div className="mt-6">
             <SectionHeader
               eyebrow="Privacy"
-              title="Privacy policy (placeholder)"
-              description="Replace this placeholder content with your official privacy policy before launch."
+              title="Privacy policy"
+              description="We’re finalizing our privacy policy. For questions about data and support, contact us."
             />
           </div>
 
           <div className="mt-10 rounded-3xl border bg-card p-6 text-sm leading-relaxed text-muted-foreground shadow-sm">
             <p>
-              This page is a placeholder. Add your privacy policy covering what data you collect, how you use it,
-              retention, sharing, user rights, and contact information.
+              This page will be updated with MechAfrica’s official privacy policy. We aim to be clear about what
+              data we collect, how it’s used, and the choices available to users. If you need more information
+              today, please contact us.
             </p>
           </div>
         </FadeIn>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, BarChart3, CheckCircle2, ClipboardList, MapPinned, Star, Tractor, Users } from "lucide-react";
 
 import { siteConfig } from "@/content/site-config";
-import { IMAGES } from "@/lib/images";
+import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { AppStoreButtons } from "@/components/site/AppStoreButtons";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,7 @@ import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
 export const metadata: Metadata = {
   title: "For Service Providers | MechAfrica",
   description:
-    "Grow demand and operate efficiently with the MechAfrica Service Provider App. Manage requests, assign equipment and teams, track active work, and build a stronger professional presence.",
+    "The MechAfrica Service Provider App helps you receive requests, manage jobs, assign assets and teams, and track delivery.",
 };
 
 export default function ServiceProvidersPage() {
@@ -34,8 +34,8 @@ export default function ServiceProvidersPage() {
                 Turn demand into delivered work — with clearer operations
               </h1>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                The MechAfrica Service Provider App helps you receive requests, manage jobs, assign equipment and
-                teams, track active work, and improve visibility across your service area.
+                Receive requests, manage jobs, assign equipment and teams, and keep farmers updated as work moves
+                from scheduling to completion.
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-2">
@@ -68,7 +68,7 @@ export default function ServiceProvidersPage() {
               <SectionHeader
                 eyebrow="Why providers join"
                 title="More visibility. Better utilization."
-                description="Providers grow when demand is organized and operations are easier to manage across assets and teams."
+                description="Organized demand and clearer operations help providers plan and deliver more work."
               />
             </FadeIn>
 
@@ -76,22 +76,22 @@ export default function ServiceProvidersPage() {
               {[
                 {
                   title: "Receive service requests",
-                  text: "See demand by location and category so you can respond faster with confidence.",
+                  text: "See demand by location and category so you can respond faster.",
                   icon: ClipboardList,
                 },
                 {
                   title: "Manage jobs end-to-end",
-                  text: "Accept, schedule, and track jobs from assignment to completion.",
+                  text: "Accept, schedule, and track jobs to completion.",
                   icon: Tractor,
                 },
                 {
                   title: "Assign teams and equipment",
-                  text: "Coordinate operators and assets to reduce downtime and missed opportunities.",
+                  text: "Coordinate operators and assets to reduce downtime.",
                   icon: Users,
                 },
                 {
                   title: "Get insights over time",
-                  text: "Use demand signals and job history to plan better and improve service quality.",
+                  text: "Use demand signals and history to plan and improve service quality.",
                   icon: BarChart3,
                 },
               ].map((b, idx) => (
@@ -116,7 +116,7 @@ export default function ServiceProvidersPage() {
             <SectionHeader
               eyebrow="Core capabilities"
               title="Operations tools designed for service delivery"
-              description="Organize demand, coordinate assets, and keep farmers informed with simple, reliable workflows."
+              description="Organize demand, coordinate assets, and keep farmers informed with reliable workflows."
             />
           </FadeIn>
 
@@ -161,8 +161,7 @@ export default function ServiceProvidersPage() {
             <div className="mt-10 rounded-3xl border bg-muted/35 p-6">
               <div className="text-sm font-semibold">Analytics and planning</div>
               <p className="mt-2 text-sm text-muted-foreground">
-                Planned: provider-facing analytics modules like demand heatmaps, seasonality trends, completion
-                times, and utilization insights.
+                Planned: demand heatmaps, seasonality trends, completion times, and utilization insights.
               </p>
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
                 {[

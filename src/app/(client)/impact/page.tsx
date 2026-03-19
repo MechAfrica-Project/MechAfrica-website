@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPinned, ShieldCheck, SignalLow, Sprout, Tractor } from "lucide-react";
 
 import { impactMetrics, siteConfig } from "@/content/site-config";
-import { IMAGES } from "@/lib/images";
+import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
@@ -14,7 +14,7 @@ import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
 export const metadata: Metadata = {
   title: "Impact | MechAfrica",
   description:
-    "MechAfrica improves access to mechanized agricultural services, reduces friction in service delivery, supports inclusion through USSD and offline-first workflows, and strengthens coordination between farmers and providers.",
+    "MechAfrica improves access to mechanized farm services in Ghana by strengthening coordination between farmers and service providers — with USSD and offline-first workflows for the field.",
 };
 
 export default function ImpactPage() {
@@ -35,11 +35,11 @@ export default function ImpactPage() {
               </h1>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 MechAfrica strengthens service delivery by connecting demand, supply, and field coordination — with
-                offline-first workflows and USSD access to keep participation inclusive.
+                USSD access and offline-first workflows to keep participation inclusive.
               </p>
               <div className="mt-7 flex flex-wrap gap-2">
                 <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                  <Link href="/download">Download / access</Link>
+                  <Link href="/download">Download & access</Link>
                 </Button>
                 <Button asChild variant="outline" className="h-11 rounded-full px-5">
                   <Link href="/contact">Partner with us</Link>
@@ -65,7 +65,7 @@ export default function ImpactPage() {
             <SectionHeader
               eyebrow="Impact themes"
               title="Efficiency + inclusion, at the service-chain level"
-              description="MechAfrica is built to improve how services are discovered, scheduled, delivered, and supported — not just how they’re booked."
+              description="MechAfrica improves how services are discovered, scheduled, delivered, and supported — not just booked."
             />
           </FadeIn>
 
@@ -73,8 +73,8 @@ export default function ImpactPage() {
             {[
               { title: "Improving access to mechanized services", icon: Tractor },
               { title: "Reducing friction in service delivery", icon: ShieldCheck },
-              { title: "Supporting rural users via USSD + offline-first", icon: SignalLow },
-              { title: "Enabling more inclusive transformation", icon: Sprout },
+              { title: "USSD + offline-first for inclusion", icon: SignalLow },
+              { title: "Supporting more resilient livelihoods", icon: Sprout },
             ].map((x, idx) => (
               <FadeIn key={x.title} delay={idx * 0.03}>
                 <div className="rounded-3xl border bg-card p-6 shadow-sm">
@@ -93,9 +93,9 @@ export default function ImpactPage() {
         <Container className="py-14 sm:py-20">
           <FadeIn>
             <SectionHeader
-              eyebrow="Impact metrics"
-              title="A structure for reporting progress"
-              description="Update these metrics with verified data as reporting matures."
+              eyebrow="Current reach"
+              title="Where we are today"
+              description="A snapshot of adoption and access methods in Ghana."
             />
           </FadeIn>
 
@@ -123,7 +123,7 @@ export default function ImpactPage() {
                 <div className="flex h-full flex-col items-center justify-center px-6 text-center">
                   <div className="font-semibold text-foreground">Coverage visualization</div>
                   <div className="mt-2 max-w-md text-sm text-muted-foreground">
-                    Add a Ghana district map or coverage dashboard when verified data is available.
+                    District coverage map coming soon.
                   </div>
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function ImpactPage() {
             <SectionHeader
               eyebrow="Before / after"
               title="From uncertainty to coordinated delivery"
-              description="A simplified comparison of how workflows can improve when service delivery is organized."
+              description="A simplified view of what improves when delivery is coordinated."
             />
           </FadeIn>
 
@@ -188,9 +188,9 @@ export default function ImpactPage() {
         <Container className="py-14 sm:py-20">
           <FadeIn>
             <SectionHeader
-              eyebrow="Ecosystem benefits"
+              eyebrow="Benefits"
               title="Impact for every role"
-              description="Better service delivery helps farmers plan, providers operate, and the ecosystem coordinate more effectively."
+              description="Better delivery helps farmers plan, providers operate, and field teams coordinate."
             />
           </FadeIn>
 

@@ -31,7 +31,7 @@ export default function FAQPage() {
               Frequently asked questions
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Answers to the most common questions about MechAfrica, access methods, and how the ecosystem works.
+              Answers to the most common questions about MechAfrica, access methods, and how the network works.
             </p>
           </FadeIn>
         </Container>
@@ -67,7 +67,7 @@ export default function FAQPage() {
                   <div className="flex flex-wrap gap-2">
                     <Button asChild variant="secondary" className="h-11 rounded-full px-5">
                       <Link href="/download">
-                        Download / access <ArrowRight className="size-4" />
+                        Download & access <ArrowRight className="size-4" />
                       </Link>
                     </Button>
                     <Button asChild variant="outline" className="h-11 rounded-full px-5">

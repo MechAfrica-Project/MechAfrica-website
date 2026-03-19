@@ -20,8 +20,8 @@ Premium, SEO-friendly public marketing website for **MechAfrica** — a digital 
 - `/download` — Download / Access
 - `/faq` — FAQ
 - `/contact` — Contact
-- `/legal/terms` — Terms (placeholder)
-- `/legal/privacy` — Privacy (placeholder)
+- `/legal/terms` — Terms (coming soon)
+- `/legal/privacy` — Privacy (coming soon)
 
 Legacy routes like `/about-us` and `/contact-us` redirect to the new paths.
 
@@ -58,6 +58,7 @@ Update these values in:
 ## Images and screenshots
 
 - Image prompts checklist: `docs/image-prompts.md`
+- Copy audit summary: `COPY_AUDIT_SUMMARY.md`
 - Optional marketing photos (drop into `public/images/marketing/`):
   - `home-hero.png` (Home hero background, optional)
   - `farmers.png`, `providers.png`, `agents.png`, `impact.png` (page hero photos)

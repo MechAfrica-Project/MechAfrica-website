@@ -23,37 +23,37 @@ import { EcosystemDiagram } from "@/components/marketing/EcosystemDiagram";
 export const metadata: Metadata = {
   title: "How It Works | MechAfrica",
   description:
-    "See how MechAfrica connects farmers, service providers, and agents with offline-first workflows, notifications, and USSD access for requesting and delivering farm services.",
+    "See how MechAfrica connects farmers, service providers, and field agents in Ghana — with mobile apps, offline-first workflows, and USSD access for farmers.",
 };
 
 const farmerFlow = [
-  { title: "Request a service", text: "Choose a service, add farm details, and submit — via app or USSD." },
-  { title: "Get matched and updated", text: "Receive confirmations and status updates as work is scheduled." },
+  { title: "Request a service", text: "Choose a service, add farm details, and submit (app or USSD)." },
+  { title: "Get matched and updated", text: "Get confirmations and status updates as work is scheduled." },
   { title: "Track and complete", text: "Follow progress to completion and confirm when the job is done." },
 ];
 
 const providerFlow = [
   { title: "Receive demand", text: "See incoming requests by location and category." },
-  { title: "Accept and schedule", text: "Confirm availability, plan routes, and set expectations." },
+  { title: "Accept and schedule", text: "Confirm availability and plan routes and time windows." },
   { title: "Assign assets and teams", text: "Allocate equipment, operators, and time slots effectively." },
   { title: "Deliver and close out", text: "Track active work, share updates, and mark completion." },
 ];
 
 const agentFlow = [
-  { title: "Onboard users", text: "Support farmer/provider onboarding and profile readiness." },
+  { title: "Onboard users", text: "Support onboarding and profile readiness for farmers and providers." },
   { title: "Coordinate operations", text: "Help resolve bottlenecks and improve delivery reliability." },
   { title: "Support issues", text: "Manage follow-ups and field-level support workflows." },
 ];
 
 const infrastructure = [
-  { title: "Mobile apps", text: "Farmers and providers use tailored app experiences for their workflows.", icon: Layers3 },
+  { title: "Mobile apps", text: "Role-based app experiences for farmers and service providers.", icon: Layers3 },
   { title: "USSD access", text: `Farmers can request services via ${siteConfig.ussd.code} without a smartphone.`, icon: Phone },
-  { title: "Offline-first sync", text: "Keep work moving in low-connectivity areas and sync when ready.", icon: RefreshCcw },
+  { title: "Offline-first sync", text: "Work in low-connectivity areas and sync when ready.", icon: RefreshCcw },
   { title: "Notifications", text: "Status updates keep demand and supply aligned.", icon: Bell },
-  { title: "Location-aware operations", text: "Support better routing and coordination across districts.", icon: MapPin },
-  { title: "Trusted workflows", text: "Clear steps and auditability improve reliability over time.", icon: ShieldCheck },
+  { title: "Location-aware operations", text: "Better routing and coordination across districts.", icon: MapPin },
+  { title: "Trusted workflows", text: "Clear steps and accountability improve reliability over time.", icon: ShieldCheck },
   { title: "Routing and coordination", text: "Match demand to providers and track delivery end-to-end.", icon: Route },
-  { title: "Ecosystem support", text: "Agents help coordination and adoption (Agents App planned).", icon: Users },
+  { title: "Agent support", text: "Field support for onboarding and coordination (planned).", icon: Users },
   { title: "Field-ready design", text: "Practical UX built for on-the-ground realities.", icon: Compass },
 ];
 
@@ -72,12 +72,12 @@ export default function HowItWorksPage() {
               How MechAfrica works
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              MechAfrica connects farmers, service providers, and field agents through one platform. Requests
-              flow from demand to delivery with clear status updates — designed for low-connectivity environments.
+              Requests move from farmer to provider to completion — supported by USSD access, offline-first
+              workflows, and clear status updates.
             </p>
             <div className="mt-7 flex flex-wrap gap-2">
               <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                <Link href="/download">Choose your access method</Link>
+                <Link href="/download">Download & access</Link>
               </Button>
               <Button asChild variant="outline" className="h-11 rounded-full px-5">
                 <Link href="/contact">Partner or get support</Link>
@@ -91,9 +91,9 @@ export default function HowItWorksPage() {
         <Container className="py-14 sm:py-20">
           <FadeIn>
             <SectionHeader
-              eyebrow="Ecosystem model"
+              eyebrow="Network model"
               title="A connected network, not a single app"
-              description="Farmers request services, providers deliver, and agents support onboarding and coordination — all backed by platform infrastructure."
+              description="Farmers request services, providers deliver, and agents support onboarding and coordination."
             />
           </FadeIn>
           <FadeIn delay={0.06}>
@@ -110,7 +110,7 @@ export default function HowItWorksPage() {
             <SectionHeader
               eyebrow="Flows"
               title="Clear steps for each audience"
-              description="Each role has a distinct journey — designed to reduce friction and improve delivery reliability."
+              description="Each role has a distinct journey — designed to reduce friction and improve delivery."
             />
           </FadeIn>
 
@@ -192,8 +192,8 @@ export default function HowItWorksPage() {
           <FadeIn>
             <SectionHeader
               eyebrow="Infrastructure"
-              title="The platform layer that makes delivery reliable"
-              description="MechAfrica combines apps, USSD, offline-first design, and coordination workflows to support service delivery at scale."
+              title="Infrastructure that keeps delivery reliable"
+              description="Apps, USSD, offline-first design, and coordination workflows built for service delivery at scale."
             />
           </FadeIn>
 
@@ -211,30 +211,6 @@ export default function HowItWorksPage() {
             ))}
           </div>
 
-          <FadeIn delay={0.08}>
-            <div className="mt-10 rounded-3xl border bg-card p-6 shadow-sm">
-              <div className="text-sm font-semibold text-foreground">Use anchors on this page</div>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Jump to:{" "}
-                <Link className="underline underline-offset-4" href="#farmers">
-                  Farmers
-                </Link>
-                ,{" "}
-                <Link className="underline underline-offset-4" href="#providers">
-                  Providers
-                </Link>
-                ,{" "}
-                <Link className="underline underline-offset-4" href="#agents">
-                  Agents
-                </Link>
-                ,{" "}
-                <Link className="underline underline-offset-4" href="#infrastructure">
-                  Infrastructure
-                </Link>
-                .
-              </p>
-            </div>
-          </FadeIn>
         </Container>
       </section>
 
@@ -247,13 +223,13 @@ export default function HowItWorksPage() {
                   Ready to access MechAfrica?
                 </h2>
                 <p className="mt-3 max-w-2xl text-base text-primary-foreground/80 sm:text-lg">
-                  Download the apps for richer workflows, or dial USSD for farmer access without a smartphone.
+                  Download the apps, or dial USSD for farmers without a smartphone.
                 </p>
               </div>
               <div className="lg:col-span-5">
                 <div className="flex flex-wrap gap-2">
                   <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                    <Link href="/download">Download / access</Link>
+                    <Link href="/download">Download & access</Link>
                   </Button>
                   <Button
                     asChild

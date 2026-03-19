@@ -62,8 +62,8 @@ export default function ContactPage({
             <FadeIn className="lg:col-span-5">
               <SectionHeader
                 eyebrow="Get in touch"
-                title="Partnerships, support, and ecosystem coordination"
-                description="Select the inquiry type so we can route your message to the right team."
+                title="Partnerships and support"
+                description="Select an inquiry type so we can route your message to the right team."
               />
 
               <div className="mt-8 space-y-3 rounded-3xl border bg-card p-6 shadow-sm">
@@ -88,14 +88,13 @@ export default function ContactPage({
                     <div className="text-sm text-muted-foreground">{siteConfig.contact.address}</div>
                   </div>
                 </div>
-
               </div>
 
               <div className="mt-6 rounded-3xl border bg-card p-6 shadow-sm">
                 <div className="text-sm font-semibold text-foreground">Agents App waitlist</div>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  The Agents App is planned for a future release. Use the form and choose “Agents waitlist”, or
-                  visit the Agents page for details.
+                  The Agents App is planned for a future release. Use the form and choose “Agents waitlist”, or visit
+                  the Agents page for details.
                 </p>
                 <div className="mt-4">
                   <Link className="text-sm font-semibold underline underline-offset-4" href="/solutions/agents">

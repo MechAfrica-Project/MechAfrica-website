@@ -49,7 +49,7 @@ export function WhoWeServe() {
         <FadeIn>
           <SectionHeader
             eyebrow="Who it serves"
-            title="Clear journeys for every part of the ecosystem"
+            title="Clear journeys for every role"
             description="MechAfrica is designed to support how services actually move — from demand to delivery to coordination."
           />
         </FadeIn>

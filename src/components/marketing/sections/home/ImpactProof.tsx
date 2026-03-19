@@ -11,9 +11,9 @@ export function ImpactProof() {
       <Container className="py-14 sm:py-20">
         <FadeIn>
           <SectionHeader
-            eyebrow="Impact & proof"
-            title="Impact at a glance"
-            description="Update with verified data as reporting matures."
+            eyebrow="Reach & access"
+            title="A growing network in Ghana"
+            description="Reach across farmers and providers — with USSD access to keep participation inclusive."
           />
         </FadeIn>
 
@@ -46,7 +46,7 @@ export function ImpactProof() {
                     <div className="flex h-full flex-col items-center justify-center text-center">
                       <div className="text-sm font-semibold text-foreground">Map visualization</div>
                       <div className="mt-2 max-w-xs text-xs text-muted-foreground">
-                        Add a district/coverage map when verified service coverage data is available.
+                        District coverage map coming soon.
                       </div>
                     </div>
                   </div>

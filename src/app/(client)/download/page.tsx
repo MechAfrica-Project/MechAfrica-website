@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Phone, QrCode, Smartphone } from "lucide-react";
+import { ArrowRight, QrCode } from "lucide-react";
 
 import { downloadScreenshots, siteConfig } from "@/content/site-config";
 import { Container } from "@/components/site/Container";
@@ -15,7 +15,7 @@ import { ScreenshotCarousel } from "@/components/marketing/ScreenshotCarousel";
 export const metadata: Metadata = {
   title: "Download / Access | MechAfrica",
   description:
-    "Choose how to access MechAfrica: download the apps for farmers and service providers, or use USSD for farmer access without a smartphone.",
+    `Download the MechAfrica apps for farmers and service providers — or dial ${siteConfig.ussd.code} for farmer access via USSD.`,
 };
 
 function QrPlaceholder({ label }: { label: string }) {
@@ -32,7 +32,7 @@ function QrPlaceholder({ label }: { label: string }) {
         <div className="flex h-full flex-col items-center justify-center text-center">
           <div className="text-sm font-semibold text-foreground">QR code</div>
           <div className="mt-2 max-w-[16rem] text-xs text-muted-foreground">
-            Add a QR code that links to the relevant store listing.
+            Add a QR code linked to this store listing.
           </div>
         </div>
       </div>
@@ -47,81 +47,87 @@ export default function DownloadPage() {
         <Container className="py-14 sm:py-20">
           <FadeIn>
             <div className="flex flex-wrap items-center gap-2">
-              <Badge>Download / access</Badge>
+              <Badge>Download</Badge>
               <Badge variant="outline">Apps + USSD</Badge>
               <Badge variant="outline">Offline-first</Badge>
             </div>
             <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              Choose your access method
+              Download the apps. Or use USSD.
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              MechAfrica is designed so the ecosystem can work across smartphones and basic phones. Farmers can
-              request services via app or USSD. Providers use a dedicated app to manage jobs and assets. Agents
-              tooling is planned for a future release.
+              Farmers can request services through the Farmers App or by dialing{" "}
+              <span className="font-semibold text-foreground">{siteConfig.ussd.code}</span>. Service providers use
+              the Provider App to manage requests, jobs, and assets. The Agents App is planned for a future
+              release.
             </p>
+            <div className="mt-7 flex flex-wrap gap-2">
+              <Button asChild variant="secondary" className="h-11 rounded-full px-5">
+                <Link href="#farmers">Farmers</Link>
+              </Button>
+              <Button asChild variant="outline" className="h-11 rounded-full px-5">
+                <Link href="#providers">Service providers</Link>
+              </Button>
+              <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
+            </div>
           </FadeIn>
 
-          <div className="mt-10 grid gap-4 lg:grid-cols-3">
-            <FadeIn delay={0.02}>
-              <div className="rounded-3xl border bg-card p-6 shadow-sm">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <div className="font-serif text-xl font-semibold text-foreground">Farmers</div>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      Use the Farmers App for richer workflows, or dial USSD for smartphone-free access.
-                    </p>
-                  </div>
-                  <div className="inline-flex size-10 items-center justify-center rounded-2xl bg-accent text-primary">
-                    <Phone className="size-5" aria-hidden="true" />
-                  </div>
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                    <Link href="#farmers">Farmers access</Link>
-                  </Button>
+          <div className="mt-10 grid gap-4 lg:grid-cols-12">
+            <FadeIn className="lg:col-span-4">
+              <div id="farmers" className="rounded-3xl border bg-card p-6 shadow-sm">
+                <div className="text-xs font-semibold tracking-wide text-muted-foreground">Farmers</div>
+                <div className="mt-2 font-serif text-xl font-semibold text-foreground">App or USSD</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Use the Farmers App for the full experience. No smartphone? Dial USSD to request services.
+                </p>
+                <div className="mt-5 flex flex-col gap-2">
+                  <AppStoreButtons
+                    playStoreHref={siteConfig.appLinks.farmer.playStore}
+                    appStoreHref={siteConfig.appLinks.farmer.appStore}
+                    className="justify-start"
+                  />
                   <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.06}>
-              <div className="rounded-3xl border bg-card p-6 shadow-sm">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <div className="font-serif text-xl font-semibold text-foreground">Service providers</div>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      Use the Provider App to receive requests, manage jobs, and assign assets and teams.
-                    </p>
-                  </div>
-                  <div className="inline-flex size-10 items-center justify-center rounded-2xl bg-accent text-primary">
-                    <Smartphone className="size-5" aria-hidden="true" />
-                  </div>
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                    <Link href="#providers">Provider access</Link>
-                  </Button>
-                  <Button asChild variant="outline" className="h-11 rounded-full px-5">
-                    <Link href="/solutions/service-providers">Learn more</Link>
+                  <Button asChild variant="ghost" className="h-11 justify-start rounded-full px-4">
+                    <Link href="/solutions/farmers">
+                      Learn more <ArrowRight className="size-4" />
+                    </Link>
                   </Button>
                 </div>
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.1}>
-              <div className="rounded-3xl border bg-card p-6 shadow-sm">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <div className="font-serif text-xl font-semibold text-foreground">Agents</div>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      The Agents App is planned for a future release to support onboarding and coordination.
-                    </p>
-                  </div>
-                  <div className="inline-flex size-10 items-center justify-center rounded-2xl bg-secondary/20 text-primary">
-                    <QrCode className="size-5" aria-hidden="true" />
-                  </div>
+            <FadeIn className="lg:col-span-4" delay={0.05}>
+              <div id="providers" className="rounded-3xl border bg-card p-6 shadow-sm">
+                <div className="text-xs font-semibold tracking-wide text-muted-foreground">Service providers</div>
+                <div className="mt-2 font-serif text-xl font-semibold text-foreground">Provider App</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  A dedicated app for receiving demand, scheduling work, assigning assets/teams, and tracking delivery.
+                </p>
+                <div className="mt-5 flex flex-col gap-2">
+                  <AppStoreButtons
+                    playStoreHref={siteConfig.appLinks.provider.playStore}
+                    appStoreHref={siteConfig.appLinks.provider.appStore}
+                    className="justify-start"
+                  />
+                  <Button asChild variant="ghost" className="h-11 justify-start rounded-full px-4">
+                    <Link href="/solutions/service-providers">
+                      Learn more <ArrowRight className="size-4" />
+                    </Link>
+                  </Button>
                 </div>
-                <div className="mt-5 flex flex-wrap gap-2">
+              </div>
+            </FadeIn>
+
+            <FadeIn className="lg:col-span-4" delay={0.1}>
+              <div className="rounded-3xl border bg-card p-6 shadow-sm">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="text-xs font-semibold tracking-wide text-muted-foreground">Agents</div>
+                  <Badge variant="outline">Coming soon</Badge>
+                </div>
+                <div className="mt-2 font-serif text-xl font-semibold text-foreground">Agents App</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Operational support workflows for onboarding, coordination, and issue resolution (planned release).
+                </p>
+                <div className="mt-5 flex flex-col gap-2">
                   <Button asChild variant="secondary" className="h-11 rounded-full px-5">
                     <Link href={siteConfig.appLinks.agents.waitlist}>Join waitlist</Link>
                   </Button>
@@ -140,8 +146,8 @@ export default function DownloadPage() {
           <FadeIn>
             <SectionHeader
               eyebrow="QR codes"
-              title="Make downloads easy in the field"
-              description="Add QR codes that link directly to each store listing."
+              title="QR codes for faster downloads"
+              description="Use QR codes in training, onboarding, and community outreach materials."
             />
           </FadeIn>
 
@@ -176,8 +182,8 @@ export default function DownloadPage() {
           <FadeIn>
             <SectionHeader
               eyebrow="Screenshots"
-              title="Preview the product experience"
-              description="Browse key workflows across the ecosystem."
+              title="Preview key workflows"
+              description="A quick look at what farmers and providers can do in the apps."
             />
           </FadeIn>
           <FadeIn delay={0.06}>
@@ -185,97 +191,6 @@ export default function DownloadPage() {
               <ScreenshotCarousel
                 slides={downloadScreenshots}
               />
-            </div>
-          </FadeIn>
-        </Container>
-      </section>
-
-      <section className="bg-muted/35">
-        <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <SectionHeader eyebrow="Access options" title="Choose the right channel for your role" />
-          </FadeIn>
-
-          <div className="mt-10 grid gap-4 lg:grid-cols-12">
-            <FadeIn className="lg:col-span-4">
-              <div id="farmers" className="rounded-3xl border bg-card p-6 shadow-sm">
-                <div className="text-xs font-semibold tracking-wide text-muted-foreground">Farmers</div>
-                <div className="mt-2 font-serif text-xl font-semibold text-foreground">App or USSD</div>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Use the Farmers App if you have a smartphone. Use USSD if you need a basic-phone option.
-                </p>
-                <div className="mt-5 flex flex-col gap-2">
-                  <AppStoreButtons
-                    playStoreHref={siteConfig.appLinks.farmer.playStore}
-                    appStoreHref={siteConfig.appLinks.farmer.appStore}
-                    className="justify-start"
-                  />
-                  <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn className="lg:col-span-4" delay={0.05}>
-              <div id="providers" className="rounded-3xl border bg-card p-6 shadow-sm">
-                <div className="text-xs font-semibold tracking-wide text-muted-foreground">Service providers</div>
-                <div className="mt-2 font-serif text-xl font-semibold text-foreground">Provider App</div>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  A dedicated experience for receiving demand, managing jobs, assigning teams/assets, and tracking delivery.
-                </p>
-                <div className="mt-5 flex flex-col gap-2">
-                  <AppStoreButtons
-                    playStoreHref={siteConfig.appLinks.provider.playStore}
-                    appStoreHref={siteConfig.appLinks.provider.appStore}
-                    className="justify-start"
-                  />
-                  <Button asChild variant="ghost" className="h-11 rounded-full px-4">
-                    <Link href="/solutions/service-providers">
-                      Learn more <ArrowRight className="size-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn className="lg:col-span-4" delay={0.1}>
-              <div className="rounded-3xl border bg-card p-6 shadow-sm">
-                <div className="text-xs font-semibold tracking-wide text-muted-foreground">Agents</div>
-                <div className="mt-2 font-serif text-xl font-semibold text-foreground">Coming soon</div>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Operational support workflows for onboarding, coordination, and issue resolution (planned release).
-                </p>
-                <div className="mt-5 flex flex-col gap-2">
-                  <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                    <Link href={siteConfig.appLinks.agents.waitlist}>Join waitlist</Link>
-                  </Button>
-                  <Button asChild variant="outline" className="h-11 rounded-full px-5">
-                    <Link href="/solutions/agents">Learn more</Link>
-                  </Button>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-
-          <FadeIn delay={0.12}>
-            <div className="mt-10 rounded-3xl border bg-card p-6 shadow-sm">
-              <div className="flex items-start gap-3">
-                <div className="inline-flex size-10 items-center justify-center rounded-2xl bg-secondary/20 text-primary">
-                  <Phone className="size-5" aria-hidden="true" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-foreground">Need a smartphone-free option?</div>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Farmers can dial <span className="font-semibold text-foreground">{siteConfig.ussd.code}</span>{" "}
-                    to request services without a smartphone.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} variant="secondary" />
-                    <Button asChild variant="ghost" className="h-11 rounded-full px-4">
-                      <Link href="/faq">Read FAQs</Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
             </div>
           </FadeIn>
         </Container>

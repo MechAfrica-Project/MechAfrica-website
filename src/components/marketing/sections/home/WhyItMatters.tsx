@@ -21,7 +21,7 @@ const challenges = [
     icon: SignalLow,
   },
   {
-    title: "The ecosystem needs better operational insight",
+    title: "Service delivery needs better operational insight",
     description: "Without clear workflows, it’s hard to improve quality and scale coverage.",
     icon: BarChart3,
   },

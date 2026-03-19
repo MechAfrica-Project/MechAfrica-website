@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 
-import { siteConfig } from "@/content/site-config";
+import { impactMetrics, siteConfig } from "@/content/site-config";
 import { Container } from "@/components/site/Container";
 import { Logo } from "@/components/site/Logo";
 import { AppStoreButtons } from "@/components/site/AppStoreButtons";
@@ -28,6 +28,11 @@ const legalLinks = [
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const footerMetrics = [
+    { value: impactMetrics[0]?.value ?? "—", label: "Farmers" },
+    { value: impactMetrics[1]?.value ?? "—", label: "Providers" },
+    { value: siteConfig.ussd.code, label: "USSD" },
+  ];
 
   return (
     <footer className="border-t bg-primary text-primary-foreground">
@@ -36,10 +41,18 @@ export function Footer() {
           <div className="space-y-4 md:col-span-5">
             <Logo className="text-primary-foreground" />
             <p className="max-w-md text-sm text-primary-foreground/80">
-              MechAfrica is a coordinated agricultural service network that helps farmers access
-              services, helps providers manage demand and assets, and supports operations through
-              field agents — with offline-first workflows and USSD access.
+              MechAfrica is a Ghana-first agricultural services network connecting farmers, service providers,
+              and field teams — with offline-first workflows and USSD access.
             </p>
+
+            <div className="flex flex-wrap gap-3 text-xs text-primary-foreground/70">
+              {footerMetrics.map((m) => (
+                <div key={m.label} className="rounded-full bg-black/15 px-3 py-1">
+                  <span className="font-semibold text-primary-foreground">{m.value}</span>{" "}
+                  <span className="text-primary-foreground/80">{m.label}</span>
+                </div>
+              ))}
+            </div>
 
             <div className="space-y-2 rounded-2xl bg-black/15 p-4">
               <div className="text-sm font-semibold">Need a smartphone-free option?</div>
@@ -107,9 +120,6 @@ export function Footer() {
                   appStoreHref={siteConfig.appLinks.farmer.appStore}
                   className="justify-start"
                 />
-                <div className="mt-2 text-xs text-primary-foreground/70">
-                  Placeholder store links — replace in <code>src/content/site-config.ts</code>.
-                </div>
               </div>
             </div>
           </div>

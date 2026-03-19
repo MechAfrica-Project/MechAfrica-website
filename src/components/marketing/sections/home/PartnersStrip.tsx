@@ -8,9 +8,10 @@ export function PartnersStrip() {
       <Container className="py-10">
         <FadeIn className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl">
-            <div className="text-sm font-semibold text-foreground">Strategic backing</div>
+            <div className="text-sm font-semibold text-foreground">Partners & backing</div>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {siteConfig.partnershipLine} Focused on practical delivery tools for low-connectivity environments.
+              {siteConfig.partnershipLine} Focused on practical service delivery in Ghana — including areas with
+              unreliable connectivity.
             </p>
           </div>
 

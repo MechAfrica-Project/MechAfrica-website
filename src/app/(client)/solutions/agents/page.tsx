@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Bell, ClipboardCheck, ShieldCheck, Users } from "lucide-react";
 
 import { siteConfig } from "@/content/site-config";
-import { IMAGES } from "@/lib/images";
+import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
@@ -14,7 +14,7 @@ import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
 export const metadata: Metadata = {
   title: "For Agents | MechAfrica",
   description:
-    "The MechAfrica Agents App (planned release) supports onboarding, coordination, and field operations across farmers and service providers — built for low-connectivity environments.",
+    "The MechAfrica Agents App (planned release) supports onboarding and field coordination across farmers and service providers.",
 };
 
 export default function AgentsPage() {
@@ -34,9 +34,8 @@ export default function AgentsPage() {
                 Field coordination that strengthens service delivery
               </h1>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                The Agents App is an upcoming operational support tool for onboarding, coordination, and issue
-                resolution across the MechAfrica ecosystem. It’s designed to help the network run smoothly — even
-                in low-connectivity environments.
+                The Agents App is an upcoming tool for onboarding, coordination, and issue resolution across the
+                MechAfrica network — designed for on-the-ground operations.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-2">
@@ -73,7 +72,7 @@ export default function AgentsPage() {
               <SectionHeader
                 eyebrow="Who agents are"
                 title="Operational support for onboarding and coordination"
-                description="Agents help connect people to the right workflows — supporting adoption, follow-ups, and delivery quality across communities and districts."
+                description="Agents support adoption and delivery quality across communities and districts."
               />
             </FadeIn>
 
@@ -81,22 +80,22 @@ export default function AgentsPage() {
               {[
                 {
                   title: "Onboarding support",
-                  text: "Help farmers and providers get started, complete profiles, and understand how to use the platform.",
+                  text: "Help farmers and providers get started and complete profiles.",
                   icon: Users,
                 },
                 {
                   title: "Coordination and follow-ups",
-                  text: "Support scheduling and resolution where field coordination improves delivery reliability.",
+                  text: "Support scheduling and follow-ups where coordination improves delivery.",
                   icon: ClipboardCheck,
                 },
                 {
                   title: "Issue management",
-                  text: "Track issues, support escalations, and ensure requests move forward to completion.",
+                  text: "Track issues and ensure requests move forward to completion.",
                   icon: ShieldCheck,
                 },
                 {
                   title: "Notification-based workflows",
-                  text: "Respond to alerts, reminders, and updates that keep the ecosystem aligned.",
+                  text: "Respond to alerts and updates that keep the network aligned.",
                   icon: Bell,
                 },
               ].map((b, idx) => (
@@ -121,7 +120,7 @@ export default function AgentsPage() {
             <SectionHeader
               eyebrow="Planned features"
               title="What the Agents App will support"
-              description="Coming soon — update as the product scope is finalized."
+              description="Coming soon — designed for practical field coordination."
             />
           </FadeIn>
 
@@ -148,7 +147,7 @@ export default function AgentsPage() {
                 text: "Support field work even when connectivity is unreliable.",
               },
               {
-                title: "Ecosystem coordination",
+                title: "Cross-role coordination",
                 text: "Help reduce bottlenecks by supporting routing and communication between roles.",
               },
             ].map((x, idx) => (

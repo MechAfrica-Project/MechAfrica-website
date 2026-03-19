@@ -1,4 +1,4 @@
-import { IMAGES } from "@/lib/images";
+import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
@@ -37,23 +37,27 @@ export function FieldMoments() {
           />
         </FadeIn>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {moments.map((m, idx) => (
-            <FadeIn key={m.title} delay={idx * 0.04}>
-              <div className="h-full">
-                <OptionalPhotoCard
-                  src={m.image}
-                  alt={m.alt}
-                  aspect="16/10"
-                  sizes="(max-width: 768px) 92vw, (max-width: 1280px) 33vw, 420px"
-                />
-                <div className="mt-4">
-                  <div className="font-serif text-lg font-semibold text-foreground">{m.title}</div>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.description}</p>
+        <div className="mt-10 grid gap-6 lg:grid-cols-12">
+          {moments.map((m, idx) => {
+            const spanClass = idx === 2 ? "lg:col-span-12" : "lg:col-span-6";
+            const aspect = idx === 2 ? "16/9" : "16/10";
+            const sizes =
+              idx === 2
+                ? "(max-width: 768px) 92vw, (max-width: 1280px) 92vw, 1100px"
+                : "(max-width: 768px) 92vw, (max-width: 1280px) 45vw, 560px";
+
+            return (
+              <FadeIn key={m.title} delay={idx * 0.04} className={spanClass}>
+                <div className="h-full">
+                  <OptionalPhotoCard src={m.image} alt={m.alt} aspect={aspect} sizes={sizes} />
+                  <div className="mt-4">
+                    <div className="font-serif text-lg font-semibold text-foreground">{m.title}</div>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.description}</p>
+                  </div>
                 </div>
-              </div>
-            </FadeIn>
-          ))}
+              </FadeIn>
+            );
+          })}
         </div>
       </Container>
     </section>

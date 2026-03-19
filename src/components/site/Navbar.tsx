@@ -187,7 +187,7 @@ function MobileNav() {
 
         <div className="mt-auto flex flex-col gap-2 border-t p-4">
           <Button asChild variant="secondary" className="h-11 rounded-full">
-            <Link href="/download">Download App</Link>
+            <Link href="/download">Download &amp; access</Link>
           </Button>
           <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
         </div>
@@ -216,7 +216,7 @@ export function Navbar() {
         <div className="hidden items-center gap-2 md:flex">
           <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
           <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-            <Link href="/download">Download App</Link>
+            <Link href="/download">Download &amp; access</Link>
           </Button>
         </div>
 

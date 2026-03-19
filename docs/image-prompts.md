@@ -171,3 +171,41 @@ Use these to add more visual depth across Home, How It Works, and Impact.
 
 **Prompt**
 > Premium documentary photo in Ghana: a field agent coordinating between a farmer and a service provider; three people in conversation; phone in hand; rural backdrop; warm natural light; premium editorial look; no logos; no text; no watermark.
+
+---
+
+## Additional premium visuals (optional, recommended)
+
+These are not required for launch, but they’ll add depth and reduce text-heavy sections over time.
+
+### 15) Partnerships / credibility moment
+
+- **File:** `public/images/marketing/partnerships.png`
+- **Recommended:** 2400×1600 or larger (3:2)
+
+**Prompt**
+> Premium documentary photo in Ghana: a small meeting between agricultural stakeholders (a farmer leader, a service provider, and a coordinator) reviewing a simple paper form and a phone; respectful, modern, practical vibe; warm natural light; realistic; no logos; no text; no watermark.
+
+### 16) Training / onboarding session (wide)
+
+- **File:** `public/images/marketing/training-wide.png`
+- **Recommended:** 3000×1688 or larger (16:9)
+
+**Prompt**
+> Wide premium documentary photo in Ghana: field training session near farms; a coordinator demonstrating a phone-based workflow to a group; authentic environment, warm natural light, premium editorial look; no logos; no text; no watermark.
+
+### 17) District coverage map placeholder (visual only)
+
+- **File:** `public/images/marketing/coverage-map.png`
+- **Recommended:** 2400×1350 (16:9)
+
+**Prompt**
+> Minimal, premium map-style illustration inspired by Ghana district coverage: soft off-white background, subtle green lines and warm-gold highlights, simple abstract district shapes (not exact boundaries), a few highlighted zones and pins; clean, modern, no text, no labels, no logos, no watermark.
+
+### 18) Mechanization services montage (multi-service)
+
+- **File:** `public/images/marketing/services-montage.png`
+- **Recommended:** 3000×1688 or larger (16:9)
+
+**Prompt**
+> Premium documentary montage in Ghana showing multiple mechanized services: ploughing, spraying, harvesting, and transport; cohesive color grading, warm natural light, realistic; no text; no logos; no watermark.

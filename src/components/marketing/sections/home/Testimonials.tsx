@@ -14,8 +14,8 @@ export function Testimonials() {
         <FadeIn>
           <SectionHeader
             eyebrow="Stories"
-            title="Trust is built through lived experience"
-            description="Use these flexible story cards to publish real farmer, provider, and partner narratives."
+            title="Stories from the field"
+            description="Short perspectives from farmers, providers, and partners as the network grows."
           />
         </FadeIn>
 
@@ -26,7 +26,7 @@ export function Testimonials() {
                 <CardHeader className="pb-2">
                   <div className="flex items-start justify-between gap-3">
                     <CardTitle className="font-serif text-lg">{t.type}</CardTitle>
-                    {t.isPlaceholder ? <Badge variant="outline">Placeholder</Badge> : null}
+                    {t.isPlaceholder ? <Badge variant="outline">Sample</Badge> : null}
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">

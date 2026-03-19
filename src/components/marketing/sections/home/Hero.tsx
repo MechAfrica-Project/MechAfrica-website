@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { siteConfig } from "@/content/site-config";
-import { IMAGES } from "@/lib/images";
+import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { UssdButton } from "@/components/site/UssdButton";
@@ -21,7 +21,7 @@ export function HomeHero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-20"
+          className="object-cover opacity-25"
         />
       </div>
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(244,176,0,0.22),transparent_55%),radial-gradient(circle_at_80%_20%,rgba(11,61,46,0.18),transparent_55%)]" />
@@ -39,14 +39,14 @@ export function HomeHero() {
             </h1>
 
             <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              MechAfrica coordinates farm service delivery across farmers, service providers, and agents — through
-              mobile apps, offline-first workflows, and USSD.
+              MechAfrica connects farmers, service providers, and field agents to request, manage, and deliver
+              farm services — via mobile apps and USSD. Built for low-connectivity areas.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <Button asChild variant="secondary" className="h-11 rounded-full px-5">
                 <Link href="/download" aria-label="Download the MechAfrica apps">
-                  Download the App <ArrowRight className="size-4" />
+                  Download &amp; access <ArrowRight className="size-4" />
                 </Link>
               </Button>
 
@@ -62,7 +62,7 @@ export function HomeHero() {
             <div className="mt-7 space-y-2 text-sm text-muted-foreground">
               {[
                 "A coordinated service network — not just tractor booking.",
-                "Offline-first + USSD to keep access inclusive.",
+                "USSD and offline-first workflows keep access inclusive.",
               ].map((line) => (
                 <div key={line} className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 size-4 text-primary/80" aria-hidden="true" />

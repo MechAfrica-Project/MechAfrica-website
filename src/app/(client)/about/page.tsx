@@ -3,16 +3,18 @@ import { ArrowRight, Globe, ShieldCheck, Users } from "lucide-react";
 import Link from "next/link";
 
 import { partners, siteConfig } from "@/content/site-config";
+import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { Badge } from "@/components/marketing/Badge";
+import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
 
 export const metadata: Metadata = {
   title: "About | MechAfrica",
   description:
-    "MechAfrica is a digital agricultural services platform connecting farmers, service providers, and agents through apps and USSD — built for low-connectivity environments.",
+    "Learn about MechAfrica — a Ghana-first agricultural services network connecting farmers, service providers, and field agents through apps and USSD.",
 };
 
 export default function AboutPage() {
@@ -20,21 +22,32 @@ export default function AboutPage() {
     <>
       <section className="bg-background">
         <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge>Our story</Badge>
-              <Badge variant="outline">Ghana-first</Badge>
-              <Badge variant="outline">Inclusive access</Badge>
-            </div>
-            <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              Building agricultural service infrastructure that works in the real world
-            </h1>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              MechAfrica is not just a tractor-booking app. It’s a coordinated agricultural service network —
-              connecting farmers, service providers, and field agents through one platform for requesting,
-              managing, and delivering services via mobile apps and USSD.
-            </p>
-          </FadeIn>
+          <div className="grid items-center gap-10 lg:grid-cols-12">
+            <FadeIn className="lg:col-span-6">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge>Our story</Badge>
+                <Badge variant="outline">Ghana-first</Badge>
+                <Badge variant="outline">Inclusive access</Badge>
+              </div>
+              <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+                Building agricultural service infrastructure that works in the real world
+              </h1>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                MechAfrica is a coordinated agricultural services network in Ghana. We connect farmers, service
+                providers, and field agents through apps and USSD — so services can be requested, scheduled,
+                delivered, and tracked with clear updates.
+              </p>
+            </FadeIn>
+
+            <FadeIn className="lg:col-span-6" delay={0.06}>
+              <OptionalPhotoCard
+                src={IMAGES.marketing.onboarding}
+                alt="Field onboarding and support in a farming community"
+                aspect="4/3"
+                priority
+              />
+            </FadeIn>
+          </div>
         </Container>
       </section>
 
@@ -44,8 +57,8 @@ export default function AboutPage() {
             <FadeIn className="lg:col-span-5">
               <SectionHeader
                 eyebrow="Our story"
-                title="A platform formed to expand access and reliability"
-                description="MechAfrica was formed through the partnership of Agrinvest Limited and MechLink Limited, with support from AGRA — aligned around practical service delivery for farmers."
+                title="Built to expand access and reliability"
+                description="MechAfrica was formed through the partnership of Agrinvest Limited and MechLink Limited, with support from AGRA."
               />
             </FadeIn>
 
@@ -54,25 +67,25 @@ export default function AboutPage() {
                 {
                   title: "Ghana focus, built to scale",
                   description:
-                    "We’re currently focused on Ghana, building a strong operational model that can expand to additional markets over time.",
+                    "Focused on Ghana today, designed to scale to additional markets over time.",
                   icon: Globe,
                 },
                 {
-                  title: "Trust through operational clarity",
+                  title: "Operational clarity builds trust",
                   description:
-                    "Service delivery improves when workflows are clear — from request routing to completion tracking and support.",
+                    "Clear steps from request to completion make delivery more reliable over time.",
                   icon: ShieldCheck,
                 },
                 {
-                  title: "Ecosystem-first design",
+                  title: "Role-based journeys",
                   description:
-                    "Farmers, providers, and agents each have distinct roles. The platform is designed to support all three journeys.",
+                    "Built for farmers, service providers, and field agents — each with the right tools.",
                   icon: Users,
                 },
                 {
                   title: "Inclusive by design",
                   description:
-                    "USSD and offline-first workflows ensure participation even without reliable internet or smartphones.",
+                    "USSD and offline-first workflows keep participation possible without perfect connectivity.",
                   icon: ShieldCheck,
                 },
               ].map((c, idx) => (
@@ -98,7 +111,7 @@ export default function AboutPage() {
               <SectionHeader
                 eyebrow="Our mission"
                 title="Make services easier to access, manage, and scale"
-                description="We build tools and workflows that reduce friction across the agricultural service chain — from requesting and matching to delivery and support."
+                description="We build practical tools that reduce friction from request to delivery to support."
               />
             </FadeIn>
 
@@ -108,19 +121,19 @@ export default function AboutPage() {
                   {[
                     {
                       label: "Mission",
-                      text: "Enable farmers to access timely, reliable services and help providers operate efficiently — even in low-connectivity areas.",
+                      text: "Help farmers access timely services and help providers deliver efficiently — even with unreliable connectivity.",
                     },
                     {
                       label: "Vision",
-                      text: "A strong, inclusive agricultural services ecosystem that supports productivity, livelihoods, and resilience across Africa.",
+                      text: "A stronger, more inclusive agricultural services network across Africa.",
                     },
                     {
                       label: "Approach",
-                      text: "Mobile apps, USSD access, offline-first workflows, and field support — connected through one platform.",
+                      text: "Role-based apps, USSD access, offline-first workflows, and field support.",
                     },
                     {
                       label: "Focus",
-                      text: "Practical infrastructure and operational clarity, grounded in the realities of rural service delivery.",
+                      text: "Operational clarity grounded in the realities of rural service delivery.",
                     },
                   ].map((b) => (
                     <div key={b.label}>
@@ -139,9 +152,9 @@ export default function AboutPage() {
         <Container className="py-14 sm:py-20">
           <FadeIn>
             <SectionHeader
-              eyebrow="Our ecosystem"
-              title="Three roles, one platform"
-              description="MechAfrica connects the people who request services, the teams who deliver them, and the field operations that keep the network running."
+              eyebrow="Our model"
+              title="Three roles. One network."
+              description="A coordinated approach to requesting, delivering, and supporting farm services."
             />
           </FadeIn>
 
@@ -150,19 +163,19 @@ export default function AboutPage() {
               {
                 title: "Farmers",
                 description:
-                  "Request services, manage farms, and track updates through the app or via USSD without a smartphone.",
+                  "Request services and track updates via app or USSD.",
                 href: "/solutions/farmers",
               },
               {
                 title: "Service providers",
                 description:
-                  "Receive demand, manage jobs, assign equipment and teams, and build a stronger professional presence.",
+                  "Receive requests, schedule jobs, and manage teams and assets.",
                 href: "/solutions/service-providers",
               },
               {
                 title: "Agents",
                 description:
-                  "Support onboarding, coordinate operations, and help resolve issues across districts (coming soon).",
+                  "Support onboarding, coordination, and issue resolution (coming soon).",
                 href: "/solutions/agents",
               },
             ].map((x, idx) => (
@@ -188,18 +201,18 @@ export default function AboutPage() {
             <FadeIn className="lg:col-span-6">
               <SectionHeader
                 eyebrow="Why accessibility matters"
-                title="Inclusive access expands coverage and reliability"
-                description="Agricultural service delivery can’t depend on perfect connectivity. MechAfrica is designed to work across smartphones, basic phones, and low-network environments."
+                title="Access that works beyond smartphones"
+                description="Agricultural service delivery can’t depend on perfect connectivity. MechAfrica supports app and USSD access for the field."
               />
             </FadeIn>
             <FadeIn className="lg:col-span-6" delay={0.06}>
               <div className="rounded-3xl border bg-card p-8 shadow-sm">
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   {[
-                    "USSD access gives farmers a reliable option without a smartphone.",
-                    "Offline-first app workflows help teams keep working in the field.",
-                    "Clear status updates reduce confusion and improve trust.",
-                    "Field coordination supports onboarding and issue resolution (Agents App planned).",
+                    "USSD gives farmers access without a smartphone.",
+                    "Offline-first workflows support work when the network drops.",
+                    "Status updates reduce confusion and missed windows.",
+                    "Agents support onboarding and follow-ups (planned).",
                   ].map((line) => (
                     <li key={line} className="flex items-start gap-2">
                       <span className="mt-1.5 size-1.5 rounded-full bg-secondary" aria-hidden="true" />
@@ -209,7 +222,7 @@ export default function AboutPage() {
                 </ul>
                 <div className="mt-6">
                   <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                    <Link href="/download">Choose your access method</Link>
+                    <Link href="/download">Download & access</Link>
                   </Button>
                 </div>
               </div>
@@ -223,7 +236,7 @@ export default function AboutPage() {
           <FadeIn>
             <SectionHeader
               eyebrow="Our partners"
-              title="Partnership that strengthens delivery"
+              title="Partners"
               description={siteConfig.partnershipLine}
             />
           </FadeIn>
@@ -246,11 +259,11 @@ export default function AboutPage() {
             <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-7">
                 <h2 className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Our future: stronger coordination, broader coverage
+                  What’s next
                 </h2>
                 <p className="mt-3 max-w-2xl text-base text-primary-foreground/80 sm:text-lg">
-                  We’re expanding the platform with operational tooling for field teams, deeper provider
-                  workflows, and continued focus on inclusion through USSD and offline-first design.
+                  We’re expanding operational support for field teams, deepening provider workflows, and
+                  continuing our focus on inclusive access through USSD and offline-first design.
                 </p>
               </div>
               <div className="lg:col-span-5">

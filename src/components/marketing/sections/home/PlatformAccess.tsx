@@ -12,12 +12,12 @@ import { SectionHeader } from "@/components/marketing/SectionHeader";
 const methods = [
   {
     title: "Android app",
-    description: "For farmers and providers who use Android devices.",
+    description: "Download on Google Play for full app workflows.",
     icon: Smartphone,
   },
   {
     title: "iPhone app",
-    description: "For iOS users who want a full app experience.",
+    description: "Download on the App Store for iOS access.",
     icon: Smartphone,
   },
   {
@@ -27,7 +27,7 @@ const methods = [
   },
   {
     title: "Offline-first workflows",
-    description: "Keep work moving in low-connectivity areas and sync when ready.",
+    description: "Keep working in the field and sync when connectivity returns.",
     icon: WifiOff,
   },
 ] as const;
@@ -39,8 +39,8 @@ export function PlatformAccess() {
         <FadeIn>
           <SectionHeader
             eyebrow="Platform access"
-            title="Multiple channels — one coordinated ecosystem"
-            description="MechAfrica is built so farmers aren’t excluded by connectivity or device access. Apps and USSD work together to expand reach."
+            title="Access that fits the field"
+            description="Farmers can request services by app or USSD. Providers use the app to manage jobs, teams, and assets."
           />
         </FadeIn>
 
@@ -71,8 +71,7 @@ export function PlatformAccess() {
               <div>
                 <div className="font-semibold">Not every user needs a smartphone</div>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  USSD gives farmers a reliable path to request services, while apps unlock richer workflows for
-                  providers and agents.
+                  USSD keeps farmer access inclusive — even without a smartphone.
                 </p>
               </div>
             </div>
