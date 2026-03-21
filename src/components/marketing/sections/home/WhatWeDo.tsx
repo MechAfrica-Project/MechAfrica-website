@@ -9,13 +9,13 @@ const items = [
   {
     title: "Request farm services easily",
     description:
-      "Farmers can request ploughing, planting, spraying, harvesting, and more — via app or USSD.",
+      "Farmers can request land preparation, planting, spraying, harvesting, threshing, logistics, and more — via app or USSD.",
     icon: Sparkles,
   },
   {
     title: "Match with trusted providers",
     description:
-      "Providers receive demand, respond faster, and keep farmers updated.",
+      "Providers with different specializations receive demand, respond, and keep farmers updated.",
     icon: ShieldCheck,
   },
   {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone, Tractor } from "lucide-react";
 
-import { farmerServices, siteConfig } from "@/content/site-config";
+import { siteConfig } from "@/content/site-config";
 import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { Badge } from "@/components/marketing/Badge";
 import { OptionalPhotoCard } from "@/components/marketing/OptionalPhotoCard";
+import { ServiceCategoriesSection } from "@/components/marketing/ServiceCategoriesSection";
 
 export const metadata: Metadata = {
   title: "For Farmers | MechAfrica",
@@ -49,8 +50,8 @@ export default function FarmersPage() {
                 Farm services, matched faster — with updates you can trust
               </h1>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Request mechanized and related farm services through the Farmers App or by dialing USSD, then track
-                updates through the same channel.
+                Request land preparation, planting, spraying, harvesting, logistics, and more through the Farmers App
+                or by dialing USSD — then track updates through the same channel.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-2">
@@ -121,28 +122,12 @@ export default function FarmersPage() {
         </Container>
       </section>
 
-      <section className="bg-background">
-        <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <SectionHeader
-              eyebrow="Available services"
-              title="Mechanized and related services (by availability)"
-              description="Offerings vary by district and provider capacity. This list reflects common categories."
-            />
-          </FadeIn>
-
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {farmerServices.map((s, idx) => (
-              <FadeIn key={s} delay={idx * 0.02}>
-                <div className="flex items-start gap-2 rounded-2xl border bg-card p-4 shadow-sm">
-                  <CheckCircle2 className="mt-0.5 size-4 text-primary/70" aria-hidden="true" />
-                  <div className="text-sm font-medium text-foreground">{s}</div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <ServiceCategoriesSection
+        eyebrow="Available services"
+        title="Services farmers can access"
+        description="Request the category you need — land preparation, spraying, planting, harvesting, transport, and technical support. Availability varies by district."
+        backgroundClassName="bg-background"
+      />
 
       <section className="bg-muted/35">
         <Container className="py-14 sm:py-20">

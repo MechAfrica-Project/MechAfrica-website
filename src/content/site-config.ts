@@ -23,9 +23,9 @@ export type SiteFaqItem = {
 
 export const siteConfig = {
   name: "MechAfrica",
-  tagline: "Mechanizing access to agricultural services across Africa",
+  tagline: "Connecting farmers to the services that power agriculture",
   description:
-    "MechAfrica is a Ghana-first agricultural services network connecting farmers, service providers, and field agents to request, manage, and deliver farm services — via mobile apps and USSD.",
+    "MechAfrica is a Ghana-first digital agricultural services platform connecting farmers to land preparation, planting, spraying, harvesting, logistics, and technical support — through mobile apps and USSD, with role-based tools for providers and field teams.",
   url: "https://mechafrica.example",
 
   ussd: {
@@ -66,7 +66,6 @@ export const siteConfig = {
 
 export const navItems: SiteNavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   { label: "How It Works", href: "/how-it-works" },
   {
     label: "Solutions",
@@ -76,9 +75,7 @@ export const navItems: SiteNavItem[] = [
       { label: "For Agents", href: "/solutions/agents" },
     ],
   },
-  { label: "Impact", href: "/impact" },
   { label: "Download", href: "/download" },
-  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -150,7 +147,7 @@ export const testimonials: SiteTestimonial[] = [
   {
     type: "Provider story",
     name: "Kojo A.",
-    role: "Mechanization service provider",
+    role: "Agricultural service provider",
     quote:
       "Demand is easier to manage when jobs are organized in one place. I can accept requests, coordinate my team, and keep farmers updated.",
     isPlaceholder: true,
@@ -169,7 +166,7 @@ export const globalFaq: SiteFaqItem[] = [
   {
     question: "What is MechAfrica?",
     answer:
-      "MechAfrica is a Ghana-first agricultural services network that connects farmers and service providers. Requests, delivery, and updates happen through mobile apps, with USSD as a basic-phone option for farmers.",
+      "MechAfrica is a digital agricultural services platform in Ghana that connects farmers to a wide range of farm services — through mobile apps and USSD, with role-based tools for service providers and field teams.",
   },
   {
     question: "Who can use it?",
@@ -184,7 +181,7 @@ export const globalFaq: SiteFaqItem[] = [
   {
     question: "How do farmers request services?",
     answer:
-      "Farmers can request services through the Farmers App, or by dialing USSD. Updates come through the same channel.",
+      "Farmers can request services through the Farmers App, or by dialing USSD. They choose the service category, share key farm details, and receive updates through the same channel.",
   },
   {
     question: "Do I need internet to use MechAfrica?",
@@ -219,14 +216,41 @@ export const globalFaq: SiteFaqItem[] = [
 ];
 
 export const farmerServices = [
-  "Ploughing and land preparation",
+  "Land preparation (ploughing, ripping)",
   "Planting",
-  "Spraying and input application",
+  "Spraying",
   "Harvesting",
-  "Threshing and processing support",
-  "Transportation and logistics",
+  "Threshing",
   "Drone services (where available)",
-  "Other mechanized and related services",
+  "Transportation and logistics",
+  "Technicians and operators",
+] as const;
+
+export type ServiceCategoryKey =
+  | "land-prep"
+  | "planting"
+  | "spraying"
+  | "harvesting"
+  | "threshing"
+  | "drone"
+  | "logistics"
+  | "technical";
+
+export type ServiceCategory = {
+  key: ServiceCategoryKey;
+  title: string;
+  services: string[];
+};
+
+export const serviceCategories: ServiceCategory[] = [
+  { key: "land-prep", title: "Land preparation", services: ["Ploughing", "Ripping"] },
+  { key: "planting", title: "Planting", services: ["Planting", "Seeding"] },
+  { key: "spraying", title: "Spraying", services: ["Spraying", "Input application"] },
+  { key: "harvesting", title: "Harvesting", services: ["Harvesting", "Collection"] },
+  { key: "threshing", title: "Threshing", services: ["Threshing", "Post-harvest support"] },
+  { key: "drone", title: "Drone services", services: ["Drone spraying", "Mapping (where available)"] },
+  { key: "logistics", title: "Transportation", services: ["Transport", "Logistics"] },
+  { key: "technical", title: "Technical services", services: ["Technicians", "Operators"] },
 ] as const;
 
 export type AppScreenshot = {

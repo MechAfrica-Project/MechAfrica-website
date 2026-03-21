@@ -35,12 +35,12 @@ export function HomeHero() {
             </div>
 
             <h1 className="mt-6 font-serif text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
-              Mechanizing access to agricultural services across Africa
+              Access the farm services you need — all in one platform
             </h1>
 
             <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              MechAfrica connects farmers, service providers, and field agents to request, manage, and deliver
-              farm services — via mobile apps and USSD. Built for low-connectivity areas.
+              MechAfrica connects farmers, service providers, and field teams to request and deliver land preparation,
+              planting, spraying, harvesting, logistics, and technical services — via mobile apps and USSD.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -61,8 +61,8 @@ export function HomeHero() {
 
             <div className="mt-7 space-y-2 text-sm text-muted-foreground">
               {[
-                "A coordinated service network — not just tractor booking.",
-                "USSD and offline-first workflows keep access inclusive.",
+                "Multi-service delivery — not a single-service booking app.",
+                "USSD and offline-first workflows keep access reliable in low connectivity.",
               ].map((line) => (
                 <div key={line} className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 size-4 text-primary/80" aria-hidden="true" />
