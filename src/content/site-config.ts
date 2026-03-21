@@ -92,7 +92,7 @@ export const partners = [
   },
   {
     name: "AGRA",
-    note: "Support",
+    note: "Partner",
     image: "/images/marketing/Agra.png",
   },
 ] as const;

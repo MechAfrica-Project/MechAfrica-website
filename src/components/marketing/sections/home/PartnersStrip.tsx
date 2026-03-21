@@ -27,7 +27,7 @@ export function PartnersStrip() {
                   className="h-10 mb-2 object-contain"
                   style={{ maxWidth: 80 }}
                 />
-                <div className="text-sm font-semibold text-foreground">{p.note}</div>
+                {/* Removed partner note as requested */}
               </div>
             ))}
           </div>

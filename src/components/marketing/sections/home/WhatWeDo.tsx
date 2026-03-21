@@ -1,4 +1,4 @@
-import { Activity, MessageSquareText, ShieldCheck, Sparkles } from "lucide-react";
+import { Activity, MessageSquareText, ShieldCheck, Star } from "lucide-react";
 
 import { Container } from "@/components/site/Container";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,7 +10,7 @@ const items = [
     title: "Request farm services easily",
     description:
       "Farmers can request land preparation, planting, spraying, harvesting, threshing, logistics, and more — via app or USSD.",
-    icon: Sparkles,
+    icon: Star,
   },
   {
     title: "Match with trusted providers",
