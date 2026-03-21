@@ -1,6 +1,7 @@
 import { partners, siteConfig } from "@/content/site-config";
 import { Container } from "@/components/site/Container";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
+import Image from "next/image";
 
 export function PartnersStrip() {
   return (
@@ -21,11 +22,12 @@ export function PartnersStrip() {
                 key={p.name}
                 className="flex flex-col items-center justify-center rounded-2xl border bg-card px-3 py-4 text-center shadow-sm"
               >
-                <img
+                <Image
                   src={p.image}
                   alt={p.name + ' logo'}
-                  className="h-10 mb-2 object-contain"
-                  style={{ maxWidth: 80 }}
+                  width={500}
+                  height={200}
+                  className="h-10 mb-2 object-contain max-w-35"
                 />
                 {/* Removed partner note as requested */}
               </div>
