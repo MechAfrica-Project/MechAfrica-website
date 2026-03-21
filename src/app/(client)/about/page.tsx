@@ -58,7 +58,7 @@ export default function AboutPage() {
               <SectionHeader
                 eyebrow="Our story"
                 title="Built to expand access and reliability"
-                description="MechAfrica was formed through the partnership of Agrinvest Limited and MechLink Limited, with support from AGRA."
+                description="MechAfrica was formed through the partnership of leading organizations in agricultural innovation and support."
               />
             </FadeIn>
 

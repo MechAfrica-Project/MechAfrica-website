@@ -21,8 +21,13 @@ export function PartnersStrip() {
                 key={p.name}
                 className="flex flex-col items-center justify-center rounded-2xl border bg-card px-3 py-4 text-center shadow-sm"
               >
-                <div className="text-sm font-semibold text-foreground">{p.name}</div>
-                <div className="mt-1 text-xs text-muted-foreground">{p.note}</div>
+                <img
+                  src={p.image}
+                  alt={p.name + ' logo'}
+                  className="h-10 mb-2 object-contain"
+                  style={{ maxWidth: 80 }}
+                />
+                <div className="text-sm font-semibold text-foreground">{p.note}</div>
               </div>
             ))}
           </div>

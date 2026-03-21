@@ -61,7 +61,7 @@ export const siteConfig = {
   },
 
   partnershipLine:
-    "Built through the partnership of Agrinvest Limited and MechLink Limited, with support from AGRA.",
+    "Built through the partnership of leading organizations in agricultural innovation and support.",
 } as const;
 
 export const navItems: SiteNavItem[] = [
@@ -80,9 +80,21 @@ export const navItems: SiteNavItem[] = [
 ];
 
 export const partners = [
-  { name: "Agrinvest Limited", note: "Founding partner" },
-  { name: "MechLink Limited", note: "Founding partner" },
-  { name: "AGRA", note: "Support" },
+  {
+    name: "Agrinvest Limited",
+    note: "Founding partner",
+    image: "/images/marketing/agrinvest.png",
+  },
+  {
+    name: "MechLink Limited",
+    note: "Founding partner",
+    image: "/images/marketing/mechlink.png",
+  },
+  {
+    name: "AGRA",
+    note: "Support",
+    image: "/images/marketing/Agra.png",
+  },
 ] as const;
 
 export const platformHighlights = [
