@@ -142,7 +142,7 @@ export const platformHighlights = [
 
 export const impactMetrics: SiteMetric[] = [
   { label: "Farmers registered", value: "100,000+" },
-  { label: "Service providers onboarded", value: "10+" },
+  { label: "Service providers onboarded", value: "300,000+" },
   { label: "USSD access for farmers", value: "*928*193#" },
   { label: "Current focus", value: "Ghana" },
 ];
