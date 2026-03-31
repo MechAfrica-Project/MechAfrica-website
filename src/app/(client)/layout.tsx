@@ -1,5 +1,6 @@
 import { Footer } from "@/components/site/Footer";
 import { Navbar } from "@/components/site/Navbar";
+import UpdatingPage from "../updating-site/page";
 
 export default function HomeLayout({
   children,
@@ -8,11 +9,12 @@ export default function HomeLayout({
 }>) {
   return (
     <div className="flex min-h-dvh flex-col font-sans">
-      <Navbar />
+      {/* <Navbar />
       <main id="main-content" className="flex-1">
         {children}
       </main>
-      <Footer />
+      <Footer /> */}
+      <UpdatingPage />
     </div>
   );
 }
