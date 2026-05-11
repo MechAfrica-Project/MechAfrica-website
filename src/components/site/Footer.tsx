@@ -41,7 +41,7 @@ export function Footer() {
           <div className="space-y-4 md:col-span-5">
      
       <Image
-        src="/assets/pngs/mechafrica.png"
+        src="/assets/pngs/MechAfrica.png"
         width={120}
         height={50}
         alt="MechAfrica"
