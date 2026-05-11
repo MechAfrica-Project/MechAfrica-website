@@ -9,13 +9,13 @@ html {
 
 :root {
   /* Premium, earthy MechAfrica brand tokens */
-  --background: #fafaf7; /* Off-white */
+  --background: #ffffff; /* Off-white */
   --foreground: #0f1e16; /* Deep green-black text */
   --card: #ffffff; /* Clean card surface */
   --card-foreground: #0f1e16;
   --popover: #ffffff;
   --popover-foreground: #0f1e16;
-  --primary: #005b35; /* Deep green */
+  --primary: #00623b; /* Deep green */
   --primary-foreground: #ffffff;
   --secondary: #f4b000; /* Warm gold accent */
   --secondary-foreground: #005b35;

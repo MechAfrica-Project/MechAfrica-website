@@ -79,9 +79,9 @@ export const navItems: SiteNavItem[] = [
 
 export const partners = [
   {
-    name: "Agrinvest Limited",
-    note: "Founding partner",
-    image: "/images/marketing/agrinvest.png",
+    name: "AGRA",
+    note: "Partner",
+    image: "/images/marketing/Agra.png",
   },
   {
     name: "MechLink Limited",
@@ -89,9 +89,9 @@ export const partners = [
     image: "/images/marketing/mechlink.png",
   },
   {
-    name: "AGRA",
-    note: "Partner",
-    image: "/images/marketing/Agra.png",
+    name: "Agrinvest Limited",
+    note: "Founding partner",
+    image: "/images/marketing/agrinvest.png",
   },
 ] as const;
 
@@ -148,7 +148,7 @@ export const impactMetrics: SiteMetric[] = [
 export const testimonials: SiteTestimonial[] = [
   {
     type: "Farmer story",
-    name: "Ama K.",
+    name: "Kojo A.",
     role: "Maize farmer, Northern Ghana",
     quote:
       "I used to struggle to find timely ploughing. With MechAfrica, I can request early, get updates, and plan my season with more confidence.",
@@ -293,4 +293,3 @@ export const downloadScreenshots: AppScreenshot[] = [
     imageSrc: "/images/screenshots/agents-01.png",
   },
 ];
-

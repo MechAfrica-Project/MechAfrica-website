@@ -3,13 +3,12 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { navItems, siteConfig } from "@/content/site-config";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Container } from "@/components/site/Container";
 import { Logo } from "@/components/site/Logo";
 import { UssdButton } from "@/components/site/UssdButton";
 
@@ -58,8 +57,8 @@ function DesktopNav() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium text-foreground/80 transition-colors hover:text-foreground",
-                active && "text-foreground"
+                "rounded-full px-5 py-3 text-[15px] font-medium text-[#151915] transition-colors hover:text-primary",
+                active && "border border-[#d9ddd8] bg-white shadow-[0_8px_24px_rgba(0,0,0,0.05)]"
               )}
             >
               {item.label}
@@ -73,15 +72,14 @@ function DesktopNav() {
             <button
               type="button"
               className={cn(
-                "inline-flex items-center gap-1 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground",
-                active && "text-foreground"
+                "inline-flex items-center rounded-full px-1 py-3 text-[15px] font-medium text-[#151915] transition-colors hover:text-primary",
+                active && "text-primary"
               )}
               aria-haspopup="menu"
               aria-expanded={solutionsOpen}
               onClick={() => setSolutionsOpen((v) => !v)}
             >
               {item.label}
-              <ChevronDown className={cn("size-4 transition-transform", solutionsOpen && "rotate-180")} />
             </button>
 
             <div
@@ -198,8 +196,8 @@ function MobileNav() {
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <Container className="flex h-16 items-center justify-between gap-3">
+    <header className="relative z-50 bg-white">
+      <div className="mx-auto flex h-[104px] w-full max-w-[1128px] items-center justify-between gap-8 px-5 sm:px-6">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-background focus:px-3 focus:py-2 focus:text-sm focus:shadow"
@@ -213,15 +211,15 @@ export function Navbar() {
 
         <DesktopNav />
 
-        <div className="hidden items-center gap-2 md:flex">
-          <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} />
-          <Button asChild className="h-11 rounded-full px-5">
+        <div className="hidden items-center gap-3 md:flex">
+          <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} className="h-[58px] px-8 text-primary" />
+          <Button asChild className="h-[58px] rounded-full bg-primary px-12 text-[15px] font-medium text-white hover:bg-primary/90">
             <Link href="/download">Download</Link>
           </Button>
         </div>
 
         <MobileNav />
-      </Container>
+      </div>
     </header>
   );
 }

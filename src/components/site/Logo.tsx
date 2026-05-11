@@ -16,13 +16,26 @@ export function Logo({
       className={cn("inline-flex items-center gap-2", className)}
       aria-label="MechAfrica home"
     >
-      <Image
-        src="/assets/pngs/logoV2.png"
-        width={size * 2.4}
-        height={size}
-        alt="MechAfrica"
-        priority
-      />
+      <span
+        className="relative block shrink-0 overflow-hidden"
+        style={{ width: size, height: size }}
+        aria-hidden="true"
+      >
+        <Image
+          src="/assets/pngs/logo.png"
+          fill
+          alt=""
+          className="scale-[1.85] object-contain"
+          priority
+        />
+      </span>
+      <span
+        className="flex flex-col font-sans font-medium leading-[0.92] text-primary"
+        style={{ fontSize: size * 0.38 }}
+      >
+        <span className="font-bold">Mech</span>
+        <span>Africa</span>
+      </span>
     </Link>
   );
 }
