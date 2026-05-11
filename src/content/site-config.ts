@@ -66,16 +66,14 @@ export const siteConfig = {
 
 export const navItems: SiteNavItem[] = [
   { label: "Home", href: "/" },
-  { label: "How It Works", href: "/how-it-works" },
   {
-    label: "Solutions",
+    label: "Solution",
     children: [
       { label: "For Farmers", href: "/solutions/farmers" },
       { label: "For Service Providers", href: "/solutions/service-providers" },
       { label: "For Agents", href: "/solutions/agents" },
     ],
   },
-  { label: "Download", href: "/download" },
   { label: "Contact", href: "/contact" },
 ];
 

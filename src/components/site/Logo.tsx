@@ -17,7 +17,7 @@ export function Logo({
       aria-label="MechAfrica home"
     >
       <Image
-        src="/assets/pngs/logoV3.png"
+        src="/assets/pngs/logoV2.png"
         width={size * 2.4}
         height={size}
         alt="MechAfrica"
