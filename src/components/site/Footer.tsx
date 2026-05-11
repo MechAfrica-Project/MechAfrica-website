@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
 import { impactMetrics, siteConfig } from "@/content/site-config";
 import { Container } from "@/components/site/Container";
 import { Logo } from "@/components/site/Logo";
 import { AppStoreButtons } from "@/components/site/AppStoreButtons";
-import { UssdButton } from "@/components/site/UssdButton";
+import Image from "next/image";
 
 const quickLinks = [
   { label: "About", href: "/about" },
@@ -35,14 +35,21 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t bg-background text-foreground">
-      <Container className="py-12">
+    <footer className="border-t bg-white text-foreground">
+      <Container className="py-12 pb-6">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="space-y-4 md:col-span-5">
-            <Logo />
+     
+      <Image
+        src="/assets/pngs/mechafrica.png"
+        width={120}
+        height={50}
+        alt="MechAfrica"
+        priority
+      />
             <p className="max-w-md text-sm text-muted-foreground">
-              MechAfrica is a Ghana-first agricultural services network connecting farmers, service providers,
-              and field teams — with offline-first workflows and USSD access.
+              MechAfrica connects farmers struggling to find timely, reliable services to Providers who
+              struggle with visibility and coordination — via mobile apps and USSD.
             </p>
 
             <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
@@ -54,17 +61,19 @@ export function Footer() {
               ))}
             </div>
 
-            <div className="space-y-2 rounded-2xl border border-border bg-muted p-4">
-              <div className="text-sm font-semibold">Need a smartphone-free option?</div>
-              <div className="flex flex-wrap items-center gap-2">
-                <UssdButton
-                  code={siteConfig.ussd.code}
-                  telHref={siteConfig.ussd.telHref}
-                />
-                <div className="text-sm text-muted-foreground">
-                  Farmers can request services via USSD.
-                </div>
-              </div>
+            <div className="flex items-center gap-4">
+              <a href={siteConfig.social.facebook} aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Facebook className="size-5" />
+              </a>
+              <a href={siteConfig.social.x} aria-label="Twitter / X" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Twitter className="size-5" />
+              </a>
+              <a href={siteConfig.social.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Instagram className="size-5" />
+              </a>
+              <a href={siteConfig.social.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Linkedin className="size-5" />
+              </a>
             </div>
           </div>
 
