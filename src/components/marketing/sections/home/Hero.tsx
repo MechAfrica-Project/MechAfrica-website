@@ -32,7 +32,7 @@ export function HomeHero() {
           width={790}
           height={659}
           priority
-          className="absolute left-[5px] top-[100px] md:top-27 lg:top-22 z-10 w-55 md:w-95 lg:w-140"
+          className="absolute left-[5px] top-[100px] md:top-27 lg:top-22 z-10 w-55 md:w-95 lg:w-140 xl:"
         />
 
         <div className="absolute right-[55px] top-[115px] z-20 max-w-[205px] text-primary max-[480px]:right-[18px] max-[480px]:top-[130px] max-[480px]:max-w-[145px] max-[360px]:right-[14px] max-[360px]:max-w-[130px] md:right-[8%] md:top-[170px] md:max-w-[340px] lg:right-[11%] lg:top-[180px] lg:max-w-[390px] xl:right-[12.5%]">
