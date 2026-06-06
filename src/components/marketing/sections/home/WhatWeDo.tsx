@@ -39,9 +39,7 @@ export function WhatWeDo() {
           alt="Smiling farmer"
           width={610}
           height={477}
-          className="absolute z-10 object-contain
-            right-[-30px] top-[45px] w-[260px]
-            "
+          className="absolute z-10 object-contain right-[-30px] top-[45px] md:top-[-100] w-[260px] md:w-150"
           priority
         />
 
@@ -51,7 +49,8 @@ export function WhatWeDo() {
           </h2>
           <p className="mt-3 max-w-[260px] text-[11px] font-medium leading-[1.5] text-white/86 max-[480px]:max-w-[230px] md:mt-4 md:max-w-[470px] md:text-[15px] lg:mt-5 lg:text-[17px]">
             MechAfrica reduces friction across the service chain — so farmers
-            can plan and providers can deliver, even with unreliable connectivity.
+            can plan and providers can deliver, even with unreliable
+            connectivity.
           </p>
           <Button
             asChild
@@ -81,7 +80,9 @@ export function WhatWeDo() {
 
           <article className="rounded-[12px] bg-[#a7ec33] p-2 text-center text-primary shadow-[0_12px_28px_rgba(0,0,0,0.14)] max-[480px]:p-1.5 md:rounded-[24px] md:p-5 lg:p-6">
             <h3 className="text-[8.5px] font-bold leading-[1.35] md:text-[15px] lg:text-[17px]">
-              We connect Farmers<br />to Service Providers
+              We connect Farmers
+              <br />
+              to Service Providers
             </h3>
             <div className="mt-3 flex h-[44px] items-center justify-center rounded-[9px] bg-white max-[480px]:mt-2.5 max-[480px]:h-[36px] md:mt-6 md:h-[112px] md:rounded-[20px] lg:h-[128px]">
               <Image
