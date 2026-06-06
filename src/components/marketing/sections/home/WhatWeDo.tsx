@@ -7,8 +7,15 @@ import { Container } from "@/components/site/Container";
 
 export function WhatWeDo() {
   return (
-    <section className="relative -mt-1 bg-primary text-white">
-      {/* Mobile decorative strips — different clip-path shapes from desktop */}
+    <section className="relative -mt-12 bg-[#a7ec33] text-white">
+      {/* Primary background — diagonal clip lets lime green section bg show through at top */}
+      <div
+        className="absolute inset-x-0 top-0 h-14 bg-primary md:h-20 lg:h-24"
+        style={{ clipPath: "polygon(0 40%, 100% 0, 100% 100%, 0 100%)" }}
+      />
+      <div className="absolute inset-x-0 top-14 bottom-0 bg-primary md:top-20 lg:top-24" />
+
+      {/* Mobile decorative strips at bottom */}
       <div
         className="absolute inset-x-0 bottom-0 h-[260px] bg-[#00492f] md:hidden"
         style={{ clipPath: "polygon(0 18%, 100% 40%, 100% 100%, 0 100%)" }}
@@ -16,12 +23,6 @@ export function WhatWeDo() {
       <div
         className="absolute inset-x-0 bottom-0 h-10 bg-white md:hidden"
         style={{ clipPath: "polygon(0 78%, 100% 42%, 100% 100%, 0 100%)" }}
-      />
-
-      {/* Desktop decorative strips */}
-      <div
-        className="absolute inset-x-0 top-0 hidden h-20 bg-[#a7ec33] md:block lg:h-24"
-        style={{ clipPath: "polygon(0 0, 100% 0, 100% 55%, 0 100%)" }}
       />
       <div
         className="absolute inset-x-0 bottom-0 hidden h-[300px] bg-[#00492f] md:block lg:h-[340px]"
