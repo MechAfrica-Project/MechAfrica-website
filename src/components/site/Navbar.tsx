@@ -48,7 +48,7 @@ function DesktopNav() {
   }, []);
 
   return (
-    <div className="hidden items-center gap-6 md:flex">
+    <div className="hidden items-center gap-6 lg:flex">
       {navItems.map((item) => {
         if ("href" in item) {
           const active = isActivePath(pathname, item.href);
@@ -122,7 +122,7 @@ function MobileNav() {
         <Button
           variant="outline"
           size="icon"
-          className="h-10 w-10 rounded-full md:hidden"
+          className="h-10 w-10 rounded-full lg:hidden"
           aria-label="Open menu"
         >
           <Menu className="size-4" />
@@ -211,7 +211,7 @@ export function Navbar() {
 
         <DesktopNav />
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <UssdButton code={siteConfig.ussd.code} telHref={siteConfig.ussd.telHref} className="h-[58px] px-8 text-primary" />
           <Button asChild className="h-[58px] rounded-full bg-primary px-12 text-[15px] font-medium text-white hover:bg-primary/90">
             <Link href="/download">Download</Link>

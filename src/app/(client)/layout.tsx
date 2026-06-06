@@ -1,6 +1,5 @@
 import { Footer } from "@/components/site/Footer";
 import { Navbar } from "@/components/site/Navbar";
-import UpdatingPage from "../updating-site/page";
 
 export default function HomeLayout({
   children,

@@ -8,19 +8,19 @@ import { cn } from "@/lib/utils";
 
 const faqItems = [
   {
-    question: "What's the difference between a contractor certified by GAF and a regular roofer?",
+    question: "What is MechAfrica and who is it for?",
     answer:
-      "A contractor certified by GAF has undergone comprehensive training, adheres to strict installation best practices, and meets ongoing performance standards established by North America's largest roofing manufacturer. These contractors can offer limited warranties that are stronger and longer-lasting than those available from uncertified installers.\n\nBy contrast, a regular roofer may not follow the same quality protocols or stay updated with innovations in the roofing industry. When you choose a GAF-certified professional, you're working with a roofing contractor who has proven their commitment to excellence, safety, and customer satisfaction. It's a difference that directly impacts the durability and lifespan of your roof system.",
+      "MechAfrica is a digital agricultural services platform for farmers, service providers, and field teams. Farmers can request services such as ploughing, planting, spraying, harvesting, threshing, drone support, and transportation, while providers manage requests and coordinate delivery.",
   },
   {
-    question: "How long does a typical residential roofing project take?",
+    question: "Can farmers use MechAfrica without internet?",
     answer:
-      "Most residential roofing projects take one to three days, depending on the roof size, weather, material availability, and the complexity of the installation.",
+      "Yes. Farmers can request services through USSD by dialing *928*193#, so they do not need a smartphone or data connection. The mobile apps are also designed with low-connectivity field conditions in mind.",
   },
   {
-    question: "How do you find a roofing contractor you can d?",
+    question: "How does MechAfrica help service providers?",
     answer:
-      "Review certifications, compare references, ask about warranties, and choose a contractor who clearly explains the scope, schedule, and installation process.",
+      "Service providers get a clearer way to receive requests, plan work, coordinate equipment and teams, and improve visibility with farmers who need timely and reliable services.",
   },
 ];
 
@@ -32,23 +32,23 @@ function FaqRow({ question, answer, defaultOpen = false }: { question: string; a
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-start justify-between gap-8 py-6 text-left"
+        className="flex w-full items-start justify-between gap-3 py-2.5 text-left md:gap-8 md:py-6"
         aria-expanded={open}
       >
-        <span className={cn("max-w-[790px] text-[21px] font-bold leading-snug max-md:text-base", open ? "text-white" : "text-white/90")}>
+        <span className={cn("max-w-[790px] text-[12px] font-bold leading-snug sm:text-[13px] md:text-[21px]", open ? "text-white" : "text-white/90")}>
           {question}
         </span>
         <ArrowRight
           className={cn(
-            "mt-1 size-6 shrink-0 text-white/75 transition-transform duration-200",
+            "mt-0.5 size-3 shrink-0 text-white/75 transition-transform duration-200 md:mt-1 md:size-6",
             open && "rotate-90 text-white"
           )}
         />
       </button>
 
       {open && (
-        <div className="max-w-[850px] whitespace-pre-line pb-8">
-          <p className="text-[18px] font-medium leading-[1.45] text-white/78 max-md:text-sm">{answer}</p>
+        <div className="max-w-[850px] whitespace-pre-line pb-3 md:pb-8">
+          <p className="text-[11px] font-medium leading-[1.55] text-white/78 sm:text-[12px] md:text-[18px]">{answer}</p>
         </div>
       )}
     </div>
@@ -59,20 +59,20 @@ export function HomeFaq() {
   return (
     <section className="relative -mt-1 overflow-hidden bg-primary">
       <div
-        className="absolute inset-x-0 bottom-0 h-44 bg-white"
+        className="absolute inset-x-0 bottom-0 h-12 bg-white md:h-44"
         style={{ clipPath: "polygon(0 60%, 100% 100%, 100% 100%, 0 100%)" }}
       />
-      <Container className="relative z-10 max-w-[930px] pb-72 pt-36 max-md:pb-44 max-md:pt-24">
+      <Container className="relative z-10 max-w-[350px] pb-[86px] pt-12 sm:max-w-[420px] md:max-w-[930px] md:pb-72 md:pt-36">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-[17px] font-bold uppercase tracking-normal text-white/80">
+          <p className="text-[10px] font-bold uppercase tracking-normal text-white/80 md:text-[17px]">
             FAQ
           </p>
-          <h2 className="mt-4 font-serif text-[43px] font-bold leading-[1.08] text-white max-md:text-3xl">
-            Answers to your<br />roofing questions
+          <h2 className="mt-1 font-serif text-[24px] font-bold leading-[1.08] text-white sm:text-[28px] md:mt-4 md:text-[43px]">
+            Answers to your<br />questions
           </h2>
         </div>
 
-        <div className="mx-auto mt-16 max-w-[930px]">
+        <div className="mx-auto mt-4 max-w-[930px] md:mt-16">
           {faqItems.map((item, i) => (
             <FaqRow
               key={item.question}

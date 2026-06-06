@@ -25,6 +25,7 @@ export function Logo({
           src="/assets/pngs/logo.png"
           fill
           alt=""
+          sizes={`${size}px`}
           className="scale-[1.85] object-contain"
           priority
         />
