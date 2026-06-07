@@ -8,6 +8,21 @@ import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { Badge } from "@/components/marketing/Badge";
 
+const nodes = {
+  farmers: { title: "Farmers", subtitle: "Request • Track • Complete", meta: "App or USSD" },
+  providers: { title: "Providers", subtitle: "Accept • Assign • Deliver", meta: "Provider App" },
+  platform: {
+    title: "MechAfrica Platform",
+    subtitle: "Routing • Updates • Coordination",
+    ussd: "USSD expands reach",
+  },
+  agents: {
+    title: "Agents",
+    subtitle: "Onboard • Support • Coordinate",
+    meta: "Agents App (planned release)",
+  },
+} as const;
+
 function MobileCard({
   title,
   subtitle,
@@ -55,24 +70,24 @@ export function EcosystemDiagram({ className }: { className?: string }) {
 
   return (
     <div className={cn("overflow-hidden rounded-3xl border bg-card p-6 shadow-sm", className)}>
-      {/* Mobile / small screens */}
+      {/* Mobile — card list layout */}
       <div className="lg:hidden">
         <div className="grid gap-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <FadeIn>
               <MobileCard
-                title="Farmers"
-                subtitle="Request • Track • Complete"
-                meta="App or USSD"
+                title={nodes.farmers.title}
+                subtitle={nodes.farmers.subtitle}
+                meta={nodes.farmers.meta}
                 icon={<Tractor className="size-5" aria-hidden="true" />}
                 tone="green"
               />
             </FadeIn>
             <FadeIn delay={0.04}>
               <MobileCard
-                title="Providers"
-                subtitle="Accept • Assign • Deliver"
-                meta="Provider App"
+                title={nodes.providers.title}
+                subtitle={nodes.providers.subtitle}
+                meta={nodes.providers.meta}
                 icon={<Wrench className="size-5" aria-hidden="true" />}
                 tone="gold"
               />
@@ -90,8 +105,8 @@ export function EcosystemDiagram({ className }: { className?: string }) {
             <div className="rounded-3xl border bg-muted/35 p-5 shadow-sm">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <div className="font-serif text-xl font-semibold text-foreground">MechAfrica Platform</div>
-                  <div className="mt-1 text-sm text-muted-foreground">Routing • Updates • Coordination</div>
+                  <div className="font-serif text-xl font-semibold text-foreground">{nodes.platform.title}</div>
+                  <div className="mt-1 text-sm text-muted-foreground">{nodes.platform.subtitle}</div>
                 </div>
                 <Badge variant="secondary">USSD reach</Badge>
               </div>
@@ -102,7 +117,7 @@ export function EcosystemDiagram({ className }: { className?: string }) {
                 <Badge>Apps + USSD</Badge>
               </div>
               <div className="mt-4 rounded-2xl border bg-background/70 p-4 text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">USSD expands reach</span> — farmers can request
+                <span className="font-semibold text-foreground">{nodes.platform.ussd}</span> — farmers can request
                 services without a smartphone.
               </div>
             </div>
@@ -117,9 +132,9 @@ export function EcosystemDiagram({ className }: { className?: string }) {
 
           <FadeIn delay={0.14}>
             <MobileCard
-              title="Agents"
-              subtitle="Onboard • Support • Coordinate"
-              meta="Agents App (planned release)"
+              title={nodes.agents.title}
+              subtitle={nodes.agents.subtitle}
+              meta={nodes.agents.meta}
               icon={<Users className="size-5" aria-hidden="true" />}
               tone="neutral"
               badge="Coming soon"
@@ -128,7 +143,7 @@ export function EcosystemDiagram({ className }: { className?: string }) {
         </div>
       </div>
 
-      {/* Desktop */}
+      {/* Desktop — SVG network diagram (genuinely different visual paradigm from the card layout above) */}
       <div className="hidden lg:block">
         <motion.svg
           viewBox="0 0 900 420"
@@ -153,125 +168,39 @@ export function EcosystemDiagram({ className }: { className?: string }) {
             return <circle key={i} cx={x} cy={y} r="28" fill="url(#dot)" opacity="0.7" />;
           })}
 
-          <motion.path
-            d="M260 140 C330 80, 420 70, 480 110"
-            fill="none"
-            stroke={`url(#${gradientId})`}
-            strokeWidth="5"
-            strokeLinecap="round"
-            initial={lineInitial}
-            whileInView={{ pathLength: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ ...lineTransition, delay: 0.05 }}
-          />
-          <motion.path
-            d="M260 280 C330 340, 420 350, 480 310"
-            fill="none"
-            stroke={`url(#${gradientId})`}
-            strokeWidth="5"
-            strokeLinecap="round"
-            initial={lineInitial}
-            whileInView={{ pathLength: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ ...lineTransition, delay: 0.1 }}
-          />
-          <motion.path
-            d="M640 210 C700 210, 740 210, 780 210"
-            fill="none"
-            stroke={`url(#${gradientId})`}
-            strokeWidth="5"
-            strokeLinecap="round"
-            initial={lineInitial}
-            whileInView={{ pathLength: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ ...lineTransition, delay: 0.16 }}
-          />
+          <motion.path d="M260 140 C330 80, 420 70, 480 110" fill="none" stroke={`url(#${gradientId})`} strokeWidth="5" strokeLinecap="round" initial={lineInitial} whileInView={{ pathLength: 1, opacity: 1 }} viewport={{ once: true, amount: 0.6 }} transition={{ ...lineTransition, delay: 0.05 }} />
+          <motion.path d="M260 280 C330 340, 420 350, 480 310" fill="none" stroke={`url(#${gradientId})`} strokeWidth="5" strokeLinecap="round" initial={lineInitial} whileInView={{ pathLength: 1, opacity: 1 }} viewport={{ once: true, amount: 0.6 }} transition={{ ...lineTransition, delay: 0.1 }} />
+          <motion.path d="M640 210 C700 210, 740 210, 780 210" fill="none" stroke={`url(#${gradientId})`} strokeWidth="5" strokeLinecap="round" initial={lineInitial} whileInView={{ pathLength: 1, opacity: 1 }} viewport={{ once: true, amount: 0.6 }} transition={{ ...lineTransition, delay: 0.16 }} />
 
           <g>
-            <rect
-              x="60"
-              y="90"
-              width="200"
-              height="110"
-              rx="26"
-              fill="rgba(11,61,46,0.08)"
-              stroke="rgba(11,61,46,0.25)"
-            />
-            <text x="160" y="135" textAnchor="middle" fontSize="18" fill="rgb(15,30,22)" fontWeight="700">
-              Farmers
-            </text>
-            <text x="160" y="162" textAnchor="middle" fontSize="13" fill="rgba(15,30,22,0.7)">
-              Request • Track • Complete
-            </text>
-            <text x="160" y="188" textAnchor="middle" fontSize="12" fill="rgba(15,30,22,0.55)">
-              App or USSD
-            </text>
+            <rect x="60" y="90" width="200" height="110" rx="26" fill="rgba(11,61,46,0.08)" stroke="rgba(11,61,46,0.25)" />
+            <text x="160" y="135" textAnchor="middle" fontSize="18" fill="rgb(15,30,22)" fontWeight="700">{nodes.farmers.title}</text>
+            <text x="160" y="162" textAnchor="middle" fontSize="13" fill="rgba(15,30,22,0.7)">{nodes.farmers.subtitle}</text>
+            <text x="160" y="188" textAnchor="middle" fontSize="12" fill="rgba(15,30,22,0.55)">{nodes.farmers.meta}</text>
           </g>
 
           <g>
-            <rect
-              x="60"
-              y="220"
-              width="200"
-              height="110"
-              rx="26"
-              fill="rgba(244,176,0,0.10)"
-              stroke="rgba(244,176,0,0.35)"
-            />
-            <text x="160" y="265" textAnchor="middle" fontSize="18" fill="rgb(15,30,22)" fontWeight="700">
-              Providers
-            </text>
-            <text x="160" y="292" textAnchor="middle" fontSize="13" fill="rgba(15,30,22,0.7)">
-              Accept • Assign • Deliver
-            </text>
-            <text x="160" y="318" textAnchor="middle" fontSize="12" fill="rgba(15,30,22,0.55)">
-              Provider App
-            </text>
+            <rect x="60" y="220" width="200" height="110" rx="26" fill="rgba(244,176,0,0.10)" stroke="rgba(244,176,0,0.35)" />
+            <text x="160" y="265" textAnchor="middle" fontSize="18" fill="rgb(15,30,22)" fontWeight="700">{nodes.providers.title}</text>
+            <text x="160" y="292" textAnchor="middle" fontSize="13" fill="rgba(15,30,22,0.7)">{nodes.providers.subtitle}</text>
+            <text x="160" y="318" textAnchor="middle" fontSize="12" fill="rgba(15,30,22,0.55)">{nodes.providers.meta}</text>
           </g>
 
           <g>
-            <rect
-              x="480"
-              y="140"
-              width="260"
-              height="160"
-              rx="32"
-              fill="rgba(11,61,46,0.06)"
-              stroke="rgba(11,61,46,0.25)"
-            />
-            <text x="610" y="188" textAnchor="middle" fontSize="18" fill="rgb(15,30,22)" fontWeight="800">
-              MechAfrica Platform
-            </text>
-            <text x="610" y="214" textAnchor="middle" fontSize="13" fill="rgba(15,30,22,0.7)">
-              Routing • Status updates • Coordination
-            </text>
+            <rect x="480" y="140" width="260" height="160" rx="32" fill="rgba(11,61,46,0.06)" stroke="rgba(11,61,46,0.25)" />
+            <text x="610" y="188" textAnchor="middle" fontSize="18" fill="rgb(15,30,22)" fontWeight="800">{nodes.platform.title}</text>
+            <text x="610" y="214" textAnchor="middle" fontSize="13" fill="rgba(15,30,22,0.7)">Routing • Status updates • Coordination</text>
             <g>
               <rect x="510" y="250" width="200" height="34" rx="17" fill="rgba(244,176,0,0.16)" />
-              <text x="610" y="272" textAnchor="middle" fontSize="12" fill="rgb(15,30,22)" fontWeight="700">
-                USSD expands reach
-              </text>
+              <text x="610" y="272" textAnchor="middle" fontSize="12" fill="rgb(15,30,22)" fontWeight="700">{nodes.platform.ussd}</text>
             </g>
           </g>
 
           <g>
-            <rect
-              x="780"
-              y="155"
-              width="120"
-              height="110"
-              rx="26"
-              fill="rgba(11,61,46,0.08)"
-              stroke="rgba(11,61,46,0.25)"
-            />
-            <text x="840" y="200" textAnchor="middle" fontSize="18" fill="rgb(15,30,22)" fontWeight="700">
-              Agents
-            </text>
-            <text x="840" y="226" textAnchor="middle" fontSize="12" fill="rgba(15,30,22,0.6)">
-              Onboard • Support
-            </text>
-            <text x="840" y="248" textAnchor="middle" fontSize="12" fill="rgba(15,30,22,0.6)">
-              Coordinate
-            </text>
+            <rect x="780" y="155" width="120" height="110" rx="26" fill="rgba(11,61,46,0.08)" stroke="rgba(11,61,46,0.25)" />
+            <text x="840" y="200" textAnchor="middle" fontSize="18" fill="rgb(15,30,22)" fontWeight="700">{nodes.agents.title}</text>
+            <text x="840" y="226" textAnchor="middle" fontSize="12" fill="rgba(15,30,22,0.6)">Onboard • Support</text>
+            <text x="840" y="248" textAnchor="middle" fontSize="12" fill="rgba(15,30,22,0.6)">Coordinate</text>
           </g>
         </motion.svg>
       </div>
