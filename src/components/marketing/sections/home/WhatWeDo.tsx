@@ -39,7 +39,7 @@ export function WhatWeDo() {
           alt="Smiling farmer"
           width={610}
           height={477}
-          className="absolute z-10 object-contain right-[-30px] top-[45px] md:top-[-100] w-[260px] md:w-150"
+          className="absolute z-10 object-contain right-[-30px] top-[45px] md:top-[-100] lg:top-[-120] w-[260px] md:w-150 lg:w-180"
           priority
         />
 
