@@ -5,7 +5,7 @@ import { Container } from "@/components/site/Container";
 
 export function PartnersStrip() {
   return (
-    <section className="bg-white py-11 md:py-36">
+    <section className="bg-white py-8 md:py-11">
       <Container className="max-w-[1140px] px-8 md:px-4">
         <div className="mx-auto max-w-[1050px] text-center">
           <h2 className="font-serif text-[20px] font-bold leading-tight text-primary md:text-[43px]">
