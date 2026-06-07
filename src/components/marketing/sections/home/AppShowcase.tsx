@@ -25,33 +25,33 @@ export function AppShowcase() {
         </div>
       </Container>
 
-      <div className="relative mt-11 h-[365px] bg-white md:mt-28 md:h-[910px]">
+      <div className="relative mt-11 h-[330px] bg-white sm:h-[420px] md:mt-28 md:h-[910px]">
         <div
-          className="absolute inset-x-0 top-0 h-[250px] bg-primary md:h-[610px]"
+          className="absolute inset-x-0 top-0 h-[215px] bg-primary sm:h-[270px] md:h-[610px]"
           style={{ clipPath: "polygon(0 0, 100% 25%, 100% 82%, 0 66%)" }}
         />
-        <div className="absolute left-1/2 top-[22px] flex w-[760px] -translate-x-1/2 items-start justify-center md:top-[80px] md:w-[1660px]">
+        <div className="absolute inset-x-0 top-4 flex items-start justify-center gap-3 md:top-[80px] md:gap-6">
           <Image
             src={IMAGES.marketing.farmersApp}
             alt="Farmers App"
-            width={540}
-            height={739}
-            className="mt-[42px] w-[235px] object-contain md:mt-[88px] md:w-[540px]"
+            width={600}
+            height={750}
+            className="mt-[22px] w-[27vw] max-w-[380px] object-contain md:mt-[88px]"
           />
           <Image
             src={IMAGES.marketing.mechAppHomeScreen}
             alt="MechAfrica App"
-            width={575}
-            height={575}
-            className="-ml-4 w-[250px] object-contain md:-ml-8 md:w-[575px]"
+            width={600}
+            height={750}
+            className="w-[32vw] max-w-[460px] object-contain"
             priority
           />
           <Image
             src={IMAGES.marketing.providersApp}
             alt="Providers App"
-            width={560}
-            height={712}
-            className="-ml-1 mt-[32px] w-[250px] object-contain md:-ml-2 md:mt-[64px] md:w-[560px]"
+            width={600}
+            height={750}
+            className="mt-[16px] w-[27vw] max-w-[380px] object-contain md:mt-[64px]"
           />
         </div>
       </div>
