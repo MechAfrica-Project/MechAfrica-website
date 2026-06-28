@@ -14,10 +14,13 @@ export function AppShowcase() {
             Clear journeys for every role
           </h2>
           <p className="mx-auto mt-3 max-w-[370px] text-[11px] font-medium leading-[1.45] text-primary/80 md:mt-8 md:max-w-none md:text-[22px]">
-            MechAfrica is designed to support how services actually move —
-            from demand to delivery to coordination.
+            MechAfrica is designed to support how services actually move — from
+            demand to delivery to coordination.
           </p>
-          <Button asChild className="mt-5 h-[30px] rounded-[10px] bg-[#a7ec33] px-5 text-[9px] font-bold text-primary shadow-none hover:bg-[#b4f146] md:mt-10 md:h-[70px] md:rounded-[24px] md:px-11 md:text-[17px]">
+          <Button
+            asChild
+            className="mt-5 h-[30px] rounded-[10px] bg-[#a7ec33] px-5 text-[9px] font-bold text-primary shadow-none hover:bg-[#b4f146] md:mt-10 md:h-[70px] md:rounded-[24px] md:px-11 md:text-[17px]"
+          >
             <Link href="/download">
               Download The App <span className="ml-3 md:ml-6">→</span>
             </Link>
@@ -25,33 +28,38 @@ export function AppShowcase() {
         </div>
       </Container>
 
-      <div className="relative mt-11 h-[330px] bg-white sm:h-[420px] md:mt-28 md:h-[910px]">
+      <div className="relative mt-10 h-[260px] sm:mt-12 sm:h-[330px] md:mt-20 md:h-[440px] lg:mt-24 lg:h-[600px] xl:h-[700px]">
         <div
-          className="absolute inset-x-0 top-0 h-[215px] bg-primary sm:h-[270px] md:h-[610px]"
-          style={{ clipPath: "polygon(0 0, 100% 25%, 100% 82%, 0 66%)" }}
+          className="absolute inset-0 bg-[#003d24]"
+          style={{ clipPath: "polygon(0 0, 100% 16%, 100% 40%, 0 58%)" }}
         />
-        <div className="absolute inset-x-0 top-4 flex items-start justify-center gap-3 md:top-[80px] md:gap-6">
+        <div
+          className="absolute inset-0 bg-primary"
+          style={{ clipPath: "polygon(0 58%, 100% 40%, 100% 64%, 0 82%)" }}
+        />
+
+        <div className="absolute inset-x-0 top-[8%] flex items-start justify-center gap-1 px-4 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5">
           <Image
             src={IMAGES.marketing.farmersApp}
             alt="Farmers App"
-            width={600}
-            height={750}
-            className="mt-[22px] w-[27vw] max-w-[380px] object-contain md:mt-[88px]"
+            width={437}
+            height={571}
+            className="h-[100px] w-auto translate-y-[14%] object-contain sm:h-[150px] md:h-[210px] lg:h-[290px] xl:h-[350px]"
           />
           <Image
             src={IMAGES.marketing.mechAppHomeScreen}
             alt="MechAfrica App"
-            width={600}
-            height={750}
-            className="w-[32vw] max-w-[460px] object-contain"
+            width={975}
+            height={975}
             priority
+            className="h-[115px] w-auto object-contain sm:h-[175px] md:h-[240px] lg:h-[335px] xl:h-[405px]"
           />
           <Image
             src={IMAGES.marketing.providersApp}
             alt="Providers App"
-            width={600}
-            height={750}
-            className="mt-[16px] w-[27vw] max-w-[380px] object-contain md:mt-[64px]"
+            width={447}
+            height={558}
+            className="h-[100px] w-auto translate-y-[8%] object-contain sm:h-[150px] md:h-[210px] lg:h-[290px] xl:h-[350px]"
           />
         </div>
       </div>
