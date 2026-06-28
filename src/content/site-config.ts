@@ -155,6 +155,7 @@ export const testimonials: SiteTestimonial[] = [
     role: "Maize farmer, Northern Ghana",
     quote:
       "I used to struggle to find timely ploughing. With MechAfrica, I can request early, get updates, and plan my season with more confidence.",
+    image: "farmers",
     isPlaceholder: true,
   },
   {
@@ -163,6 +164,7 @@ export const testimonials: SiteTestimonial[] = [
     role: "Agricultural service provider",
     quote:
       "Demand is easier to manage when jobs are organized in one place. I can accept requests, coordinate my team, and keep farmers updated.",
+    image: "providers",
     isPlaceholder: true,
   },
   {
@@ -171,6 +173,7 @@ export const testimonials: SiteTestimonial[] = [
     role: "Partner perspective",
     quote:
       "MechAfrica strengthens service delivery by connecting people, tools, and workflows — including users who rely on USSD and offline access.",
+    image: "stories",
     isPlaceholder: true,
   },
 ];
