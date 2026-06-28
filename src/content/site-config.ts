@@ -1,3 +1,5 @@
+import type { MarketingImageKey } from "@/lib/images";
+
 export type SiteNavItem =
   | { label: string; href: string }
   | { label: string; children: { label: string; href: string }[] };
@@ -13,6 +15,7 @@ export type SiteTestimonial = {
   name: string;
   role: string;
   quote: string;
+  image: MarketingImageKey;
   isPlaceholder?: boolean;
 };
 
