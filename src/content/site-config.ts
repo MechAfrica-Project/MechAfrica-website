@@ -29,7 +29,7 @@ export const siteConfig = {
   tagline: "Connecting farmers to the services that power agriculture",
   description:
     "MechAfrica is a Ghana-first digital agricultural services platform connecting farmers to land preparation, planting, spraying, harvesting, logistics, and technical support — through mobile apps and USSD, with role-based tools for providers and field teams.",
-  url: "https://mechafrica.example",
+  url: "https://mechafrica.com",
 
   ussd: {
     code: "*928*193#",
@@ -51,9 +51,9 @@ export const siteConfig = {
   },
 
   contact: {
-    email: "hello@mechafrica.example",
-    phone: "+233 XX XXX XXXX",
-    address: "Accra, Ghana",
+    email: "hello@mechafrica.com",
+    phone: "+233 552 778 748",
+    address: "Kumasi, Ghana",
   },
 
   social: {
@@ -143,8 +143,8 @@ export const platformHighlights = [
 ] as const;
 
 export const impactMetrics: SiteMetric[] = [
-  { label: "Farmers registered", value: "100,000+" },
-  { label: "Service providers onboarded", value: "300,000+" },
+  { label: "Farmers registered", value: "50,000+" },
+  { label: "Service providers onboarded", value: "1,000+" },
   { label: "USSD access for farmers", value: "*928*193#" },
   { label: "Current focus", value: "Ghana" },
 ];
