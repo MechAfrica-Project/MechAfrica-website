@@ -16,7 +16,7 @@ export default function AgentsPage() {
       heading="Agents App"
       heroImage={IMAGES.marketing.agents}
       heroAlt="Field agent coordinating with farmers"
-      phoneImage={IMAGES.marketing.mechAppHomeScreen}
+      phoneImage={IMAGES.marketing.agentApp}
       phoneAlt="MechAfrica app splash screen"
       phoneWidth={975}
       phoneHeight={975}

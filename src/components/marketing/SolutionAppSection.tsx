@@ -64,7 +64,7 @@ export function SolutionAppSection({
               alt={phoneAlt}
               width={phoneWidth}
               height={phoneHeight}
-              className="-mt-[100px] w-[145px] object-contain drop-shadow-2xl sm:-mt-[160px] sm:w-[210px] md:-mt-[210px] md:w-[270px] lg:-mt-[270px] lg:w-[340px]"
+              className="-mt-[100px] w-[145px] object-contain drop-shadow-2xl sm:-mt-[175px] sm:w-[230px] md:-mt-[230px] md:w-[300px] lg:-mt-[320px] lg:w-[400px] xl:-mt-[360px] xl:w-[450px]"
             />
           </div>
         </div>
