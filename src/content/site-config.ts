@@ -80,6 +80,12 @@ export const navItems: SiteNavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
+export const founder = {
+  name: "MechLink Limited",
+  note: "Founder & developer",
+  image: "/images/marketing/mechlink.png",
+} as const;
+
 export const partners = [
   {
     name: "AGRA",
@@ -87,13 +93,8 @@ export const partners = [
     image: "/images/marketing/Agra.png",
   },
   {
-    name: "MechLink Limited",
-    note: "Founding partner",
-    image: "/images/marketing/mechlink.png",
-  },
-  {
     name: "Agrinvest Limited",
-    note: "Founding partner",
+    note: "Partner",
     image: "/images/marketing/agrinvest.png",
   },
 ] as const;

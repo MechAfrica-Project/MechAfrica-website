@@ -13,11 +13,11 @@ import {
 } from "lucide-react";
 
 import { siteConfig } from "@/content/site-config";
+import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
-import { FadeIn } from "@/components/marketing/motion/FadeIn";
-import { SectionHeader } from "@/components/marketing/SectionHeader";
-import { Badge } from "@/components/marketing/Badge";
+import { PageHero } from "@/components/marketing/PageHero";
+import { TiltedCallout } from "@/components/marketing/TiltedCallout";
 import { EcosystemDiagram } from "@/components/marketing/EcosystemDiagram";
 
 export const metadata: Metadata = {
@@ -60,191 +60,157 @@ const infrastructure = [
 export default function HowItWorksPage() {
   return (
     <>
-      <section className="bg-background">
-        <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge>Step-by-step</Badge>
-              <Badge variant="outline">Apps + USSD</Badge>
-              <Badge variant="outline">Offline-first</Badge>
-            </div>
-            <h1 className="mt-6 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              How MechAfrica works
-            </h1>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Requests move from farmer to provider to completion — supported by USSD access, offline-first
-              workflows, and clear status updates.
+      <PageHero
+        heroImage={IMAGES.marketing.logistics}
+        heroAlt="Service providers loading produce for transport"
+        heading="How MechAfrica works"
+        description="Requests move from farmer to provider to completion — supported by USSD access, offline-first workflows, and clear status updates."
+        cta={
+          <>
+            <Button asChild className="h-11 rounded-full bg-primary px-5 text-white hover:bg-primary/90">
+              <Link href="/download">Download & access</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="h-11 rounded-full border-primary/30 px-5 text-primary hover:bg-primary/5"
+            >
+              <Link href="/contact">Partner or get support</Link>
+            </Button>
+          </>
+        }
+      />
+
+      <section className="bg-muted/60 py-12 sm:py-16 md:py-20">
+        <Container>
+          <div className="mx-auto max-w-xl text-center">
+            <h2 className="font-serif text-2xl font-bold leading-tight text-primary sm:text-3xl md:text-4xl">
+              A connected network, not a single app
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-primary/80 sm:text-base">
+              Farmers request services, providers deliver, and agents support onboarding and
+              coordination.
             </p>
-            <div className="mt-7 flex flex-wrap gap-2">
-              <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                <Link href="/download">Download & access</Link>
-              </Button>
-              <Button asChild variant="outline" className="h-11 rounded-full px-5">
-                <Link href="/contact">Partner or get support</Link>
-              </Button>
-            </div>
-          </FadeIn>
+          </div>
+          <div className="mt-10">
+            <EcosystemDiagram />
+          </div>
         </Container>
       </section>
 
-      <section className="bg-muted/35">
-        <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <SectionHeader
-              eyebrow="Network model"
-              title="A connected network, not a single app"
-              description="Farmers request services, providers deliver, and agents support onboarding and coordination."
-            />
-          </FadeIn>
-          <FadeIn delay={0.06}>
-            <div className="mt-10">
-              <EcosystemDiagram />
-            </div>
-          </FadeIn>
-        </Container>
-      </section>
-
-      <section className="bg-background">
-        <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <SectionHeader
-              eyebrow="Flows"
-              title="Clear steps for each audience"
-              description="Each role has a distinct journey — designed to reduce friction and improve delivery."
-            />
-          </FadeIn>
+      <section className="bg-white py-12 sm:py-16 md:py-20">
+        <Container>
+          <div className="mx-auto max-w-xl text-center">
+            <h2 className="font-serif text-2xl font-bold leading-tight text-primary sm:text-3xl md:text-4xl">
+              Clear steps for each audience
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-primary/80 sm:text-base">
+              Each role has a distinct journey — designed to reduce friction and improve
+              delivery.
+            </p>
+          </div>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            <FadeIn delay={0.02}>
-              <div id="farmers" className="rounded-3xl border bg-card p-6 shadow-sm">
-                <div className="font-serif text-xl font-semibold text-foreground">For farmers</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Request → track → complete (via app or USSD)
-                </p>
-                <ol className="mt-5 space-y-3">
-                  {farmerFlow.map((s, idx) => (
-                    <li key={s.title} className="flex items-start gap-3">
-                      <div className="mt-0.5 inline-flex size-7 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground">
-                        {idx + 1}
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-foreground">{s.title}</div>
-                        <div className="text-sm text-muted-foreground">{s.text}</div>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </FadeIn>
+            <div id="farmers" className="rounded-2xl bg-accent p-6">
+              <div className="font-serif text-lg font-bold text-primary">For farmers</div>
+              <p className="mt-2 text-sm text-primary/80">
+                Request → track → complete (via app or USSD)
+              </p>
+              <ol className="mt-5 space-y-3">
+                {farmerFlow.map((s, idx) => (
+                  <li key={s.title} className="flex items-start gap-3">
+                    <div className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
+                      {idx + 1}
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-primary">{s.title}</div>
+                      <div className="text-sm text-primary/80">{s.text}</div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
 
-            <FadeIn delay={0.06}>
-              <div id="providers" className="rounded-3xl border bg-card p-6 shadow-sm">
-                <div className="font-serif text-xl font-semibold text-foreground">For providers</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Receive demand → accept → assign assets → complete
-                </p>
-                <ol className="mt-5 space-y-3">
-                  {providerFlow.map((s, idx) => (
-                    <li key={s.title} className="flex items-start gap-3">
-                      <div className="mt-0.5 inline-flex size-7 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground">
-                        {idx + 1}
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-foreground">{s.title}</div>
-                        <div className="text-sm text-muted-foreground">{s.text}</div>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </FadeIn>
+            <div id="providers" className="rounded-2xl bg-accent p-6">
+              <div className="font-serif text-lg font-bold text-primary">For providers</div>
+              <p className="mt-2 text-sm text-primary/80">
+                Receive demand → accept → assign assets → complete
+              </p>
+              <ol className="mt-5 space-y-3">
+                {providerFlow.map((s, idx) => (
+                  <li key={s.title} className="flex items-start gap-3">
+                    <div className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
+                      {idx + 1}
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-primary">{s.title}</div>
+                      <div className="text-sm text-primary/80">{s.text}</div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
 
-            <FadeIn delay={0.1}>
-              <div id="agents" className="rounded-3xl border bg-card p-6 shadow-sm">
-                <div className="flex items-start justify-between gap-2">
-                  <div className="font-serif text-xl font-semibold text-foreground">For agents</div>
-                  <Badge variant="outline">Planned release</Badge>
-                </div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Onboard → support → coordinate (coming soon)
-                </p>
-                <ol className="mt-5 space-y-3">
-                  {agentFlow.map((s, idx) => (
-                    <li key={s.title} className="flex items-start gap-3">
-                      <div className="mt-0.5 inline-flex size-7 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground">
-                        {idx + 1}
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-foreground">{s.title}</div>
-                        <div className="text-sm text-muted-foreground">{s.text}</div>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
+            <div id="agents" className="rounded-2xl bg-accent p-6">
+              <div className="flex items-start justify-between gap-2">
+                <div className="font-serif text-lg font-bold text-primary">For agents</div>
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                  Planned release
+                </span>
               </div>
-            </FadeIn>
+              <p className="mt-2 text-sm text-primary/80">
+                Onboard → support → coordinate (coming soon)
+              </p>
+              <ol className="mt-5 space-y-3">
+                {agentFlow.map((s, idx) => (
+                  <li key={s.title} className="flex items-start gap-3">
+                    <div className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
+                      {idx + 1}
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-primary">{s.title}</div>
+                      <div className="text-sm text-primary/80">{s.text}</div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </Container>
       </section>
 
-      <section className="bg-muted/35">
-        <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <SectionHeader
-              eyebrow="Infrastructure"
-              title="Infrastructure that keeps delivery reliable"
-              description="Apps, USSD, offline-first design, and coordination workflows built for service delivery at scale."
-            />
-          </FadeIn>
+      <section className="bg-muted/60 py-12 sm:py-16 md:py-20">
+        <Container>
+          <div className="mx-auto max-w-xl text-center">
+            <h2 className="font-serif text-2xl font-bold leading-tight text-primary sm:text-3xl md:text-4xl">
+              Infrastructure that keeps delivery reliable
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-primary/80 sm:text-base">
+              Apps, USSD, offline-first design, and coordination workflows built for service
+              delivery at scale.
+            </p>
+          </div>
 
           <div id="infrastructure" className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {infrastructure.map((x, idx) => (
-              <FadeIn key={x.title} delay={idx * 0.02}>
-                <div className="rounded-3xl border bg-card p-6 shadow-sm">
-                  <div className="mb-3 inline-flex size-10 items-center justify-center rounded-2xl bg-accent text-primary">
-                    <x.icon className="size-5" aria-hidden="true" />
-                  </div>
-                  <div className="font-serif text-lg font-semibold text-foreground">{x.title}</div>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{x.text}</p>
+            {infrastructure.map((x) => (
+              <div key={x.title} className="rounded-2xl bg-white p-6 shadow-sm">
+                <div className="mb-3 inline-flex size-10 items-center justify-center rounded-xl bg-primary text-white">
+                  <x.icon className="size-5" aria-hidden="true" />
                 </div>
-              </FadeIn>
+                <div className="font-serif text-base font-bold text-primary">{x.title}</div>
+                <p className="mt-2 text-sm leading-relaxed text-primary/80">{x.text}</p>
+              </div>
             ))}
           </div>
-
         </Container>
       </section>
 
-      <section className="bg-primary text-primary-foreground">
-        <Container className="py-14 sm:py-20">
-          <FadeIn>
-            <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-7">
-                <h2 className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Ready to access MechAfrica?
-                </h2>
-                <p className="mt-3 max-w-2xl text-base text-primary-foreground/80 sm:text-lg">
-                  Download the apps, or dial USSD for farmers without a smartphone.
-                </p>
-              </div>
-              <div className="lg:col-span-5">
-                <div className="flex flex-wrap gap-2">
-                  <Button asChild variant="secondary" className="h-11 rounded-full px-5">
-                    <Link href="/download">Download & access</Link>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="h-11 rounded-full border-white/30 bg-transparent px-5"
-                  >
-                    <Link href={siteConfig.ussd.telHref}>Dial {siteConfig.ussd.code}</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </Container>
-      </section>
+      <TiltedCallout
+        heading="Ready to access MechAfrica?"
+        description="Download the apps, or dial USSD for farmers without a smartphone."
+        primaryCta={{ label: "Download & access", href: "/download" }}
+        secondaryCta={{ label: `Dial ${siteConfig.ussd.code}`, href: siteConfig.ussd.telHref }}
+      />
     </>
   );
 }
-
