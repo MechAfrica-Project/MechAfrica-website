@@ -8,6 +8,8 @@ import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/marketing/PageHero";
 import { TiltedCallout } from "@/components/marketing/TiltedCallout";
+import { CountUpValue } from "@/components/marketing/motion/CountUpValue";
+import { StaggerReveal } from "@/components/marketing/motion/StaggerReveal";
 
 export const metadata: Metadata = {
   title: "Impact | MechAfrica",
@@ -51,7 +53,7 @@ export default function ImpactPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <StaggerReveal className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { title: "Improving access to mechanized services", icon: Tractor },
               { title: "Reducing friction in service delivery", icon: ShieldCheck },
@@ -65,7 +67,7 @@ export default function ImpactPage() {
                 <div className="font-serif text-base font-bold text-primary">{x.title}</div>
               </div>
             ))}
-          </div>
+          </StaggerReveal>
         </Container>
       </section>
 
@@ -80,14 +82,16 @@ export default function ImpactPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerReveal className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {impactMetrics.map((m) => (
               <div key={m.label} className="rounded-2xl bg-accent p-6">
-                <div className="font-serif text-3xl font-bold text-primary">{m.value}</div>
+                <div className="font-serif text-3xl font-bold text-primary">
+                  <CountUpValue value={m.value} />
+                </div>
                 <div className="mt-2 text-sm font-medium text-primary/80">{m.label}</div>
               </div>
             ))}
-          </div>
+          </StaggerReveal>
 
           <div className="mt-10 rounded-2xl bg-muted/60 p-6">
             <div className="flex items-center justify-between gap-3">

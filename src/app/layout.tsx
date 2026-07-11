@@ -3,6 +3,7 @@ import { Comfortaa, Poppins } from "next/font/google";
 
 import "./globals.css";
 import { siteConfig } from "@/content/site-config";
+import { SmoothScrollProvider } from "@/components/site/SmoothScrollProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -59,7 +60,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${poppins.variable} ${comfortaa.variable} antialiased`}
       >
-        {children}
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );

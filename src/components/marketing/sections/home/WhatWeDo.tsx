@@ -4,6 +4,8 @@ import Link from "next/link";
 import { IMAGES } from "@/lib/images";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/site/Container";
+import { FadeIn } from "@/components/marketing/motion/FadeIn";
+import { StaggerReveal } from "@/components/marketing/motion/StaggerReveal";
 
 export function WhatWeDo() {
   return (
@@ -43,7 +45,7 @@ export function WhatWeDo() {
           priority
         />
 
-        <div className="relative z-20 ml-[12%] max-w-[260px] max-[480px]:max-w-[240px] md:ml-0 md:max-w-[500px]">
+        <FadeIn className="relative z-20 ml-[12%] max-w-[260px] max-[480px]:max-w-[240px] md:ml-0 md:max-w-[500px]">
           <h2 className="font-serif text-[21px] font-bold leading-tight md:text-[30px] lg:text-[36px]">
             What MechAfrica does?
           </h2>
@@ -60,9 +62,12 @@ export function WhatWeDo() {
               Learn more <span className="ml-3 md:ml-4">→</span>
             </Link>
           </Button>
-        </div>
+        </FadeIn>
 
-        <div className="relative z-20 mt-7 grid grid-cols-3 items-end gap-2 md:mt-14 md:max-w-[900px] md:gap-6 lg:mt-16 lg:gap-7">
+        <StaggerReveal
+          stagger={0.12}
+          className="relative z-20 mt-7 grid grid-cols-3 items-end gap-2 md:mt-14 md:max-w-[900px] md:gap-6 lg:mt-16 lg:gap-7"
+        >
           <article className="rounded-[12px] border border-white/55 bg-primary/45 p-1.5 pb-2.5 max-[480px]:rounded-[10px] md:rounded-[22px] md:p-4 md:pb-5 md:backdrop-blur-sm">
             <div className="relative h-[46px] overflow-hidden rounded-[8px] max-[480px]:h-[40px] md:h-[112px] md:rounded-[15px] lg:h-[128px]">
               <Image
@@ -109,7 +114,7 @@ export function WhatWeDo() {
               Providers struggle with visibility and coordination
             </p>
           </article>
-        </div>
+        </StaggerReveal>
       </Container>
     </section>
   );

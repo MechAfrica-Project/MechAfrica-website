@@ -3,6 +3,7 @@ import { WhatWeDo } from "@/components/marketing/sections/home/WhatWeDo";
 import { PartnersStrip } from "@/components/marketing/sections/home/PartnersStrip";
 import { AvailableServices } from "@/components/marketing/sections/home/AvailableServices";
 import { FocusCrops } from "@/components/marketing/sections/home/FocusCrops";
+import { ServicesTicker } from "@/components/marketing/sections/home/ServicesTicker";
 import { AppShowcase } from "@/components/marketing/sections/home/AppShowcase";
 import { FieldStories } from "@/components/marketing/sections/home/FieldStories";
 import { HomeFaq } from "@/components/marketing/sections/home/HomeFaq";
@@ -15,6 +16,7 @@ export function HomePage() {
       <PartnersStrip />
       <AvailableServices />
       <FocusCrops />
+      <ServicesTicker />
       <AppShowcase />
       <FieldStories />
       <HomeFaq />

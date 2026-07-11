@@ -2,12 +2,14 @@ import Image from "next/image";
 
 import { founder, partners } from "@/content/site-config";
 import { Container } from "@/components/site/Container";
+import { FadeIn } from "@/components/marketing/motion/FadeIn";
+import { StaggerReveal } from "@/components/marketing/motion/StaggerReveal";
 
 export function PartnersStrip() {
   return (
     <section className="bg-white py-8 md:py-11">
       <Container className="max-w-[1140px] px-8 md:px-4">
-        <div className="mx-auto max-w-[1050px] text-center">
+        <FadeIn className="mx-auto max-w-[1050px] text-center">
           <h2 className="font-serif text-[20px] font-bold leading-tight text-primary md:text-[43px]">
             Built by MechLink. Backed by partners.
           </h2>
@@ -16,9 +18,12 @@ export function PartnersStrip() {
             organizations in agricultural innovation. Focused on practical service
             delivery in Ghana — including areas with unreliable connectivity.
           </p>
-        </div>
+        </FadeIn>
 
-        <div className="mt-10 flex flex-col items-center gap-8 md:mt-24 md:gap-12">
+        <StaggerReveal
+          stagger={0.15}
+          className="mt-10 flex flex-col items-center gap-8 md:mt-24 md:gap-12"
+        >
           <div className="flex flex-col items-center gap-2">
             <Image
               src={founder.image}
@@ -44,7 +49,7 @@ export function PartnersStrip() {
               />
             ))}
           </div>
-        </div>
+        </StaggerReveal>
       </Container>
     </section>
   );
