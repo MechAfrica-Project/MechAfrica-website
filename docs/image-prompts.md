@@ -6,6 +6,7 @@ Use this document to generate **high-quality, authentic** visuals that match the
 
 - **Look & feel:** premium documentary photography; warm natural light; real farming environments; respectful, modern, practical.
 - **Context:** Ghana / West Africa (villages, fields, mechanization, rural commerce).
+- **Crops (IMPORTANT):** only show MechAfrica focus crops — **maize, soya, rice, cowpea, sorghum, groundnut, cassava, tomato, chillies, green pepper, carrot, onions**. **Never wheat**, barley, or other temperate crops. Avoid American/European farm cues (red barns, grain silos, plaid-and-overalls farmers).
 - **Avoid:** stereotypes, exaggerated “NGO poster” looks, heavy HDR, overly staged models, neon SaaS style, fake logos.
 - **No text / no watermarks / no UI text baked into photos.**
 - Prefer **realism** and **authentic clothing/equipment**.
@@ -209,3 +210,72 @@ These are not required for launch, but they’ll add depth and reduce text-heavy
 
 **Prompt**
 > Premium documentary montage in Ghana showing multiple mechanized services: ploughing, spraying, harvesting, and transport; cohesive color grading, warm natural light, realistic; no text; no logos; no watermark.
+
+---
+
+## PRIORITY (July 2026): new services + focus crops
+
+The site now lists **Ploughing, Harrowing, Ripping, Planting, Spraying, Fertilization, Drone, Harvesting, Threshing, Bagging, Transportation** on Home → Available Services, and a new Home → “Crops we focus on” section with 12 crops. The assets below are wired into the code already — generate each image and drop it at the exact path (same filename) and it appears automatically.
+
+**Shared negative prompt for everything below**
+> wheat, barley, red barn, grain silo, American farm, European farm, cartoon, illustration, CGI, text, watermark, logo, over-sharpened, HDR, neon
+
+### A) New service circle images (Home → Available Services)
+
+Square **1:1, ≥1200×1200**, subject centered (displayed inside a circular crop). The files currently in place are **temporary copies of other photos** — overwrite them.
+
+#### A1. Harrowing
+- **File:** `public/images/marketing/harrowing.png` (placeholder today: copy of `impact.png`)
+- **Prompt**
+> Premium documentary photo in Ghana: tractor pulling a disc harrow across a freshly ploughed field, breaking soil clods into fine tilth, light dust rising; warm natural light; red-brown laterite soil; realistic; square composition with the harrow centered; no people looking at camera; no text; no logos; no watermark.
+
+#### A2. Fertilization
+- **File:** `public/images/marketing/fertilization.png` (placeholder today: copy of `farmField.png`)
+- **Prompt**
+> Documentary photo in Ghana: fertilizer application in young green maize rows — a farmer in simple work clothes applying granular fertilizer from a bucket/spreader beside the rows, or a tractor-mounted spreader working the field; warm morning light; realistic; square composition; no text; no logos; no watermark.
+
+#### A3. Bagging
+- **File:** `public/images/marketing/bagging.png` (placeholder today: copy of `logistics.png`)
+- **Prompt**
+> Premium documentary photo in Ghana: post-harvest bagging — workers filling and stitching woven polypropylene sacks with dried maize grain beside a thresher in a field, full sacks stacked nearby; warm late-afternoon light; realistic; square composition; no text; no logos; no watermark.
+
+### B) Regenerate — currently show wheat / non-Ghana setting
+
+#### B1. Transportation (currently: wheat field + American red barn and silo)
+- **File:** `public/images/marketing/transportation.png`
+- **Recommended:** 1:1, ≥1200×1200 (used in a circle on Home)
+- **Prompt**
+> Documentary photo in Ghana: a blue cargo motor tricycle (“aboboyaa”) loaded with sacks of maize on a red laterite rural road, green maize and cassava fields and palm trees in the background; warm natural light; realistic; square composition; no text; no logos; no watermark.
+
+#### B2. Harvesting (currently: wheat-straw stubble in frame)
+- **File:** `public/images/marketing/harvesting.png`
+- **Recommended:** 1:1, ≥1200×1200 (used in a circle on Home)
+- **Prompt**
+> Premium documentary photo in Ghana: maize harvest in progress — a combine or workers hand-harvesting mature brown maize, cobs visible, tractor and trailer nearby; warm golden-hour light; realistic; square composition; no text; no logos; no watermark.
+
+#### B3. Home farmer portrait (optional — currently reads as a US farmer in plaid shirt and overalls)
+- **File:** `public/images/marketing/homeFarmer.png`
+- **Where used:** Home → What We Do (cutout on transparent background)
+- **Prompt**
+> Studio-style portrait of a Ghanaian smallholder farmer, arms crossed and smiling with quiet confidence, simple work shirt and sun hat, realistic skin tones, soft even lighting, isolated on a plain/transparent background; photorealistic; no text; no logos; no watermark.
+
+### C) Focus-crop images (Home → “Crops we focus on”)
+
+Folder: `public/images/marketing/crops/` — **exact filenames below**. Square **1:1, ≥800×800**, displayed in small circles. Until a file exists the site shows a neutral leaf icon, so add these in any order.
+
+Keep the set visually consistent: **close-up of the crop growing or freshly harvested, Ghana/West Africa farm context, warm natural light, shallow depth of field, photorealistic, premium editorial look, square composition, no hands holding products toward camera, no text, no logos, no watermark.** Append this to each prompt below.
+
+| File | Subject prompt (prepend to shared style above) |
+| --- | --- |
+| `crops/maize.png` | Mature maize cobs with golden kernels partially husked on the stalk in a maize field |
+| `crops/soya.png` | Green soybean pods clustered on a soya plant, field rows blurred behind |
+| `crops/rice.png` | Ripening golden rice panicles in a lowland paddy field |
+| `crops/cowpea.png` | Cowpea plant with long green pods, some dried black-eyed cowpea beans visible |
+| `crops/sorghum.png` | Reddish-brown sorghum grain heads against green leaves in a sorghum field |
+| `crops/groundnut.png` | Freshly uprooted groundnut plant with pods and soil, laid on the earth |
+| `crops/cassava.png` | Freshly harvested cassava roots with red-brown soil beside a cassava plant |
+| `crops/tomato.png` | Ripe red tomatoes on the vine in an open vegetable farm |
+| `crops/chillies.png` | Bright red chilli peppers on a chilli plant, some green fruits behind |
+| `crops/green-pepper.png` | Glossy green bell peppers on a plant in a vegetable garden |
+| `crops/carrot.png` | Freshly pulled carrots with green tops and soil, resting on a farm bed |
+| `crops/onions.png` | Red onion bulbs at harvest, some in a woven basket in an onion field |

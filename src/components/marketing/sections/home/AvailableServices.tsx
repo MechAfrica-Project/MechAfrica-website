@@ -4,14 +4,17 @@ import { IMAGES } from "@/lib/images";
 import { Container } from "@/components/site/Container";
 
 const services = [
-  { label: "Harvesting", image: IMAGES.marketing.harvesting },
-  { label: "Ripping", image: IMAGES.marketing.ripping },
   { label: "Ploughing", image: IMAGES.marketing.ploughing },
-  { label: "Spraying", image: IMAGES.marketing.spraying },
-  { label: "Drone", image: IMAGES.marketing.drone },
-  { label: "Transportation", image: IMAGES.marketing.transportation },
-  { label: "Threshing", image: IMAGES.marketing.threshing },
+  { label: "Harrowing", image: IMAGES.marketing.harrowing },
+  { label: "Ripping", image: IMAGES.marketing.ripping },
   { label: "Planting", image: IMAGES.marketing.planting },
+  { label: "Spraying", image: IMAGES.marketing.spraying },
+  { label: "Fertilization", image: IMAGES.marketing.fertilization },
+  { label: "Drone", image: IMAGES.marketing.drone },
+  { label: "Harvesting", image: IMAGES.marketing.harvesting },
+  { label: "Threshing", image: IMAGES.marketing.threshing },
+  { label: "Bagging", image: IMAGES.marketing.bagging },
+  { label: "Transportation", image: IMAGES.marketing.transportation },
 ];
 
 export function AvailableServices() {
@@ -31,7 +34,7 @@ export function AvailableServices() {
             Available Services
           </h2>
           <p className="mt-3 text-[11px] font-medium text-primary/80 md:mt-7 md:text-[21px]">
-            From land preparation to harvesting — and more
+            From land preparation to harvest, bagging, and transport — and more
           </p>
         </div>
 

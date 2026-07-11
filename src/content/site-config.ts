@@ -28,12 +28,12 @@ export const siteConfig = {
   name: "MechAfrica",
   tagline: "Connecting farmers to the services that power agriculture",
   description:
-    "MechAfrica is a Ghana-first digital agricultural services platform connecting farmers to land preparation, planting, spraying, harvesting, logistics, and technical support — through mobile apps and USSD, with role-based tools for providers and field teams.",
+    "MechAfrica is a Ghana-first digital agricultural services platform connecting farmers to ploughing, harrowing, planting, spraying, fertilization, harvesting, threshing, bagging, transport, and technical support — through mobile apps and USSD, with role-based tools for providers and field teams.",
   url: "https://mechafrica.com",
 
   ussd: {
-    code: "*928*193#",
-    telHref: "tel:*928*193%23",
+    code: "*928*123#",
+    telHref: "tel:*928*123%23",
   },
 
   appLinks: {
@@ -145,7 +145,7 @@ export const platformHighlights = [
 export const impactMetrics: SiteMetric[] = [
   { label: "Farmers registered", value: "50,000+" },
   { label: "Service providers onboarded", value: "1,000+" },
-  { label: "USSD access for farmers", value: "*928*193#" },
+  { label: "USSD access for farmers", value: "*928*123#" },
   { label: "Current focus", value: "Ghana" },
 ];
 
@@ -233,11 +233,13 @@ export const globalFaq: SiteFaqItem[] = [
 ];
 
 export const farmerServices = [
-  "Land preparation (ploughing, ripping)",
+  "Land preparation (ploughing, harrowing, ripping)",
   "Planting",
   "Spraying",
+  "Fertilization",
   "Harvesting",
   "Threshing",
+  "Bagging",
   "Drone services (where available)",
   "Transportation and logistics",
   "Technicians and operators",
@@ -247,8 +249,10 @@ export type ServiceCategoryKey =
   | "land-prep"
   | "planting"
   | "spraying"
+  | "fertilization"
   | "harvesting"
   | "threshing"
+  | "bagging"
   | "drone"
   | "logistics"
   | "technical";
@@ -260,14 +264,36 @@ export type ServiceCategory = {
 };
 
 export const serviceCategories: ServiceCategory[] = [
-  { key: "land-prep", title: "Land preparation", services: ["Ploughing", "Ripping"] },
+  { key: "land-prep", title: "Land preparation", services: ["Ploughing", "Harrowing", "Ripping"] },
   { key: "planting", title: "Planting", services: ["Planting", "Seeding"] },
   { key: "spraying", title: "Spraying", services: ["Spraying", "Input application"] },
+  { key: "fertilization", title: "Fertilization", services: ["Fertilizer application", "Soil nutrition"] },
   { key: "harvesting", title: "Harvesting", services: ["Harvesting", "Collection"] },
   { key: "threshing", title: "Threshing", services: ["Threshing", "Post-harvest support"] },
+  { key: "bagging", title: "Bagging", services: ["Bagging", "Post-harvest handling"] },
   { key: "drone", title: "Drone services", services: ["Drone spraying", "Mapping (where available)"] },
   { key: "logistics", title: "Transportation", services: ["Transport", "Logistics"] },
   { key: "technical", title: "Technical services", services: ["Technicians", "Operators"] },
+] as const;
+
+export type FocusCrop = {
+  name: string;
+  image: string;
+};
+
+export const focusCrops: FocusCrop[] = [
+  { name: "Maize", image: "/images/marketing/crops/maize.png" },
+  { name: "Soya", image: "/images/marketing/crops/soya.png" },
+  { name: "Rice", image: "/images/marketing/crops/rice.png" },
+  { name: "Cowpea", image: "/images/marketing/crops/cowpea.png" },
+  { name: "Sorghum", image: "/images/marketing/crops/sorghum.png" },
+  { name: "Groundnut", image: "/images/marketing/crops/groundnut.png" },
+  { name: "Cassava", image: "/images/marketing/crops/cassava.png" },
+  { name: "Tomato", image: "/images/marketing/crops/tomato.png" },
+  { name: "Chillies", image: "/images/marketing/crops/chillies.png" },
+  { name: "Green pepper", image: "/images/marketing/crops/green-pepper.png" },
+  { name: "Carrot", image: "/images/marketing/crops/carrot.png" },
+  { name: "Onions", image: "/images/marketing/crops/onions.png" },
 ] as const;
 
 export type AppScreenshot = {

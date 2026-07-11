@@ -4,6 +4,9 @@ import homeHero from "../../public/images/marketing/home-hero.png";
 import farmers from "../../public/images/marketing/farmers.png";
 import providers from "../../public/images/marketing/providers.png";
 import agents from "../../public/images/marketing/agents.png";
+import bagging from "../../public/images/marketing/bagging.png";
+import fertilization from "../../public/images/marketing/fertilization.png";
+import harrowing from "../../public/images/marketing/harrowing.png";
 import impact from "../../public/images/marketing/impact.png";
 import onboarding from "../../public/images/marketing/onboarding.png";
 import ussd from "../../public/images/marketing/ussd.png";
@@ -31,6 +34,9 @@ export type MarketingImageKey =
   | "farmers"
   | "providers"
   | "agents"
+  | "bagging"
+  | "fertilization"
+  | "harrowing"
   | "impact"
   | "onboarding"
   | "ussd"
@@ -61,6 +67,9 @@ export const IMAGES: {
     farmers,
     providers,
     agents,
+    bagging,
+    fertilization,
+    harrowing,
     impact,
     onboarding,
     ussd,

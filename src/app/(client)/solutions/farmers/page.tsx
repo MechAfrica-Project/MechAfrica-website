@@ -8,7 +8,7 @@ import { SolutionAppSection } from "@/components/marketing/SolutionAppSection";
 export const metadata: Metadata = {
   title: "For Farmers | MechAfrica",
   description:
-    "Request ploughing, spraying, harvesting, and more through the MechAfrica Farmers App or USSD. Track updates and complete jobs with confidence.",
+    "Request ploughing, harrowing, planting, spraying, fertilization, harvesting, threshing, bagging, and transport through the MechAfrica Farmers App or USSD. Track updates and complete jobs with confidence.",
 };
 
 export default function FarmersPage() {
@@ -16,14 +16,15 @@ export default function FarmersPage() {
     <SolutionAppSection
       heading="Farmer's App"
       heroImage={IMAGES.marketing.farmField}
-      heroAlt="Farmer in a maize field at sunset"
+      heroAlt="Rows of young soya plants on a farm"
       phoneImage={IMAGES.marketing.farmersApp}
       phoneAlt="MechAfrica Farmers App home screen"
       phoneWidth={437}
       phoneHeight={571}
       paragraphs={[
         "MechAfrica has built a coordinated agricultural service network designed for the realities of modern farming, reducing friction across the entire service chain — from request to delivery to ongoing support.",
-        "Farmers can easily request essential services such as land preparation, planting, spraying, harvesting, threshing, logistics, and more through a simple mobile app or USSD access, making the platform accessible even in low-connectivity areas.",
+        "Farmers can easily request essential services such as ploughing, harrowing, planting, spraying, fertilization, harvesting, threshing, bagging, transport, and more through a simple mobile app or USSD access, making the platform accessible even in low-connectivity areas.",
+        "The platform supports the crops that matter most to Ghanaian farmers — maize, soya, rice, cowpea, sorghum, groundnut, cassava, tomato, chillies, green pepper, carrot, and onions — with services matched to each stage of the season.",
         "Trusted service providers with different specializations are then matched to demand, allowing them to respond quickly, communicate updates, and deliver efficient support to farmers. With real-time operational management, teams can track requests, schedule jobs, and coordinate assets seamlessly across multiple locations.",
         <Fragment key="ussd-paragraph">
           By combining offline-first workflows with both <strong className="font-semibold">app</strong> and{" "}

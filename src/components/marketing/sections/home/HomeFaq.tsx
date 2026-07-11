@@ -3,6 +3,7 @@
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
 
+import { siteConfig } from "@/content/site-config";
 import { Container } from "@/components/site/Container";
 import { cn } from "@/lib/utils";
 
@@ -10,12 +11,12 @@ const faqItems = [
   {
     question: "What is MechAfrica and who is it for?",
     answer:
-      "MechAfrica is a digital agricultural services platform for farmers, service providers, and field teams. Farmers can request services such as ploughing, planting, spraying, harvesting, threshing, drone support, and transportation, while providers manage requests and coordinate delivery.",
+      "MechAfrica is a digital agricultural services platform for farmers, service providers, and field teams. Farmers can request services such as ploughing, harrowing, planting, spraying, fertilization, harvesting, threshing, bagging, drone support, and transportation, while providers manage requests and coordinate delivery.",
   },
   {
     question: "Can farmers use MechAfrica without internet?",
     answer:
-      "Yes. Farmers can request services through USSD by dialing *928*193#, so they do not need a smartphone or data connection. The mobile apps are also designed with low-connectivity field conditions in mind.",
+      `Yes. Farmers can request services through USSD by dialing ${siteConfig.ussd.code}, so they do not need a smartphone or data connection. The mobile apps are also designed with low-connectivity field conditions in mind.`,
   },
   {
     question: "How does MechAfrica help service providers?",

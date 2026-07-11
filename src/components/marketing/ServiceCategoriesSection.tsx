@@ -1,6 +1,6 @@
 "use client";
 
-import { Droplets, Layers3, Radar, Shovel, Sprout, Truck, Wheat, Wrench, type LucideIcon } from "lucide-react";
+import { Droplets, Layers3, Leaf, Package, Radar, Shovel, Sprout, Tractor, Truck, Wrench, type LucideIcon } from "lucide-react";
 
 import { serviceCategories, type ServiceCategoryKey } from "@/content/site-config";
 import { cn } from "@/lib/utils";
@@ -12,8 +12,10 @@ const iconMap: Record<ServiceCategoryKey, LucideIcon> = {
   "land-prep": Shovel,
   planting: Sprout,
   spraying: Droplets,
-  harvesting: Wheat,
+  fertilization: Leaf,
+  harvesting: Tractor,
   threshing: Layers3,
+  bagging: Package,
   drone: Radar,
   logistics: Truck,
   technical: Wrench,
