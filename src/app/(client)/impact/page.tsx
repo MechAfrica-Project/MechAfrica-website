@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, MapPinned, ShieldCheck, SignalLow, Sprout, Tractor } from "lucide-react";
 
@@ -159,6 +160,39 @@ export default function ImpactPage() {
               </ul>
             </div>
           </div>
+
+          <StaggerReveal stagger={0.12} className="mt-10 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                image: IMAGES.marketing.ploughing,
+                alt: "Tractor ploughing a field",
+                label: "Land preparation on time",
+              },
+              {
+                image: IMAGES.marketing.harvesting,
+                alt: "Mechanized harvesting in progress",
+                label: "Harvest support at scale",
+              },
+              {
+                image: IMAGES.marketing.logistics,
+                alt: "Produce being loaded for transport on a rural road",
+                label: "Post-harvest transport",
+              },
+            ].map((x) => (
+              <figure key={x.label} className="group overflow-hidden rounded-2xl bg-white shadow-sm">
+                <div className="relative h-44 overflow-hidden sm:h-52">
+                  <Image
+                    src={x.image}
+                    alt={x.alt}
+                    fill
+                    sizes="(min-width: 640px) 384px, 100vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                </div>
+                <figcaption className="p-4 text-sm font-semibold text-primary">{x.label}</figcaption>
+              </figure>
+            ))}
+          </StaggerReveal>
         </Container>
       </section>
 

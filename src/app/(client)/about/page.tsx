@@ -9,6 +9,7 @@ import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/marketing/PageHero";
 import { TiltedCallout } from "@/components/marketing/TiltedCallout";
+import { StaggerReveal } from "@/components/marketing/motion/StaggerReveal";
 
 export const metadata: Metadata = {
   title: "About | MechAfrica",
@@ -39,7 +40,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="grid gap-4 lg:col-span-7 sm:grid-cols-2">
+            <StaggerReveal className="grid gap-4 lg:col-span-7 sm:grid-cols-2">
               {[
                 {
                   title: "Ghana focus, built to scale",
@@ -74,7 +75,7 @@ export default function AboutPage() {
                   <p className="mt-2 text-sm leading-relaxed text-primary/80">{c.description}</p>
                 </div>
               ))}
-            </div>
+            </StaggerReveal>
           </div>
         </Container>
       </section>
@@ -136,29 +137,44 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <StaggerReveal stagger={0.12} className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
               {
                 title: "Farmers",
                 description: "Request services and track updates via app or USSD.",
                 href: "/solutions/farmers",
+                image: IMAGES.marketing.farmers,
+                imageAlt: "Farmer checking service updates on his phones in the field",
               },
               {
                 title: "Service providers",
                 description: "Receive requests, schedule jobs, and manage teams and assets.",
                 href: "/solutions/service-providers",
+                image: IMAGES.marketing.providers,
+                imageAlt: "Service provider team observing a tractor at work",
               },
               {
                 title: "Agents",
                 description:
                   "Support onboarding, coordination, and issue resolution (coming soon).",
                 href: "/solutions/agents",
+                image: IMAGES.marketing.agents,
+                imageAlt: "Field agent coordinating with farmers in a rural community",
               },
             ].map((x) => (
               <div
                 key={x.title}
-                className="flex h-full flex-col rounded-2xl border border-border bg-white p-6"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white p-6"
               >
+                <div className="relative -mx-6 -mt-6 mb-5 h-36 overflow-hidden sm:h-40">
+                  <Image
+                    src={x.image}
+                    alt={x.imageAlt}
+                    fill
+                    sizes="(min-width: 640px) 384px, 100vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                </div>
                 <div className="font-serif text-lg font-bold text-primary">{x.title}</div>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-primary/80">
                   {x.description}
@@ -171,7 +187,7 @@ export default function AboutPage() {
                 </Link>
               </div>
             ))}
-          </div>
+          </StaggerReveal>
         </Container>
       </section>
 
@@ -186,6 +202,15 @@ export default function AboutPage() {
                 Agricultural service delivery can&rsquo;t depend on perfect connectivity.
                 MechAfrica supports app and USSD access for the field.
               </p>
+              <div className="relative mt-6 h-44 overflow-hidden rounded-2xl shadow-sm sm:h-52">
+                <Image
+                  src={IMAGES.marketing.ussd}
+                  alt="Hands dialing a USSD code on a basic phone near a farm"
+                  fill
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
             <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 lg:col-span-6">
               <ul className="space-y-3 text-sm text-primary/80">

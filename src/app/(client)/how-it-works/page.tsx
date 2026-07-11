@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Bell,
@@ -19,6 +20,8 @@ import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/marketing/PageHero";
 import { TiltedCallout } from "@/components/marketing/TiltedCallout";
 import { EcosystemDiagram } from "@/components/marketing/EcosystemDiagram";
+import { FadeIn } from "@/components/marketing/motion/FadeIn";
+import { StaggerReveal } from "@/components/marketing/motion/StaggerReveal";
 
 export const metadata: Metadata = {
   title: "How It Works | MechAfrica",
@@ -92,9 +95,9 @@ export default function HowItWorksPage() {
               coordination.
             </p>
           </div>
-          <div className="mt-10">
+          <FadeIn className="mt-10">
             <EcosystemDiagram />
-          </div>
+          </FadeIn>
         </Container>
       </section>
 
@@ -110,8 +113,17 @@ export default function HowItWorksPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            <div id="farmers" className="rounded-2xl bg-accent p-6">
+          <StaggerReveal stagger={0.12} className="mt-10 grid gap-6 lg:grid-cols-3">
+            <div id="farmers" className="group overflow-hidden rounded-2xl bg-accent p-6">
+              <div className="relative -mx-6 -mt-6 mb-5 h-36 overflow-hidden sm:h-40">
+                <Image
+                  src={IMAGES.marketing.farmers}
+                  alt="Farmer checking service updates on his phones in the field"
+                  fill
+                  sizes="(min-width: 1024px) 384px, 100vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
+              </div>
               <div className="font-serif text-lg font-bold text-primary">For farmers</div>
               <p className="mt-2 text-sm text-primary/80">
                 Request → track → complete (via app or USSD)
@@ -131,7 +143,16 @@ export default function HowItWorksPage() {
               </ol>
             </div>
 
-            <div id="providers" className="rounded-2xl bg-accent p-6">
+            <div id="providers" className="group overflow-hidden rounded-2xl bg-accent p-6">
+              <div className="relative -mx-6 -mt-6 mb-5 h-36 overflow-hidden sm:h-40">
+                <Image
+                  src={IMAGES.marketing.providers}
+                  alt="Service provider team observing a tractor at work"
+                  fill
+                  sizes="(min-width: 1024px) 384px, 100vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
+              </div>
               <div className="font-serif text-lg font-bold text-primary">For providers</div>
               <p className="mt-2 text-sm text-primary/80">
                 Receive demand → accept → assign assets → complete
@@ -151,7 +172,16 @@ export default function HowItWorksPage() {
               </ol>
             </div>
 
-            <div id="agents" className="rounded-2xl bg-accent p-6">
+            <div id="agents" className="group overflow-hidden rounded-2xl bg-accent p-6">
+              <div className="relative -mx-6 -mt-6 mb-5 h-36 overflow-hidden sm:h-40">
+                <Image
+                  src={IMAGES.marketing.agents}
+                  alt="Field agent coordinating with farmers in a rural community"
+                  fill
+                  sizes="(min-width: 1024px) 384px, 100vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
+              </div>
               <div className="flex items-start justify-between gap-2">
                 <div className="font-serif text-lg font-bold text-primary">For agents</div>
                 <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
@@ -175,11 +205,11 @@ export default function HowItWorksPage() {
                 ))}
               </ol>
             </div>
-          </div>
+          </StaggerReveal>
         </Container>
       </section>
 
-      <section className="bg-muted/60 py-12 sm:py-16 md:py-20">
+      <section id="infrastructure" className="bg-muted/60 py-12 sm:py-16 md:py-20">
         <Container>
           <div className="mx-auto max-w-xl text-center">
             <h2 className="font-serif text-2xl font-bold leading-tight text-primary sm:text-3xl md:text-4xl">
@@ -191,7 +221,9 @@ export default function HowItWorksPage() {
             </p>
           </div>
 
-          <div id="infrastructure" className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerReveal
+            className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          >
             {infrastructure.map((x) => (
               <div key={x.title} className="rounded-2xl bg-white p-6 shadow-sm">
                 <div className="mb-3 inline-flex size-10 items-center justify-center rounded-xl bg-primary text-white">
@@ -201,7 +233,7 @@ export default function HowItWorksPage() {
                 <p className="mt-2 text-sm leading-relaxed text-primary/80">{x.text}</p>
               </div>
             ))}
-          </div>
+          </StaggerReveal>
         </Container>
       </section>
 

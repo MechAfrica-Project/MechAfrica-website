@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { FadeIn } from "@/components/marketing/motion/FadeIn";
 
 export function TiltedCallout({
   heading,
@@ -22,7 +23,7 @@ export function TiltedCallout({
       />
 
       <div className="relative z-10 px-6 py-10 sm:px-10 sm:py-14 md:px-16 md:py-20">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-10">
+        <FadeIn className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-10">
           <div className="max-w-[560px]">
             <h2 className="font-serif text-xl font-bold text-white sm:text-2xl md:text-3xl lg:text-4xl">
               {heading}
@@ -48,7 +49,7 @@ export function TiltedCallout({
               </Button>
             ) : null}
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
