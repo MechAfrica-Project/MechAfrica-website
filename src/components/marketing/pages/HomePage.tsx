@@ -16,7 +16,6 @@ export function HomePage() {
       <PartnersStrip />
       <AvailableServices />
       <FocusCrops />
-      <ServicesTicker />
       <AppShowcase />
       <FieldStories />
       <HomeFaq />

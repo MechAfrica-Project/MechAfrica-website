@@ -35,7 +35,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t bg-white text-foreground">
+    <footer className="bg-white text-foreground">
       <Container className="py-12 pb-6">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="space-y-4 md:col-span-5">

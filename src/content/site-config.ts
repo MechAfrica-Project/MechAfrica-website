@@ -97,6 +97,16 @@ export const partners = [
     note: "Partner",
     image: "/images/marketing/agrinvest.png",
   },
+  {
+    name: "AgriSource Global",
+    note: "Partner",
+    image: "/images/marketing/agrisourceglobal.jpg",
+  },
+  {
+    name: "Utrack Africa",
+    note: "Partner",
+    image: "/images/marketing/utrackafrica.svg",
+  }
 ] as const;
 
 export const platformHighlights = [
