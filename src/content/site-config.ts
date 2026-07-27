@@ -84,6 +84,7 @@ export const founder = {
   name: "MechLink Limited",
   note: "Founder & developer",
   image: "/images/marketing/mechlink.png",
+  url: "https://mechlink.org",
 } as const;
 
 export const partners = [

@@ -254,13 +254,21 @@ export default function AboutPage() {
 
           <div className="mt-10 flex flex-col items-center gap-8 md:gap-12">
             <div className="flex flex-col items-center gap-2">
-              <Image
-                src={founder.image}
-                alt={founder.name}
-                width={220}
-                height={70}
-                className="h-auto w-[140px] object-contain md:w-[220px]"
-              />
+              <a
+                href={founder.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${founder.name}`}
+                className="transition-opacity hover:opacity-80"
+              >
+                <Image
+                  src={founder.image}
+                  alt={founder.name}
+                  width={220}
+                  height={70}
+                  className="h-auto w-[140px] object-contain md:w-[220px]"
+                />
+              </a>
               <span className="text-[10px] font-semibold uppercase tracking-wide text-primary/70 md:text-xs">
                 {founder.note}
               </span>
