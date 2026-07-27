@@ -9,5 +9,5 @@ export default function Home() {
 export const metadata: Metadata = {
   title: "MechAfrica | Agricultural services network in Ghana",
   description:
-    "MechAfrica connects 100k+ farmers and 300+ service providers in Ghana to request, manage, and deliver farm services via mobile apps and USSD (*928*123#).",
+    "MechAfrica connects 12,150+ farmers and 650+ service providers across 9 regions of Ghana to request, manage, and deliver farm services via mobile apps and USSD (*928*123#).",
 };

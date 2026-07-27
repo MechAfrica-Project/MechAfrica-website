@@ -153,21 +153,69 @@ export const platformHighlights = [
 ] as const;
 
 export const impactMetrics: SiteMetric[] = [
-  { label: "Farmers registered", value: "50,000+" },
-  { label: "Service providers onboarded", value: "1,000+" },
-  { label: "USSD access for farmers", value: "*928*123#" },
-  { label: "Current focus", value: "Ghana" },
+  { label: "Farmers reached", value: "12,150+" },
+  { label: "Service providers", value: "652" },
+  { label: "Service requests recorded", value: "6,273" },
+  { label: "Regions covered", value: "9" },
+  { label: "Districts reached", value: "16" },
+  { label: "Women farmer participation", value: "65.3%" },
 ];
+
+// Verified reach from the SAMA project (Strengthened Access to Mechanization for
+// Agribusiness), led by Agrinvest with funding from AGRA. Public-facing figures only.
+export const programNote = {
+  name: "SAMA",
+  full: "Strengthened Access to Mechanization for Agribusiness",
+  summary:
+    "MechAfrica scaled through SAMA — Strengthened Access to Mechanization for Agribusiness — led by Agrinvest with funding from AGRA.",
+} as const;
+
+export const coverage = {
+  regionCount: 9,
+  districtCount: 16,
+  areas: [
+    { region: "Ashanti", districts: ["Ejura Sekyeredumase", "Ejisu Municipal"] },
+    { region: "Bono", districts: ["Sunyani Municipal"] },
+    { region: "Bono East", districts: ["Kintampo North", "Techiman Municipal"] },
+    { region: "Central", districts: ["Cape Coast Metropolitan"] },
+    { region: "North East", districts: ["Nalerigu Municipal"] },
+    { region: "Northern", districts: ["Yendi Municipal", "Tamale Metropolitan"] },
+    { region: "Savannah", districts: ["Bole District"] },
+    { region: "Upper East", districts: ["Navrongo Municipal", "Bolgatanga Municipal"] },
+    {
+      region: "Upper West",
+      districts: ["Sissala East", "Sissala West", "Wa Municipal", "Wa East Municipal"],
+    },
+  ],
+} as const;
+
+export const womenParticipation = {
+  farmers: "65.3%",
+  providers: "10.8%",
+  providerCount: 71,
+} as const;
+
+export const mostRequestedServices = {
+  leading: { name: "Ploughing", requests: 2321 },
+  others: [
+    "Threshing",
+    "Planting",
+    "Harvesting",
+    "Spraying",
+    "Fertilizer application",
+    "Transportation",
+  ],
+  topCrops: ["Maize", "Soy", "Rice"],
+} as const;
 
 export const testimonials: SiteTestimonial[] = [
   {
     type: "Farmer story",
-    name: "Kojo A.",
-    role: "Maize farmer, Northern Ghana",
+    name: "Soy farmer",
+    role: "Kpugi, Northern Ghana",
     quote:
-      "I used to struggle to find timely ploughing. With MechAfrica, I can request early, get updates, and plan my season with more confidence.",
+      "I used to thresh my soy by hand with sticks — it broke the beans and mixed in stones, so buyers paid me less. Now I dial the USSD code to request a thresher. The machine keeps my soy clean, I lose less, and my harvest sells for more.",
     image: "farmers",
-    isPlaceholder: true,
   },
   {
     type: "Provider story",

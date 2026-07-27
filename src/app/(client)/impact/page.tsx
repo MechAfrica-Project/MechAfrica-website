@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, MapPinned, ShieldCheck, SignalLow, Sprout, Tractor } from "lucide-react";
+import { CheckCircle2, MapPin, ShieldCheck, SignalLow, Sprout, Tractor, Users } from "lucide-react";
 
-import { impactMetrics, siteConfig } from "@/content/site-config";
+import {
+  coverage,
+  impactMetrics,
+  mostRequestedServices,
+  programNote,
+  siteConfig,
+  womenParticipation,
+} from "@/content/site-config";
 import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
@@ -15,7 +22,7 @@ import { StaggerReveal } from "@/components/marketing/motion/StaggerReveal";
 export const metadata: Metadata = {
   title: "Impact | MechAfrica",
   description:
-    "MechAfrica improves access to mechanized farm services in Ghana by strengthening coordination between farmers and service providers — with USSD and offline-first workflows for the field.",
+    "MechAfrica has reached 12,150+ farmers and 652 service providers across 9 regions and 16 districts of Ghana — recording 6,273 service requests through the SAMA project led by Agrinvest with funding from AGRA.",
 };
 
 export default function ImpactPage() {
@@ -74,12 +81,12 @@ export default function ImpactPage() {
 
       <section className="bg-white py-12 sm:py-16 md:py-20">
         <Container>
-          <div className="mx-auto max-w-xl text-center">
+          <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-serif text-2xl font-bold leading-tight text-primary sm:text-3xl md:text-4xl">
               Where we are today
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-primary/80 sm:text-base">
-              A snapshot of adoption and access methods in Ghana.
+              Verified reach as MechAfrica scaled through the SAMA project across Ghana.
             </p>
           </div>
 
@@ -94,23 +101,93 @@ export default function ImpactPage() {
             ))}
           </StaggerReveal>
 
-          <div className="mt-10 rounded-2xl bg-muted/60 p-6">
-            <div className="flex items-center justify-between gap-3">
-              <div className="text-sm font-semibold text-primary">Service coverage map</div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs text-primary/70">
-                <MapPinned className="size-3" aria-hidden="true" />
-                Coming soon
+          <div className="mt-4 grid gap-4 lg:grid-cols-3">
+            {/* Women's participation */}
+            <div className="rounded-2xl bg-primary p-6 text-white lg:col-span-1">
+              <div className="mb-3 inline-flex size-10 items-center justify-center rounded-xl bg-white/15">
+                <Users className="size-5" aria-hidden="true" />
               </div>
-            </div>
-            <div className="mt-4 aspect-[16/8] rounded-2xl bg-white shadow-sm">
-              <div className="flex h-full flex-col items-center justify-center px-6 text-center">
-                <div className="font-semibold text-primary">Coverage visualization</div>
-                <div className="mt-2 max-w-md text-sm text-primary/70">
-                  District coverage map coming soon.
+              <div className="font-serif text-base font-bold">Women on the platform</div>
+              <div className="mt-4 space-y-3">
+                <div>
+                  <div className="font-serif text-3xl font-bold">{womenParticipation.farmers}</div>
+                  <div className="text-sm text-white/80">of farmer participation</div>
+                </div>
+                <div>
+                  <div className="font-serif text-3xl font-bold">{womenParticipation.providers}</div>
+                  <div className="text-sm text-white/80">of service providers</div>
                 </div>
               </div>
             </div>
+
+            {/* Most-requested services */}
+            <div className="rounded-2xl bg-accent p-6 lg:col-span-2">
+              <div className="text-sm font-semibold text-primary">Most-requested services</div>
+              <p className="mt-2 text-sm leading-relaxed text-primary/80">
+                Ploughing leads demand with{" "}
+                <span className="font-bold text-primary">
+                  {mostRequestedServices.leading.requests.toLocaleString("en-US")}
+                </span>{" "}
+                recorded requests, followed by other core services across the season.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="rounded-full bg-primary px-3 py-1 text-sm font-semibold text-white">
+                  {mostRequestedServices.leading.name}
+                </span>
+                {mostRequestedServices.others.map((s) => (
+                  <span key={s} className="rounded-full bg-white px-3 py-1 text-sm text-primary/80">
+                    {s}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-5 text-sm font-medium text-primary/80">
+                Leading crops:{" "}
+                <span className="font-semibold text-primary">
+                  {mostRequestedServices.topCrops.join(", ")}
+                </span>
+              </div>
+            </div>
           </div>
+
+          {/* Regional coverage */}
+          <div className="mt-10 rounded-2xl bg-muted/60 p-6 sm:p-8">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div className="font-serif text-lg font-bold text-primary">Where we operate</div>
+                <p className="mt-1 text-sm text-primary/80">
+                  {coverage.regionCount} regions · {coverage.districtCount} metropolitan, municipal
+                  and district areas
+                </p>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary/70">
+                <MapPin className="size-3" aria-hidden="true" />
+                Ghana
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {coverage.areas.map((a) => (
+                <div key={a.region} className="rounded-2xl bg-white p-5 shadow-sm">
+                  <div className="text-sm font-bold text-primary">{a.region}</div>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {a.districts.map((d) => (
+                      <span
+                        key={d}
+                        className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-medium text-primary/80"
+                      >
+                        {d}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-6 text-center text-xs leading-relaxed text-primary/60">
+            Figures reflect reach through {programNote.name} —{" "}
+            {programNote.full} — led by Agrinvest with funding from AGRA.
+          </p>
         </Container>
       </section>
 

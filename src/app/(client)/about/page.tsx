@@ -246,8 +246,9 @@ export default function AboutPage() {
               Built by MechLink. Backed by partners.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-primary/80 sm:text-base">
-              MechLink Limited founded and develops MechAfrica, with support from leading
-              organizations in agricultural innovation.
+              MechLink Limited founded and develops MechAfrica, which scaled through the SAMA
+              project — Strengthened Access to Mechanization for Agribusiness — led by Agrinvest
+              with funding from AGRA, reaching 12,150+ farmers across 9 regions of Ghana.
             </p>
           </div>
 
