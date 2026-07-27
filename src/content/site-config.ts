@@ -159,7 +159,6 @@ export const impactMetrics: SiteMetric[] = [
   { label: "Service requests recorded", value: "6,273" },
   { label: "Regions covered", value: "9" },
   { label: "Districts reached", value: "16" },
-  { label: "Women farmer participation", value: "65.3%" },
 ];
 
 // Verified reach from the SAMA project (Strengthened Access to Mechanization for
