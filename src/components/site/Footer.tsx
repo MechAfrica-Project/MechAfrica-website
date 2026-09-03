@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
-import { impactMetrics, siteConfig } from "@/content/site-config";
+import { siteConfig } from "@/content/site-config";
+import { getHeadlineCounts } from "@/lib/metrics";
 import { Container } from "@/components/site/Container";
 import { Logo } from "@/components/site/Logo";
 import { AppStoreButtons } from "@/components/site/AppStoreButtons";
@@ -26,11 +27,12 @@ const legalLinks = [
   { label: "Privacy", href: "/legal/privacy" },
 ];
 
-export function Footer() {
+export async function Footer() {
   const year = new Date().getFullYear();
+  const { farmers, providers } = await getHeadlineCounts();
   const footerMetrics = [
-    { value: impactMetrics[0]?.value ?? "—", label: "Farmers" },
-    { value: impactMetrics[1]?.value ?? "—", label: "Providers" },
+    { value: farmers, label: "Farmers" },
+    { value: providers, label: "Providers" },
     { value: siteConfig.ussd.code, label: "USSD" },
   ];
 

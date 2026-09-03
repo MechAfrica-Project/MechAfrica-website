@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { founder, partners } from "@/content/site-config";
+import { getHeadlineCounts } from "@/lib/metrics";
 import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
@@ -17,7 +18,9 @@ export const metadata: Metadata = {
     "Learn about MechAfrica — a Ghana-first agricultural services network connecting farmers, service providers, and field agents through apps and USSD.",
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const { farmers } = await getHeadlineCounts();
+
   return (
     <>
       <PageHero
@@ -248,7 +251,7 @@ export default function AboutPage() {
             <p className="mt-3 text-sm leading-relaxed text-primary/80 sm:text-base">
               MechLink Limited founded and develops MechAfrica, which scaled through the SAMA
               project — Strengthened Access to Mechanization for Agribusiness — led by Agrinvest
-              with funding from AGRA, reaching 21,759+ farmers across 9 regions of Ghana.
+              with funding from AGRA, reaching {farmers} farmers across 9 regions of Ghana.
             </p>
           </div>
 

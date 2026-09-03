@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, ShieldCheck, SignalLow, Sprout, Tractor } from "lucide-react";
 
-import { impactMetrics, programNote, siteConfig } from "@/content/site-config";
+import { programNote, siteConfig } from "@/content/site-config";
+import { getHeadlineCounts, getImpactMetrics } from "@/lib/metrics";
 import { IMAGES } from "@/lib/image";
 import { Container } from "@/components/site/Container";
 import { Button } from "@/components/ui/button";
@@ -12,13 +13,18 @@ import { TiltedCallout } from "@/components/marketing/TiltedCallout";
 import { CountUpValue } from "@/components/marketing/motion/CountUpValue";
 import { StaggerReveal } from "@/components/marketing/motion/StaggerReveal";
 
-export const metadata: Metadata = {
-  title: "Impact | MechAfrica",
-  description:
-    "MechAfrica has reached 21,759+ farmers and 3,554+ service providers across 9 regions and 16 districts of Ghana — recording 6,273 service requests through the SAMA project led by Agrinvest with funding from AGRA.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { farmers, providers } = await getHeadlineCounts();
 
-export default function ImpactPage() {
+  return {
+    title: "Impact | MechAfrica",
+    description: `MechAfrica has reached ${farmers} farmers and ${providers} service providers across 9 regions and 16 districts of Ghana — recording 6,273 service requests through the SAMA project led by Agrinvest with funding from AGRA.`,
+  };
+}
+
+export default async function ImpactPage() {
+  const impactMetrics = await getImpactMetrics();
+
   return (
     <>
       <PageHero

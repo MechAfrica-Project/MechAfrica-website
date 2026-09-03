@@ -1,11 +1,14 @@
 import Image from "next/image";
 
 import { founder, partners } from "@/content/site-config";
+import { getHeadlineCounts } from "@/lib/metrics";
 import { Container } from "@/components/site/Container";
 import { FadeIn } from "@/components/marketing/motion/FadeIn";
 import { StaggerReveal } from "@/components/marketing/motion/StaggerReveal";
 
-export function PartnersStrip() {
+export async function PartnersStrip() {
+  const { farmers } = await getHeadlineCounts();
+
   return (
     <section className="bg-white py-8 md:py-11">
       <Container className="max-w-[1140px] px-8 md:px-4">
@@ -16,7 +19,7 @@ export function PartnersStrip() {
           <p className="mx-auto mt-4 max-w-[520px] text-[11px] font-medium leading-[1.45] text-primary/85 md:mt-7 md:max-w-none md:text-[21px]">
             MechAfrica is developed by MechLink Limited and scaled through SAMA —
             Strengthened Access to Mechanization for Agribusiness — led by Agrinvest with
-            funding from AGRA. Today it reaches 21,759+ farmers across 9 regions of Ghana.
+            funding from AGRA. Today it reaches {farmers} farmers across 9 regions of Ghana.
           </p>
         </FadeIn>
 
