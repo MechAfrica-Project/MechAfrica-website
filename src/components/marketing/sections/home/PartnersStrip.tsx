@@ -16,7 +16,7 @@ export function PartnersStrip() {
           <p className="mx-auto mt-4 max-w-[520px] text-[11px] font-medium leading-[1.45] text-primary/85 md:mt-7 md:max-w-none md:text-[21px]">
             MechAfrica is developed by MechLink Limited and scaled through SAMA —
             Strengthened Access to Mechanization for Agribusiness — led by Agrinvest with
-            funding from AGRA. Today it reaches 12,150+ farmers across 9 regions of Ghana.
+            funding from AGRA. Today it reaches 21,759+ farmers across 9 regions of Ghana.
           </p>
         </FadeIn>
 

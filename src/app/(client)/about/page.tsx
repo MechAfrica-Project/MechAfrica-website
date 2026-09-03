@@ -248,7 +248,7 @@ export default function AboutPage() {
             <p className="mt-3 text-sm leading-relaxed text-primary/80 sm:text-base">
               MechLink Limited founded and develops MechAfrica, which scaled through the SAMA
               project — Strengthened Access to Mechanization for Agribusiness — led by Agrinvest
-              with funding from AGRA, reaching 12,150+ farmers across 9 regions of Ghana.
+              with funding from AGRA, reaching 21,759+ farmers across 9 regions of Ghana.
             </p>
           </div>
 

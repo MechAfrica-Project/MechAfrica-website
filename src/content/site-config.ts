@@ -154,8 +154,8 @@ export const platformHighlights = [
 ] as const;
 
 export const impactMetrics: SiteMetric[] = [
-  { label: "Farmers reached", value: "12,150+" },
-  { label: "Service providers", value: "652" },
+  { label: "Farmers reached", value: "21,759+" },
+  { label: "Service providers", value: "3,554+" },
   { label: "Service requests recorded", value: "6,273" },
   { label: "Regions covered", value: "9" },
   { label: "Districts reached", value: "16" },

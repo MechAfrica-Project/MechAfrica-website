@@ -15,7 +15,7 @@ import { StaggerReveal } from "@/components/marketing/motion/StaggerReveal";
 export const metadata: Metadata = {
   title: "Impact | MechAfrica",
   description:
-    "MechAfrica has reached 12,150+ farmers and 652 service providers across 9 regions and 16 districts of Ghana — recording 6,273 service requests through the SAMA project led by Agrinvest with funding from AGRA.",
+    "MechAfrica has reached 21,759+ farmers and 3,554+ service providers across 9 regions and 16 districts of Ghana — recording 6,273 service requests through the SAMA project led by Agrinvest with funding from AGRA.",
 };
 
 export default function ImpactPage() {
